@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bagro&#39;s Blog</title>
-    <link>https://BenAgro314.github.io/</link>
-    <description>Recent content on Bagro&#39;s Blog</description>
+    <title>Posts on Bagro&#39;s Blog</title>
+    <link>https://BenAgro314.github.io/posts/</link>
+    <description>Recent content in Posts on Bagro&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2021, Ben Agro</copyright>
-    <lastBuildDate>Tue, 19 Jan 2021 21:00:25 -0500</lastBuildDate><atom:link href="https://BenAgro314.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Jan 2021 21:00:25 -0500</lastBuildDate><atom:link href="https://BenAgro314.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Clearing a Mind Virus</title>
       <link>https://BenAgro314.github.io/posts/mind_worm/</link>
@@ -16,24 +16,6 @@
       <guid>https://BenAgro314.github.io/posts/mind_worm/</guid>
       <description>Mind Worms I am often afflicted by what I like to call Mind Worms 1: thoughts that I can&amp;rsquo;t seem to get out of my head, and grow to occupy the majority of my working memory. For example, my2 mind worms often take the form of:
  a technical problem that I have yet overcome a post-exam obsession/stress over a question I was unable to solve a social or personal anxiety that has been recently aggravated  In my experience, mind worms can either</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://BenAgro314.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://BenAgro314.github.io/about/</guid>
-      <description>About Me Ben Agro</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://BenAgro314.github.io/post/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://BenAgro314.github.io/post/</guid>
-      <description>Posts Some of my posts</description>
     </item>
     
   </channel>
