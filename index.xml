@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2021, Ben Agro</copyright>
-    <lastBuildDate>Mon, 15 Feb 2021 21:00:25 -0500</lastBuildDate><atom:link href="https://BenAgro314.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 May 2021 12:00:00 -0500</lastBuildDate><atom:link href="https://BenAgro314.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Self-Supervised Learning of Lidar Segmentation for Autonomous Indoor Navigation</title>
+      <link>https://BenAgro314.github.io/post/first_publication/</link>
+      <pubDate>Mon, 03 May 2021 12:00:00 -0500</pubDate>
+      
+      <guid>https://BenAgro314.github.io/post/first_publication/</guid>
+      <description>My first publication can be found here: https://arxiv.org/abs/2012.05897.
+It presents a self-supervised learning approach for semantic segmentation of lidar frames. Basically, the algorithm can identify object &amp;ldquo;classes&amp;rdquo; such as walls, long-term movable objects (tables, chairs), and short-term movable objects (people), and this information is used to improve localization and navigation in complex environments. i
+Big thanks to everyone at the ASRL lab for the opporotunity to work on this probject, especially Tim Barfoot, Hugues Thomas, and Mona Grisdeth.</description>
+    </item>
+    
     <item>
       <title>What I Wish I Knew In Highschool</title>
       <link>https://BenAgro314.github.io/post/what_i_wish_i_knew_in_highschool/</link>
