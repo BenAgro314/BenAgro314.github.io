@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2021, Ben Agro</copyright>
-    <lastBuildDate>Mon, 03 May 2021 12:00:00 -0500</lastBuildDate><atom:link href="https://BenAgro314.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://BenAgro314.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Summer 2021 Research Log</title>
+      <link>https://BenAgro314.github.io/post/research_diary/</link>
+      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://BenAgro314.github.io/post/research_diary/</guid>
+      <description>This will contain some rough presentations and visualizations from my work at the RVL lab. It will be continually updated throughout the summer of 2021.
+The Github repository for much of this work can be found at BenAgro314/drake_workspace
+Weeks 1 and 2 You can find the logs for weeks 1 and 2 here.
+Week 3  Controller for Franka Panda arm (very similar to Drake&amp;rsquo;s ManipulationStation for the Kuka iiwa)  PID controller (Drake&amp;rsquo;s InverseDynamicsController class) $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q) \; dt$$ \(k_p, k_d\) and \(k_i\) are position, velocity, and integral gains.</description>
+    </item>
+    
     <item>
       <title>Self-Supervised Learning of Lidar Segmentation for Autonomous Indoor Navigation</title>
       <link>https://BenAgro314.github.io/post/first_publication/</link>
@@ -42,15 +54,6 @@ The prevailing worldview in western (capitalist) societies is that upward growth
     </item>
     
     <item>
-      <title>About</title>
-      <link>https://BenAgro314.github.io/about_me/</link>
-      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://BenAgro314.github.io/about_me/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Mind Worms</title>
       <link>https://BenAgro314.github.io/post/mind_worm/</link>
       <pubDate>Tue, 19 Jan 2021 21:00:25 -0500</pubDate>
@@ -58,16 +61,6 @@ The prevailing worldview in western (capitalist) societies is that upward growth
       <guid>https://BenAgro314.github.io/post/mind_worm/</guid>
       <description>I am often afflicted by what I like to call Mind Worms 1: thoughts that I can&amp;rsquo;t seem to get out of my head, and grow to occupy the majority of my working memory. For example, my2 mind worms often take the form of:
  a technical problem that I have yet overcome a post-exam obsession/stress over a question I was unable to solve a social or personal anxiety that has been recently aggravated  In my experience, mind worms can either</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://BenAgro314.github.io/post/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://BenAgro314.github.io/post/</guid>
-      <description>Stuff
-writings</description>
     </item>
     
   </channel>
