@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Ben Agro</title>
+    <title>Posts on Ben Agro: Home</title>
     <link>https://BenAgro314.github.io/post/</link>
-    <description>Recent content in Posts on Ben Agro</description>
+    <description>Recent content in Posts on Ben Agro: Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2021, Ben Agro</copyright>
     <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://BenAgro314.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Summer 2021 Research Log</title>
-      <link>https://BenAgro314.github.io/post/research_diary/</link>
+      <link>https://BenAgro314.github.io/post/research_log/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://BenAgro314.github.io/post/research_diary/</guid>
+      <guid>https://BenAgro314.github.io/post/research_log/</guid>
       <description>This will contain some rough presentations and visualizations from my work at the RVL lab. It will be continually updated throughout the summer of 2021.
 The Github repository for much of this work can be found at BenAgro314/drake_workspace
 Weeks 1 and 2 You can find the logs for weeks 1 and 2 here.

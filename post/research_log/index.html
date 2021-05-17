@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en"><head>
+    <title>Summer 2021 Research Log</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+
+    
+    
+    
+    <link rel="stylesheet" href="../../css/theme.min.css">
+
+    
+    
+    
+
+    
+</head>
+<body>
+        <div id="content" class="mx-auto"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+    <div class="row">
+        <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
+            <a href="../../" class="text-decoration-none">
+                <img id="home-image" class="rounded-circle"
+                    
+                        
+                            src="../../images/prom_pic.jpg"
+                        
+                    
+                />
+            </a>
+        </div>
+        <div class="col-sm-8 col-12 text-sm-left text-center">
+            <h2 class="m-0 mb-2 mt-4">
+                <a href="../../" class="text-decoration-none">
+                    
+                        Ben Agro: Home
+                    
+                </a>
+            </h2>
+            <p class="text-muted mb-1">
+                
+                    A collection of blog posts and projects
+                
+            </p>
+            <ul id="nav-links" class="list-inline mb-2">
+                
+                
+            </ul>
+            <ul id="nav-social" class="list-inline">
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="mailto:ben.agro@mail.utoronto.ca" target="_blank">
+                            <i class="fas fa-at fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="http://github.com/BenAgro314" target="_blank">
+                            <i class="fab fa-github fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://twitter.com/BenAgro4" target="_blank">
+                            <i class="fab fa-twitter fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://www.instagram.com/ben_agro/" target="_blank">
+                            <i class="fab fa-instagram fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+    <hr />
+</header>
+<div class="container">
+    <div class="pl-sm-2">
+        <div class="mb-3">
+            
+            <h2 class="mb-0">Summer 2021 Research Log</h2>
+            
+            
+            <small class="text-muted">Published May 16, 2021</small>
+        </div>
+
+        <article>
+            <p>This will contain some rough presentations and visualizations from my work at the RVL lab. It will be continually updated throughout the summer of 2021.</p>
+<p>The Github repository for much of this work can be found at <a href="https://github.com/BenAgro314/drake_workspace">BenAgro314/drake_workspace</a></p>
+<h3 id="weeks-1-and-2">Weeks 1 and 2</h3>
+<p>You can find the logs for weeks 1 and 2 <a href="../../files/RVL_Research_Diary.pdf">here</a>.</p>
+<h3 id="week-3">Week 3</h3>
+<ul>
+<li>Controller for Franka Panda arm (very similar to Drake&rsquo;s <a href="https://drake.mit.edu/doxygen_cxx/classdrake_1_1examples_1_1manipulation__station_1_1_manipulation_station.html">ManipulationStation</a> for the Kuka iiwa)
+<ul>
+<li>PID controller (Drake&rsquo;s <a href="https://drake.mit.edu/doxygen_cxx/classdrake_1_1systems_1_1controllers_1_1_inverse_dynamics_controller.html">InverseDynamicsController</a> class)
+$$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$</li>
+<li>\(k_p, k_d\) and \(k_i\) are position, velocity, and integral gains. I used values for <a href="https://github.com/RobotLocomotion/drake/blob/master/examples/manipulation_station/manipulation_station.cc">Kuka iiwa</a>, how do we estimate values for real panda?</li>
+<li><em>Positional control</em> (using <a href="StateInterpolatorWithDiscreteDerivative">state interpolation with discrete derivatives</a> to find velocity) and <em>feedforward torque control</em>.</li>
+<li>Below is a diagram of the <code>PandaStation</code> system (<a href="../../files/panda_station_diagram.svg">fullscreen</a>)</li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="100%" height="400" name="iframe" src="../../files/panda_station_diagram.svg"></iframe>
+
+
+<ul>
+<li>Figured out how to create &ldquo;welds&rdquo; during runtime to simulate furniture assembly in Drake.</li>
+<li>Custom inverse kinematics class <code>PandaInverseKinematics</code>
+<ul>
+<li>Can add custom constraints (e.g optimizing across the entire trajectory instead of pairwise between adjacent IK solutions)</li>
+<li>Avoids some of the pitfalls of adding free bodies in Drake&rsquo;s <a href="https://drake.mit.edu/doxygen_cxx/classdrake_1_1multibody_1_1_inverse_kinematics.html">InverseKinematics</a> class</li>
+<li>Pitfalls: written using python bindings so it is a bit slower (can always turn into C++ and create out own bindings later)</li>
+</ul>
+</li>
+<li>below is the Franka Panda completing a basic pick and place with collision avoidance (with a manually coded desired end effector trajectory). (<a href="../../files/collision_avoid_pick_and_place.html">fullscreen</a>)</li>
+</ul>
+
+
+<iframe width="100%" height="400" name="iframe" src="../../files/collision_avoid_pick_and_place.html"></iframe>
+
+
+<h3 id="references">References</h3>
+
+
+<div id="refs" class="references">
+<ol>
+<li>Dai, Hongkai, Gregory Izatt, and Russ Tedrake. 2017. “Global Inverse Kinematics via Mixed-Integer Convex Optimization.” In <em>International Symposium on Robotics Research</em>. doi:<a href="https://doi.org/10.1007/978-3-030-28619-4_56">10.1007/978-3-030-28619-4_56</a>.</li>
+<li>Garrett, Caelan Reed. 2020. “Integrating Task and Motion Planning Tutorial.” 3rd Summer School on Cognitive Robotics. January 27. <a href="http://web.mit.edu/caelan/www/presentations/CRSS19.pdf" class="uri">http://web.mit.edu/caelan/www/presentations/CRSS19.pdf</a>.</li>
+<li>Garrett, Caelan Reed, Rohan Chitnis, Rachel Holladay, Beomjoon Kim, Tom Silver, Leslie Pack Kaelbling, and Tomás Lozano-Pérez. 2020. “Integrated Task and Motion Planning.” <a href="https://arxiv.org/pdf/2010.01083.pdf" class="uri">https://arxiv.org/pdf/2010.01083.pdf</a>.</li>
+<li>“GobalInverseKinematics Class Reference.” 2020. Drake. <a href="https://drake.mit.edu/doxygen_cxx/classdrake_1_1multibody_1_1_global_inverse_kinematics.html" class="uri">https://drake.mit.edu/doxygen_cxx/classdrake_1_1multibody_1_1_global_inverse_kinematics.html</a>.</li>
+<li>Lee, Youngwoon, Edward S. Hu, Zhengyu Yang, Alex Yin, and Joseph J. Lim. 2019. “IKEA Furniture Assembly Environment for Long-Horizon Complex Manipulation Tasks.”</li>
+<li>Shen, William, Felipe Trevizan, and Sylvie Thiébaux. 2019. “Learning Domain-Independent Planning Heuristics with Hypergraph Networks.” <a href="https://arxiv.org/abs/1911.13101" class="uri">https://arxiv.org/abs/1911.13101</a>.</li>
+<li>Tedrake, Russ. 2021. “Robot Manipulation: Perception, Planning, and Control (Course Notes for Mit 6.881).” <a href="http://manipulation.csail.mit.edu/" class="uri">http://manipulation.csail.mit.edu/</a>.</li>
+<li>Tedrake, Russ. 2021. “Underactuated Robotics: Algorithms for Walking, Running, Swimming, Flying, and Manipulation (Course Notes for Mit 6.832).” <a href="http://underactuated.mit.edu/" class="uri">http://underactuated.mit.edu/</a>.</li>
+<li>Tedrake, Russ, and the Drake Development Team. 2019. “Drake: Model-Based Design and Verification for Robotics.” <a href="https://drake.mit.edu" class="uri">https://drake.mit.edu</a>.</li>
+<li>Yoon, S. W., Alan Fern, and R. Givan. 2006. “Learning Heuristic Functions from Relaxed Plans.” In <em>ICAPS</em>. <a href="https://www.aaai.org/Papers/ICAPS/2006/ICAPS06-017.pdf" class="uri">https://www.aaai.org/Papers/ICAPS/2006/ICAPS06-017.pdf</a>.</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+        </article>
+
+        
+
+<head>
+<style>
+.boxed {
+  border: 1px solid black ;
+  }
+</style>
+</head>
+<div class="pl-sm-2">
+    <p><strong> For ocassional updates when I post:</strong></p>
+</div>
+
+<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#f8f9fa; clear:left; font:14px Helvetica,Arial,sans-serif;  width:400px;}
+	 
+</style>
+<div id="mc_embed_signup">
+<form action="https://utoronto.us7.list-manage.com/subscribe/post?u=0ca3e22c895a4e0d109fc614f&amp;id=1bf9e17065" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0ca3e22c895a4e0d109fc614f_1bf9e17065" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+
+
+
+    </div>
+
+            </div>
+        </div><script type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<footer class="text-center pb-1">
+    <small class="text-muted">
+        By: Ben Agro, <a href="https://BenAgro314.github.io">Home</a>
+    </small>
+</footer>
+</body>
+</html>
