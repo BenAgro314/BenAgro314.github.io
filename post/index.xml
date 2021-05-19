@@ -17,7 +17,7 @@
       <description>This will contain some rough presentations and visualizations from my work at the RVL lab. It will be continually updated throughout the summer of 2021.
 The Github repository for much of this work can be found at BenAgro314/drake_workspace
 Weeks 1 and 2 You can find the logs for weeks 1 and 2 here.
-Week 3  Controller for Franka Panda arm (very similar to Drake&amp;rsquo;s ManipulationStation for the Kuka iiwa)  PID controller (Drake&amp;rsquo;s InverseDynamicsController class) $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q) \; dt$$ \(k_p, k_d\) and \(k_i\) are position, velocity, and integral gains.</description>
+ Solving an IK problem with generic task-space constraints  using SNOPT: Sparse, Nonelinear Optimizer sequential quadratic programming which finds iteratively jumps to the local minimum of quadratic approximations    Week 3  Controller for Franka Panda arm (very similar to Drake&amp;rsquo;s ManipulationStation for the Kuka iiwa)  PID controller (Drake&amp;rsquo;s InverseDynamicsController class) $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q) \; dt$$ \(k_p, k_d\) and \(k_i\) are position, velocity, and integral gains.</description>
     </item>
     
     <item>

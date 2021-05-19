@@ -93,6 +93,14 @@
 <p>The Github repository for much of this work can be found at <a href="https://github.com/BenAgro314/drake_workspace">BenAgro314/drake_workspace</a></p>
 <h3 id="weeks-1-and-2">Weeks 1 and 2</h3>
 <p>You can find the logs for weeks 1 and 2 <a href="../../files/RVL_Research_Diary.pdf">here</a>.</p>
+<ul>
+<li>Solving an IK problem with generic task-space constraints
+<ul>
+<li>using <a href="https://web.stanford.edu/group/SOL/snopt.htm">SNOPT</a>: Sparse, Nonelinear Optimizer</li>
+<li><a href="https://en.wikipedia.org/wiki/Sequential_quadratic_programming">sequential quadratic programming</a> which finds iteratively jumps to the local minimum of quadratic approximations</li>
+</ul>
+</li>
+</ul>
 <h3 id="week-3">Week 3</h3>
 <ul>
 <li>Controller for Franka Panda arm (very similar to Drake&rsquo;s <a href="https://drake.mit.edu/doxygen_cxx/classdrake_1_1examples_1_1manipulation__station_1_1_manipulation_station.html">ManipulationStation</a> for the Kuka iiwa)
@@ -124,6 +132,38 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 
 
 <iframe width="100%" height="400" name="iframe" src="../../files/collision_avoid_pick_and_place.html"></iframe>
+
+
+<ul>
+<li>Rough draft of <strong>motion planning via trajectory optimization done</strong> (see below, <a href="../../files/traj_optim_v1.html">fullscreen</a>)
+<ul>
+<li>solving the motion planning problem as IK optimization problems connected by splines</li>
+<li>only need to specify start and end points, and the amount of time to get between them</li>
+</ul>
+</li>
+<li>Still need to tune the constraints/costs so things look a less janky!</li>
+</ul>
+
+
+<iframe width="100%" height="400" name="iframe" src="../../files/traj_optim_v1.html"></iframe>
+
+
+<ul>
+<li><strong>Todo:</strong>
+<ul>
+<li>Fix collision geometries for panda URDF (see visualization below, <a href="../../files/media/videos/panda_collisions.html">fullscreen</a>)</li>
+<li>choosing a motion planning algorithm:
+<ul>
+<li>Motion planning a trajectory optimization</li>
+<li>Sampling based motion planners (RRT*, PRM*)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="100%" height="400" name="iframe" src="../../files/panda_collisions.html"></iframe>
 
 
 <h3 id="references">References</h3>
