@@ -166,6 +166,115 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <iframe width="100%" height="400" name="iframe" src="../../files/panda_collisions.html"></iframe>
 
 
+<h3 id="week-4">Week 4</h3>
+<ul>
+<li><strong>Sampling based motion planning algorithms</strong>
+<ul>
+<li>custom implementation of RRT and RRT*</li>
+<li>added <a href="https://ompl.kavrakilab.org/">OMPL</a> for speed (see video below, <a href="../../files/ompl_pick_and_place.html">fullscreen</a>)
+<ul>
+<li>specify a desired pick pose \({}^WX^{Pick}_W\) and the place pose \({}^WX^{Place}_W\)</li>
+<li>solve for collision free initial and final joint positions using optimization based inverse kinematics</li>
+<li>Seven dimensional joint space \(\mathcal Q\) is defined by the joint limits</li>
+<li><code>StateValidityChecker</code> checks for collisions at sample points</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="100%" height="400" name="iframe" src="../../files/ompl_pick_and_place.html"></iframe>
+
+
+<ul>
+<li>
+<p><strong>Fixed Panda models collisions with drake&rsquo;s collision filtering:</strong></p>
+<ul>
+<li>in code:
+<ul>
+<li><code>ExcludeCollisionsWithin</code></li>
+<li><code>ExcludeCollisionsBetween</code></li>
+</ul>
+</li>
+<li>in urdf:
+<ul>
+<li><code>&lt;drake:collision_filter_group name=&quot;model_b_group&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Perception and grasp planning</strong></p>
+<ul>
+<li><strong>Perception</strong> is done purely geometrically (ie. no learning)
+<ul>
+<li>Data from three depth cameras per bin is converted to a pointcloud</li>
+<li>Pointclouds are merged at cropped to the space above the <em>pick</em> bin with <a href="http://www.open3d.org/">open3d</a></li>
+<li>Estimate normals of pointcloud with <code>open3d.geometry.estimate_normals</code> and <code>open3d.geometry.orient_normals_towards_camera_location</code></li>
+<li>Voxelize downsample the pointcloud with <code>voxelize_down_sample</code></li>
+</ul>
+</li>
+<li><strong>Grasp Selection</strong>:
+<ul>
+<li>looking for antipodal grasps: grasping the object at a pair of points on the pointcloud with normals co-linear with the line connecting them and with normals in the opposite direction</li>
+<li>Score grasp candidates by
+<ul>
+<li>assessing kinematic feasibility (ie. can the arm reach to that position)
+<ul>
+<li>check if an IK solution can be found</li>
+</ul>
+</li>
+<li>assessing the normality of the patch of points underneath the gripper fingers
+<ul>
+<li>measure how aligned the normals are with the panda gripper y axis:  \(\text{cost} = -\sum_i(n^i_{G_y})^2\), where \(n^i_{G_y}\) is the magnitude of the projection of the \(i^{th}\) normal on the y axis of the gripper.</li>
+</ul>
+</li>
+<li>no collision constraint: gripper must not penetrate the pointcloud (or any surrouding objects, but this is handlled in the IK step)</li>
+</ul>
+</li>
+<li>Many methods to generate antipodal grasp candidates, here we have simply sample points in the cloud and take the lowest cost</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="../../files/antipodal.jpeg/" alt="antipodal"></p>
+<ul>
+<li><strong>Finishing the full-stack pick and place</strong>
+<ul>
+<li>Robot knows the static objects in the environment, but only &ldquo;sees&rdquo; the manipulands through the pointcloud data from the bins</li>
+<li>See the video below the robot stacking two randomly placed blocks, while avoiding collisions with an obstacle (<a href="../../files/stacking_blocksV1.html">fullscreen</a>)</li>
+<li>Cycles through a pick and place routine:
+<ol>
+<li>Sample until finding a grasp candiadate (or reaching a sampling limit)</li>
+<li>Move to <em>prepick position</em> (just above grasp candidate)</li>
+<li><em>Pick</em> subroutine
+<ul>
+<li>move to grasp position with open gripper</li>
+<li>close gripper while in grasp position</li>
+<li>move back to prepick position</li>
+</ul>
+</li>
+<li>Move to <em>preplace position</em> (specified in code)</li>
+<li><em>Place</em> subroutine
+<ul>
+<li>move to place position with closed gripper</li>
+<li>open gripper while in place position</li>
+<li>move back to preplace position</li>
+</ul>
+</li>
+<li>Back to initial position, and then repeat from step 1</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="100%" height="400" name="iframe" src="../../files/stacking_blocksV1.html"></iframe>
+
+
 <h3 id="references">References</h3>
 
 
@@ -181,6 +290,8 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <li>Tedrake, Russ. 2021. “Underactuated Robotics: Algorithms for Walking, Running, Swimming, Flying, and Manipulation (Course Notes for Mit 6.832).” <a href="http://underactuated.mit.edu/" class="uri">http://underactuated.mit.edu/</a>.</li>
 <li>Tedrake, Russ, and the Drake Development Team. 2019. “Drake: Model-Based Design and Verification for Robotics.” <a href="https://drake.mit.edu" class="uri">https://drake.mit.edu</a>.</li>
 <li>Yoon, S. W., Alan Fern, and R. Givan. 2006. “Learning Heuristic Functions from Relaxed Plans.” In <em>ICAPS</em>. <a href="https://www.aaai.org/Papers/ICAPS/2006/ICAPS06-017.pdf" class="uri">https://www.aaai.org/Papers/ICAPS/2006/ICAPS06-017.pdf</a>.</li>
+<li>Ioan A. Șucan, Mark Moll, Lydia E. Kavraki, The Open Motion Planning Library, IEEE Robotics & Automation Magazine, 19(4):72–82, December 2012. <a href="https://ompl.kavrakilab.org" class="uri">https://ompl.kavrakilab.org</a>.</li>
+<li>Qian-Yi Zhou, Jaesik Park, Vladlen Koltun, Open3d: A Modern Library For 3D, arXiv, 2018. <a href="http://www.open3d.org/" class="uri">http://www.open3d.org/</a>.</li>
 </ol>
 </div>
 
