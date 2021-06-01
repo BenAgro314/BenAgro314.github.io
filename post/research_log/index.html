@@ -266,18 +266,59 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <ul>
 <li><strong>Learning to grasp</strong>
 <ul>
-<li>Paper, code</li>
-<li>Paper, code</li>
+<li><a href="https://arxiv.org/abs/1905.10520">6-DOF GraspNet: Variational Grasp Generation for Object Manipulation</a>, <a href="https://github.com/NVlabs/6dof-graspnet">github</a></li>
+<li><a href="https://research.nvidia.com/publication/2021-03_Contact-GraspNet%3A--Efficient">Contact-GraspNet: Efficient 6-DoF Grasp Generation in Cluttered Scenes</a>, <a href="https://github.com/NVlabs/contact_graspnet">github</a></li>
 </ul>
 </li>
+</ul>
+<p><img src="../../images/contact_graspnet.png" alt="contact graspnet"></p>
+<ul>
 <li><strong>Ground truth grasping as an optimization problem</strong>
 <ul>
-<li>The method is &hellip;
+<li>Drake only support collision geometries of three types:
 <ul>
-<li>heuristics for cylinder</li>
-<li>advantages of solving this as one optimization problem</li>
+<li>box</li>
+<li>cylinder</li>
+<li>sphere</li>
 </ul>
 </li>
+<li>Idea: with the Panda gripper, these shapes can only be grabbed in a few valid ways:
+<ul>
+<li>Solve the inverse kinematisc <strong>and</strong> gripper pose as <em>one constrained optimization problem</em> based on the heuristics for grabbing each type of shape*</li>
+<li>Collision constraints \( \implies \) non-convex \( \implies \) use SNOPT: Sparse Non-Linear Optimizer
+<ul>
+<li>under the hood this does sparse SQP (Sequential Quadratic Programming)</li>
+</ul>
+</li>
+<li>if the object consists of more than one of these shapes, return the lowest cost grasp for all shapes in that object</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="../../images/grasping.jpg" alt="heuristics"></p>
+<p>
+
+<iframe width="100%" height="400" name="iframe" src="../../files/box.html"></iframe>
+
+
+
+
+<iframe width="100%" height="400" name="iframe" src="../../files/cylinder1.html"></iframe>
+
+
+
+
+<iframe width="100%" height="400" name="iframe" src="../../files/cylinder2.html"></iframe>
+
+
+
+
+<iframe width="100%" height="400" name="iframe" src="../../files/sphere.html"></iframe>
+
+</p>
+<ul>
+<li>Combine these grasp poses with motion planning via OMPL from the previous week and we can pick up most objects (espcially furniture peices which have relatively simple geometries)</li>
 <li>Here are links to all of the ycb objects provided with drake, plus some others I made:
 <ul>
 <li><a href="../../files/week5/brick.html">brick</a></li>
@@ -289,8 +330,6 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <li><a href="../../files/week5/soup.html">soup</a></li>
 <li><a href="../../files/week5/marble.html">marble</a></li>
 <li><a href="../../files/week5/puck.html">puck</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -317,6 +356,12 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <li>Ioan A. Șucan, Mark Moll, Lydia E. Kavraki, The Open Motion Planning Library, IEEE Robotics & Automation Magazine, 19(4):72–82, December 2012. <a href="https://ompl.kavrakilab.org" class="uri">https://ompl.kavrakilab.org</a>.</li>
 <li>Qian-Yi Zhou, Jaesik Park, Vladlen Koltun, Open3d: A Modern Library For 3D, arXiv, 2018. <a href="http://www.open3d.org/" class="uri">http://www.open3d.org/</a>.</li>
 <li>Xu, Zhenjia and Qi, Beichun and Agrawal, Shubham and Song, Shuran. "AdaGrasp:  Learning  an  Adaptive  Gripper-Aware  Grasping  Policy", Proceedings of the IEEE International Conference on Robotics and Automation, 2021. <a href="https://adagrasp.cs.columbia.edu/" class="uri">https://adagrasp.cs.columbia.edu/</a>.</li>
+<li>
+Martin Sundermeyer, Arsalan Mousavian, Rudolph Triebel and Dieter Fox. Contact-GraspNet: Efficient 6-DoF Grasp Generation in Cluttered Scenes. 2021. <a href="https://arxiv.org/abs/2103.14127" class="uri">https://arxiv.org/abs/2103.14127</a> 
+</li>
+<li>
+Arsalan Mousavian, Clemens Eppner and Dieter Fox. 6-DOF GraspNet: Variational Grasp Generation for Object Manipulation. 2019. <a href="https://arxiv.org/abs/1905.10520" class="uri">https://arxiv.org/abs/1905.10520</a> 
+</li>
 </ol>
 </div>
 
