@@ -284,7 +284,7 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 </li>
 <li>Idea: with the Panda gripper, these shapes can only be grabbed in a few valid ways:
 <ul>
-<li>Solve the inverse kinematisc <strong>and</strong> gripper pose as <em>one constrained optimization problem</em> based on the heuristics for grabbing each type of shape*</li>
+<li>Solve the inverse kinematics <strong>and</strong> gripper pose as <em>one constrained optimization problem</em> based on the heuristics for grabbing each type of shape*</li>
 <li>Collision constraints \( \implies \) non-convex \( \implies \) use SNOPT: Sparse Non-Linear Optimizer
 <ul>
 <li>under the hood this does sparse SQP (Sequential Quadratic Programming)</li>
@@ -318,8 +318,11 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 
 </p>
 <ul>
-<li>Combine these grasp poses with motion planning via OMPL from the previous week and we can pick up most objects (especially furniture peices which have relatively simple geometries)</li>
-<li>Here are links to all of the ycb objects provided with drake, plus some others I made:
+<li>
+<p>Combine these grasp poses with motion planning via OMPL from the previous week and we can pick up most objects (espcially furniture peices which have relatively simple geometries)</p>
+</li>
+<li>
+<p>Here are links to all of the ycb objects provided with drake, plus some others I made:</p>
 <ul>
 <li><a href="../../files/week5/brick.html">brick</a></li>
 <li><a href="../../files/week5/gelatin.html">gelatin</a></li>
@@ -332,10 +335,82 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <li><a href="../../files/week5/puck.html">puck</a></li>
 </ul>
 </li>
+<li>
+<p><strong>Next Steps:</strong></p>
+<ul>
+<li>floating Panda hand as an intermediate step between cursor and full arm</li>
+<li>furniture assembly in Drake (simulating welds, building models &hellip;)</li>
+<li>motion planning that accounts for objects in the grasp
+<ul>
+<li>closed loop planning that adjusts based on the objects orientation (if it spins)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="week-6">Week 6</h3>
+<ul>
+<li>Finished floating hand
+<ul>
+<li>describe bugs</li>
+</ul>
+</li>
+<li>I spent some time working on furniture construction in <code>Drake</code>. This will be a difficult to do because it does not allow for joints to be added mid-simulation, only forces.
+<ul>
+<li>in the meantime, Mohammed and I are integrating his work into <code>Drake</code> to try benchmark TAMP problems (still suitable for enhancment with learning)</li>
+</ul>
+</li>
+<li>reading up on TAMP, PDDL, PDDLStream, LGP:
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=JNOk1rylDpU&amp;list=PLWPCgxnTLbvHRpt6EIrUfxPWkenKhiZFV&amp;index=7">Integrated TAMP Tutorial (Garrett)</a></p>
+</li>
+<li>
+<p><a href="http://dyalab.mines.edu/papers/lagriffoul2018benchmark.pdf">Platform-Independent Benchmarks for Task and Motion Planningi (Lagriffoul et al.)</a> and website with <a href="http://tampbenchmark.aass.oru.se/index.php?title=Problems">problem files</a>. There were some interesting assumptions made in this paper about the types of problems that they cover:</p>
+<ul>
+<li>
+<p><em>&ldquo;Objects that are grasped or placed are kinematically coupled with the parent object and do not move or slide&rdquo;</em>. We have already seen that this is not the case in many of the simulations. Below I describe how I made the friction of the Panda hand more realistic, and the grasp poses are optimzed so that they are <em>near the COM of the objects</em>.</p>
+</li>
+<li>
+<p><em>&ldquo;The initial state is entirely known geometrically (positions, meshes, configurations), semantically (e.g., movability of objects, placement locations).&quot;</em></p>
+</li>
+<li>
+<p>Predefined surfaces supporting stable placement (SSSP) and stable object poses (SOPs)
+<img src="../../images/SOPs.png" alt="SOPs_and__SSPs">. See below for how we can find stable placement poses.</p>
+</li>
+<li>
+<p>Task criteria: infeasible task actions, large task spaces, motion/task trade offs (problem can be solved in less steps if grasps and placements are carfully chosen), non-monotonicity (objects need to be moved more than once), non-geometric actions (actions that change the state without the configurations)</p>
+<ul>
+<li><em>Towers of Hanoi</em></li>
+<li><em>Blocks World</em>: stacking blocks in alphabetical order with a obstacle ridden environment</li>
+<li><em>Sort Clutter</em>: move \( N\) blue blocks from on table to another, \( N \) green blocks in the opposite direction, while avoiding \( 2N \) red blocks that act as obstacles</li>
+<li><em>Non-Monotonic</em>: moving objects that are blocked by other objects, while returning all blocking objects to their original positions</li>
+<li><em>Kitchen</em>: preparing a meal by cleaning two glasses (in the dishwasher), cooking food (in the microwave), and setting the table</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www-morganclaypool-com.myaccess.library.utoronto.ca/doi/abs/10.2200/S00900ED2V01Y201902AIM042">An Introduction to the Planning Domain Definition Language (Haslum et al.)</a></p>
+</li>
+<li>
+<p><a href="https://sites.google.com/stanford.edu/objectcentrictamp">Object-Centric Task and Motion Planning in Dynamic Environments (Migimatsu et al.)</a></p>
+</li>
+</ul>
+</li>
+<li><strong>How to generate stable object placement poses?</strong>
+<ul>
+<li>as always with <code>Drake</code>, try and optmization problem!</li>
+</ul>
+</li>
+</ul>
+<p><img src="../../images/placing.jpg" alt="placing"></p>
+<ul>
+<li>Demo with picking and placing (<a href="../../files/two_item_place.html">fullscreen</a>)</li>
 </ul>
 
 
-<iframe width="100%" height="400" name="iframe" src="../../files/week5/mustard.html"></iframe>
+<iframe width="100%" height="400" name="iframe" src="../../files/two_item_place.html"></iframe>
 
 
 <h3 id="references">References</h3>
