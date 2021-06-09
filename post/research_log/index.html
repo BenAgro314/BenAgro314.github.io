@@ -352,12 +352,12 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <ul>
 <li>Finished floating hand
 <ul>
-<li>describe bugs</li>
+<li>dealt with some bugs concerning conversion of quaternions to RPY</li>
 </ul>
 </li>
-<li>I spent some time working on furniture construction in <code>Drake</code>. This will be a difficult to do because it does not allow for joints to be added mid-simulation, only forces.
+<li>Spent some time working on furniture construction in <code>Drake</code>. This will be a difficult to do because it does not allow for joints to be added mid-simulation, only forces.
 <ul>
-<li>in the meantime, Mohammed and I are integrating his work into <code>Drake</code> to try benchmark TAMP problems (still suitable for enhancment with learning)</li>
+<li>in the meantime, Mohamed and I are integrating his work into <code>Drake</code> to try benchmark TAMP problems (still suitable for enhancment with learning)</li>
 </ul>
 </li>
 <li>reading up on TAMP, PDDL, PDDLStream, LGP:
@@ -404,15 +404,44 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 </ul>
 </li>
 </ul>
-<p><img src="../../images/placing.jpg" alt="placing"></p>
+<p><img src="../../images/placing.jpg" alt="placing">
+<img src="../../images/placing2.jpg" alt="placing2"></p>
 <ul>
-<li>Demo with picking and placing (<a href="../../files/two_item_place.html">fullscreen</a>)</li>
+<li>
+<p>using the faces of the convex hull that satisfy the above requirements, we can then perform the same IK optimization problem to find the best <em>reachable</em> placement pose.</p>
+</li>
+<li>
+<p>Demo with picking and placing (<a href="../../files/two_item_place.html">fullscreen</a>)</p>
+</li>
 </ul>
 
 
 <iframe width="100%" height="400" name="iframe" src="../../files/two_item_place.html"></iframe>
 
 
+<ul>
+<li>Demo picking up more complex object made of multiple primitive shapes (<a href="../../files/dumbbell.html">fullscreen</a>)</li>
+</ul>
+
+
+<iframe width="100%" height="400" name="iframe" src="../../files/dumbbell.html"></iframe>
+
+
+<ul>
+<li>Todo/Next Steps:
+<ol>
+<li><code>Drake</code> TAMP (integration with Mohameds' work)</li>
+<li>Improving streams
+<ul>
+<li>placement: implement and test convex hull idea</li>
+<li>grasping: how can we find good initial guess for the IK problem (it is non-convex, so is prey to falling into local minima)</li>
+</ul>
+</li>
+<li>Continue learning about PDDL(stream) and thinking about where learning could help in the pipeline</li>
+<li>Furniture construction in <code>Drake</code></li>
+</ol>
+</li>
+</ul>
 <h3 id="references">References</h3>
 
 
