@@ -96,7 +96,7 @@
 <ul>
 <li>Solving an IK problem with generic task-space constraints
 <ul>
-<li>using <a href="https://web.stanford.edu/group/SOL/snopt.htm">SNOPT</a>: Sparse, Nonelinear Optimizer</li>
+<li>using <a href="https://web.stanford.edu/group/SOL/snopt.htm">SNOPT</a>: Sparse, Nonlinear Optimizer</li>
 <li><a href="https://en.wikipedia.org/wiki/Sequential_quadratic_programming">sequential quadratic programming</a> which finds iteratively jumps to the local minimum of quadratic approximations</li>
 </ul>
 </li>
@@ -109,7 +109,7 @@
 <li>PID controller (Drake&rsquo;s <a href="https://drake.mit.edu/doxygen_cxx/classdrake_1_1systems_1_1controllers_1_1_inverse_dynamics_controller.html">InverseDynamicsController</a> class)
 $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$</li>
 <li>\(k_p, k_d\) and \(k_i\) are position, velocity, and integral gains. I used values for <a href="https://github.com/RobotLocomotion/drake/blob/master/examples/manipulation_station/manipulation_station.cc">Kuka iiwa</a>, how do we estimate values for real panda?</li>
-<li><em>Positional control</em> (using <a href="StateInterpolatorWithDiscreteDerivative">state interpolation with discrete derivatives</a> to find velocity) and <em>feedforward torque control</em>.</li>
+<li><em>Positional control</em> (using <a href="StateInterpolatorWithDiscreteDerivative">state interpolation with discrete derivatives</a> to find velocity) and <em>feed-forward torque control</em>.</li>
 <li>Here is a diagram of the <code>PandaStation</code> system: <a href="../../files/panda_station_diagram.svg">PandaStation diagram</a></li>
 </ul>
 </li>
@@ -187,15 +187,15 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <ul>
 <li><strong>Perception</strong> is done purely geometrically (ie. no learning)
 <ul>
-<li>Data from three depth cameras per bin is converted to a pointcloud</li>
-<li>Pointclouds are merged at cropped to the space above the <em>pick</em> bin with <a href="http://www.open3d.org/">open3d</a></li>
-<li>Estimate normals of pointcloud with <code>open3d.geometry.estimate_normals</code> and <code>open3d.geometry.orient_normals_towards_camera_location</code></li>
-<li>Voxelize downsample the pointcloud with <code>voxelize_down_sample</code></li>
+<li>Data from three depth cameras per bin is converted to a point-cloud</li>
+<li>Point-clouds are merged at cropped to the space above the <em>pick</em> bin with <a href="http://www.open3d.org/">open3d</a></li>
+<li>Estimate normals of point-cloud with <code>open3d.geometry.estimate_normals</code> and <code>open3d.geometry.orient_normals_towards_camera_location</code></li>
+<li>Voxelize downsample the point-cloud with <code>voxelize_down_sample</code></li>
 </ul>
 </li>
 <li><strong>Grasp Selection</strong>:
 <ul>
-<li>looking for antipodal grasps: grasping the object at a pair of points on the pointcloud with normals co-linear with the line connecting them and with normals in the opposite direction</li>
+<li>looking for antipodal grasps: grasping the object at a pair of points on the point-cloud with normals co-linear with the line connecting them and with normals in the opposite direction</li>
 <li>Score grasp candidates by
 <ul>
 <li>assessing kinematic feasibility (ie. can the arm reach to that position)
@@ -208,7 +208,7 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <li>measure how aligned the normals are with the panda gripper y axis:  \(\text{cost} = -\sum_i(n^i_{G_y})^2\), where \(n^i_{G_y}\) is the magnitude of the projection of the \(i^{th}\) normal on the y axis of the gripper.</li>
 </ul>
 </li>
-<li>no collision constraint: gripper must not penetrate the pointcloud (or any surrouding objects, but this is handlled in the IK step)</li>
+<li>no collision constraint: gripper must not penetrate the point-cloud (or any surrounding objects, but this is handled in the IK step)</li>
 </ul>
 </li>
 <li>Many methods to generate antipodal grasp candidates, here we have simply sample points in the cloud and take the lowest cost</li>
@@ -222,11 +222,11 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <li>
 <p><strong>Finishing the full-stack pick and place</strong></p>
 <ul>
-<li>Robot knows the static objects in the environment, but only &ldquo;sees&rdquo; the manipulands through the pointcloud data from the bins</li>
+<li>Robot knows the static objects in the environment, but only &ldquo;sees&rdquo; the manipulands through the point-cloud data from the bins</li>
 <li>Here is a video of a robot stacking two randomly placed blocks, while avoiding collisions with an obstacle : <a href="../../files/stacking_blocksV1.html">stacking blocks</a></li>
 <li>Cycles through a pick and place routine:
 <ol>
-<li>Sample until finding a grasp candiadate (or reaching a sampling limit)</li>
+<li>Sample until finding a grasp candidate (or reaching a sampling limit)</li>
 <li>Move to <em>prepick position</em> (just above grasp candidate)</li>
 <li><em>Pick</em> subroutine
 <ul>
@@ -255,7 +255,7 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <p>Most frequent point of failure: finding valid grasps (inverse kinematics constraint is the most restrictive). I might look into testing/implementing any of:</p>
 <ul>
 <li><a href="https://adagrasp.cs.columbia.edu/">AdaGrasp:  Learning  an  Adaptive  Gripper-Aware  Grasping  Policy</a></li>
-<li>already has a pytorth implementation on <a href="https://github.com/columbia-ai-robotics/adagrasp">github</a></li>
+<li>already has a pytorch implementation on <a href="https://github.com/columbia-ai-robotics/adagrasp">github</a></li>
 <li>Many others:, <a href="https://github.com/andyzeng/visual-pushing-grasping">Visual Pushing and Grasping Toolbox</a>, <a href="https://github.com/ivalab/grasp_multiObject_multiGrasp">Real-world Multi-object, Multi-grasp Detection</a>, <a href="https://github.com/NVlabs/contact_graspnet">Contact Grasp-Net</a></li>
 <li>How do we determine stable placement poses?</li>
 <li>Other areas I can contribute to TAMP?</li>
@@ -319,7 +319,7 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 </p>
 <ul>
 <li>
-<p>Combine these grasp poses with motion planning via OMPL from the previous week and we can pick up most objects (espcially furniture peices which have relatively simple geometries)</p>
+<p>Combine these grasp poses with motion planning via OMPL from the previous week and we can pick up most objects (particularly furniture pieces which have relatively simple geometries)</p>
 </li>
 <li>
 <p>Here are links to all of the ycb objects provided with drake, plus some others I made:</p>
@@ -357,7 +357,7 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 </li>
 <li>Spent some time working on furniture construction in <code>Drake</code>. This will be a difficult to do because it does not allow for joints to be added mid-simulation, only forces.
 <ul>
-<li>in the meantime, Mohamed and I are integrating his work into <code>Drake</code> to try benchmark TAMP problems (still suitable for enhancment with learning)</li>
+<li>in the meantime, Mohamed and I are integrating his work into <code>Drake</code> to try benchmark TAMP problems (still suitable for enhancement with learning)</li>
 </ul>
 </li>
 <li>reading up on TAMP, PDDL, PDDLStream, LGP:
@@ -369,7 +369,7 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <p><a href="http://dyalab.mines.edu/papers/lagriffoul2018benchmark.pdf">Platform-Independent Benchmarks for Task and Motion Planningi (Lagriffoul et al.)</a> and website with <a href="http://tampbenchmark.aass.oru.se/index.php?title=Problems">problem files</a>. There were some interesting assumptions made in this paper about the types of problems that they cover:</p>
 <ul>
 <li>
-<p><em>&ldquo;Objects that are grasped or placed are kinematically coupled with the parent object and do not move or slide&rdquo;</em>. We have already seen that this is not the case in many of the simulations. Below I describe how I made the friction of the Panda hand more realistic, and the grasp poses are optimzed so that they are <em>near the COM of the objects</em>.</p>
+<p><em>&ldquo;Objects that are grasped or placed are kinematically coupled with the parent object and do not move or slide&rdquo;</em>. We have already seen that this is not the case in many of the simulations. Below I describe how I made the friction of the Panda hand more realistic, and the grasp poses are optimized so that they are <em>near the COM of the objects</em>.</p>
 </li>
 <li>
 <p><em>&ldquo;The initial state is entirely known geometrically (positions, meshes, configurations), semantically (e.g., movability of objects, placement locations).&quot;</em></p>
@@ -379,7 +379,7 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <img src="../../images/SOPs.png" alt="SOPs_and__SSPs">. See below for how we can find stable placement poses.</p>
 </li>
 <li>
-<p>Task criteria: infeasible task actions, large task spaces, motion/task trade offs (problem can be solved in less steps if grasps and placements are carfully chosen), non-monotonicity (objects need to be moved more than once), non-geometric actions (actions that change the state without the configurations)</p>
+<p>Task criteria: infeasible task actions, large task spaces, motion/task trade offs (problem can be solved in less steps if grasps and placements are carefully chosen), non-monotonicity (objects need to be moved more than once), non-geometric actions (actions that change the state without the configurations)</p>
 <ul>
 <li><em>Towers of Hanoi</em></li>
 <li><em>Blocks World</em>: stacking blocks in alphabetical order with a obstacle ridden environment</li>
@@ -400,7 +400,7 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 </li>
 <li><strong>How to generate stable object placement poses?</strong>
 <ul>
-<li>as always with <code>Drake</code>, try and optmization problem!</li>
+<li>as always with <code>Drake</code>, try and optimization problem!</li>
 </ul>
 </li>
 </ul>
@@ -411,26 +411,15 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <p>using the faces of the convex hull that satisfy the above requirements, we can then perform the same IK optimization problem to find the best <em>reachable</em> placement pose.</p>
 </li>
 <li>
-<p>Demo with picking and placing (<a href="../../files/two_item_place.html">fullscreen</a>)</p>
+<p><a href="../../files/two_item_place.html">Demo with picking and placing</a></p>
 </li>
-</ul>
-
-
-<iframe width="100%" height="400" name="iframe" src="../../files/two_item_place.html"></iframe>
-
-
-<ul>
-<li>Demo picking up more complex object made of multiple primitive shapes (<a href="../../files/dumbbell.html">fullscreen</a>)</li>
-</ul>
-
-
-<iframe width="100%" height="400" name="iframe" src="../../files/dumbbell.html"></iframe>
-
-
-<ul>
-<li>Todo/Next Steps:
+<li>
+<p><a href="../../files/dumbbell.html">Demo picking up more complex object made of multiple primitive shapes</a></p>
+</li>
+<li>
+<p>Todo/Next Steps:</p>
 <ol>
-<li><code>Drake</code> TAMP (integration with Mohameds' work)</li>
+<li><code>Drake</code> TAMP (integration with Mohamed&rsquo;s work)</li>
 <li>Improving streams
 <ul>
 <li>placement: implement and test convex hull idea</li>
@@ -440,6 +429,92 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <li>Continue learning about PDDL(stream) and thinking about where learning could help in the pipeline</li>
 <li>Furniture construction in <code>Drake</code></li>
 </ol>
+</li>
+</ul>
+<h3 id="week-7">Week 7</h3>
+<ul>
+<li>Lots of re-engineering and re-writing of code
+<ul>
+<li>For <a href="https://coding.abel.nu/2012/06/programmer-time-translation-table/">software development</a>: take the expected number of time units it will take you, multiply by two and add one.</li>
+</ul>
+</li>
+<li>For samplers, injected randomness to the mathematical programs so it aligns with the <a href="https://arxiv.org/abs/1802.08705">pddlstream</a> philosophy
+<ul>
+<li>placement poses were deterministic, so it was impossible to place two items on one table.
+<ul>
+<li>in previous demos, the placement planner had information about the other objects on the table</li>
+</ul>
+</li>
+<li>solution: add a cost for deviation from a random point on the table and a random orientation
+<ul>
+<li>this IK problem is less constrained than randomly generating positions for the object on the table and solving IK for the (possible) joint configuration</li>
+<li>still would like to try the other method of randomly generating poses for the object, and backing out the joint positions from there</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Demo: specify the goal:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">goal <span style="color:#f92672">=</span> (
+    <span style="color:#e6db74">&#34;and&#34;</span>,
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;foam_brick&#34;</span>, <span style="color:#e6db74">&#34;table_square&#34;</span>),
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;soup_can&#34;</span>, <span style="color:#e6db74">&#34;table_square&#34;</span>),
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;mustard&#34;</span>, <span style="color:#e6db74">&#34;table_round&#34;</span>),
+)
+</code></pre></div>
+
+<figure>
+    <iframe width="100%" height="400" name="iframe" src="../../files/week7/mustard_foam_soup.html"></iframe>
+    <figcaption>Placing object on tables. (<a href="../../files/week7/mustard_foam_soup.html">fullscreen</a>)</figcaption>
+</figure>
+
+
+<ul>
+<li>Problems:
+<ul>
+<li>planner cannot seem to figure out slightly more difficult plans. Consider the scenario below:</li>
+</ul>
+</li>
+</ul>
+<p><img src="../../images/mustard_scenario.png" alt="mustard_scenario"></p>
+<pre><code>- moving the mustard alone is easy:
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">goal <span style="color:#f92672">=</span> (
+    <span style="color:#e6db74">&#34;and&#34;</span>,
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;mustard&#34;</span>, <span style="color:#e6db74">&#34;table_round&#34;</span>),
+)
+</code></pre></div>
+
+<figure>
+    <iframe width="100%" height="400" name="iframe" src="../../files/week7/mustard_only.html"></iframe>
+    <figcaption>Figuring out order of operations is hard for the planner. (<a href="../../files/week7/mustard_only.html">fullscreen</a>)</figcaption>
+</figure>
+
+
+<ul>
+<li>The planner fails when it must move the mustard first:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">goal <span style="color:#f92672">=</span> (
+    <span style="color:#e6db74">&#34;and&#34;</span>,
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;mustard&#34;</span>, <span style="color:#e6db74">&#34;table_round&#34;</span>),
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;soup_can&#34;</span>, <span style="color:#e6db74">&#34;table_square&#34;</span>),
+)
+</code></pre></div><p>or</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">goal <span style="color:#f92672">=</span> (
+    <span style="color:#e6db74">&#34;and&#34;</span>,
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;soup_can&#34;</span>, <span style="color:#e6db74">&#34;table_square&#34;</span>),
+)
+</code></pre></div><ul>
+<li>Possible bug with pddlstream, it gets into an infinite loop of iterations, but does not sample the streams</li>
+</ul>
+<p><img src="../../images/pddlbug.png" alt="pddlbug"></p>
+<ul>
+<li>Next Steps/Todo:
+<ul>
+<li>a</li>
+<li>b</li>
+<li>c</li>
+</ul>
 </li>
 </ul>
 <h3 id="references">References</h3>
