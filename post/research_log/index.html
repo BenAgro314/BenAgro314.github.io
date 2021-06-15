@@ -433,12 +433,14 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 </ul>
 <h3 id="week-7">Week 7</h3>
 <ul>
-<li>Lots of re-engineering and re-writing of code
+<li>
+<p>Lots of re-engineering and re-writing of code</p>
 <ul>
 <li>For <a href="https://coding.abel.nu/2012/06/programmer-time-translation-table/">software development</a>: take the expected number of time units it will take you, multiply by two and add one.</li>
 </ul>
 </li>
-<li>For samplers, injected randomness to the mathematical programs so it aligns with the <a href="https://arxiv.org/abs/1802.08705">pddlstream</a> philosophy
+<li>
+<p>For samplers, injected randomness to the mathematical programs so it aligns with the <a href="https://arxiv.org/abs/1802.08705">PDDLstream</a> philosophy</p>
 <ul>
 <li>placement poses were deterministic, so it was impossible to place two items on one table.
 <ul>
@@ -453,7 +455,9 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 </li>
 </ul>
 </li>
-<li>Demo: specify the goal:</li>
+<li>
+<p>Demo: specify the goal</p>
+</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">goal <span style="color:#f92672">=</span> (
     <span style="color:#e6db74">&#34;and&#34;</span>,
@@ -464,56 +468,104 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 </code></pre></div>
 
 <figure>
-    <iframe width="100%" height="400" name="iframe" src="../../files/week7/mustard_foam_soup.html"></iframe>
-    <figcaption>Placing object on tables. (<a href="../../files/week7/mustard_foam_soup.html">fullscreen</a>)</figcaption>
+    <iframe width="100%" height="400" name="iframe" src="../../files/week7/cycle.html"></iframe>
+    <figcaption>Placing object on tables. (<a href="../../files/week7/cycle.html">fullscreen</a>)</figcaption>
 </figure>
 
 
 <ul>
-<li>Problems:
+<li><strong>Weakness</strong>: less specific goals
 <ul>
-<li>planner cannot seem to figure out slightly more difficult plans. Consider the scenario below:</li>
+<li>consider the goal below:</li>
 </ul>
 </li>
 </ul>
-<p><img src="../../images/mustard_scenario.png" alt="mustard_scenario"></p>
-<pre><code>- moving the mustard alone is easy:
-</code></pre>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">goal <span style="color:#f92672">=</span> (
     <span style="color:#e6db74">&#34;and&#34;</span>,
-    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;mustard&#34;</span>, <span style="color:#e6db74">&#34;table_round&#34;</span>),
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;foam_brick&#34;</span>, <span style="color:#e6db74">&#34;table_square&#34;</span>),
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;mustard&#34;</span>, <span style="color:#e6db74">&#34;table&#34;</span>),
 )
 </code></pre></div>
 
 <figure>
-    <iframe width="100%" height="400" name="iframe" src="../../files/week7/mustard_only.html"></iframe>
-    <figcaption>Figuring out order of operations is hard for the planner. (<a href="../../files/week7/mustard_only.html">fullscreen</a>)</figcaption>
+    <iframe width="100%" height="400" name="iframe" src="../../files/week7/easy_swap.html"></iframe>
+    <figcaption>This plan took 15 seconds to find (<a href="../../files/week7/easy_swap.html">fullscreen</a>)</figcaption>
 </figure>
 
 
-<ul>
-<li>The planner fails when it must move the mustard first:</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">goal <span style="color:#f92672">=</span> (
-    <span style="color:#e6db74">&#34;and&#34;</span>,
-    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;mustard&#34;</span>, <span style="color:#e6db74">&#34;table_round&#34;</span>),
-    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;soup_can&#34;</span>, <span style="color:#e6db74">&#34;table_square&#34;</span>),
-)
-</code></pre></div><p>or</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">goal <span style="color:#f92672">=</span> (
-    <span style="color:#e6db74">&#34;and&#34;</span>,
-    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;soup_can&#34;</span>, <span style="color:#e6db74">&#34;table_square&#34;</span>),
-)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">complexity: 2, 
+cost: 0.000, 
+evaluations: 60, 
+iterations: 4, 
+length: 2, 
+run_time: 14.630
+sample_time: 12.838,
+search_time: 1.792,
+skeletons: 2, 
+solutions: 1, 
+solved: True, 
+timeout: False
+
+Total External Statistics                                                                  
+External: plan-motion-free | n: <span style="color:#ae81ff">783</span> | p_success: 1.000 | overhead: 0.155                    
+External: plan-motion-holding | n: <span style="color:#ae81ff">19414</span> | p_success: 0.121 | overhead: 0.017              
+External: grasp-conf | n: <span style="color:#ae81ff">583</span> | p_success: 0.933 | overhead: 1.929                          
+External: placement-conf | n: <span style="color:#ae81ff">597</span> | p_success: 0.988 | overhead: 5.419
 </code></pre></div><ul>
-<li>Possible bug with pddlstream, it gets into an infinite loop of iterations, but does not sample the streams</li>
+<li>What if we make this goal less specific?</li>
 </ul>
-<p><img src="../../images/pddlbug.png" alt="pddlbug"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">goal <span style="color:#f92672">=</span> (
+    <span style="color:#e6db74">&#34;and&#34;</span>,
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;foam_brick&#34;</span>, <span style="color:#e6db74">&#34;table_square&#34;</span>),
+)
+</code></pre></div>
+
+<figure>
+    <iframe width="100%" height="400" name="iframe" src="../../files/week7/BIGBRAIN.html"></iframe>
+    <figcaption>A less specific goal results in a much longer planning process. This plan took 22 minutes to find! The full statistics are listed below (<a href="../../files/week7/BIGBRAIN.html">fullscreen</a>). Note that the reason the arm does a big circle to place the mustard is because the bottom-most rotary joint has a limit on it</figcaption>.
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">complexity: 2,
+cost: 0.000,
+evaluations: 18228,
+iterations: 210,
+length: 2,
+run_time: 1343.843,
+sample_time: 667.892,
+search_time: 675.951,
+skeletons: 208,
+solutions: 1,
+solved: True,
+timeout: False
+
+Total External Statistics
+External: plan-motion-free | n: <span style="color:#ae81ff">723</span> | p_success: 1.000 | overhead: 0.157
+External: plan-motion-holding | n: <span style="color:#ae81ff">19293</span> | p_success: 0.119 | overhead: 0.016
+External: grasp-conf | n: <span style="color:#ae81ff">558</span> | p_success: 0.930 | overhead: 1.901
+External: placement-conf | n: <span style="color:#ae81ff">572</span> | p_success: 0.988 | overhead: 5.452
+</code></pre></div><ul>
+<li>
+<p>Notice that the <code>plan-motion-holding</code> stream was evaluated a huge number of times. Almost every one of these evaluations was trying to place the <code>foam_brick</code> on the <code>table_square</code> while the <code>mustard</code> was already there.</p>
+</li>
+<li>
+<p>The grasp and placement streams both have a high probability of success, but they have no information about the objects that the placed object might be in collision with (except the objects welded to the world)</p>
+</li>
+<li>
+<p>While this run may be an outlier (some others I tested were \(\sim 300s \)), the idea is the same: without specifying a goal for the mustard, the planning takes 1-2 orders of magnitude longer.</p>
+</li>
+<li>
+<p>Next Steps/Todo:</p>
 <ul>
-<li>Next Steps/Todo:
+<li>New scenarios/domains?</li>
+<li>Faster streams:
 <ul>
-<li>a</li>
-<li>b</li>
-<li>c</li>
+<li>The slowest part of these streams are the custom costs/constraints I had to add to <code>Drake</code>&rsquo;s inverse kinematics API, written in <code>python</code>. The C++ bindings will find a grasp/placement pose in \(\sim 0.5 s\), while the python code adds a \(10 \times\) slowdown.</li>
+<li>This could probably be fixed by writing the code in C++ and creating python bindings</li>
+</ul>
+</li>
+<li>Ideas?</li>
+<li>Learning?</li>
 </ul>
 </li>
 </ul>
