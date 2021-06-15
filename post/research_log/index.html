@@ -434,13 +434,13 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <h3 id="week-7">Week 7</h3>
 <ul>
 <li>
-<p>Lots of re-engineering and re-writing of code</p>
+<p>Lots of re-engineering and re-writing code</p>
 <ul>
-<li>For <a href="https://coding.abel.nu/2012/06/programmer-time-translation-table/">software development</a>: take the expected number of time units it will take you, multiply by two and add one.</li>
+<li>For <a href="https://coding.abel.nu/2012/06/programmer-time-translation-table/">expected software development times</a> take the expected number of (time) units you think a project will take you, multiply it by two, and add one.</li>
 </ul>
 </li>
 <li>
-<p>For samplers, injected randomness to the mathematical programs so it aligns with the <a href="https://arxiv.org/abs/1802.08705">PDDLstream</a> philosophy</p>
+<p>For samplers, injected randomness to the mathematical programs so they produce different result each time (aligning with the <a href="https://arxiv.org/abs/1802.08705">PDDLstream</a> philosophy)</p>
 <ul>
 <li>placement poses were deterministic, so it was impossible to place two items on one table.
 <ul>
@@ -450,7 +450,7 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <li>solution: add a cost for deviation from a random point on the table and a random orientation
 <ul>
 <li>this IK problem is less constrained than randomly generating positions for the object on the table and solving IK for the (possible) joint configuration</li>
-<li>still would like to try the other method of randomly generating poses for the object, and backing out the joint positions from there</li>
+<li>could try the other method of randomly generating poses for the object, and backing out the joint positions from there</li>
 </ul>
 </li>
 </ul>
@@ -522,7 +522,8 @@ External: placement-conf | n: <span style="color:#ae81ff">597</span> | p_success
 
 <figure>
     <iframe width="100%" height="400" name="iframe" src="../../files/week7/BIGBRAIN.html"></iframe>
-    <figcaption>A less specific goal results in a much longer planning process. This plan took 22 minutes to find! The full statistics are listed below (<a href="../../files/week7/BIGBRAIN.html">fullscreen</a>). Note that the reason the arm does a big circle to place the mustard is because the bottom-most rotary joint has a limit on it</figcaption>.
+    <figcaption>A less specific goal results in a much longer planning process. This particular plan took 22 minutes to find! The full statistics are listed below (<a href="../../files/week7/BIGBRAIN.html">fullscreen</a>). Note that the reason the arm does a big circle to place the mustard is because the bottom-most rotary joint has a 
+    joint limit of [-2.8973, 2.8973].</figcaption>
 </figure>
 
 
@@ -546,7 +547,7 @@ External: grasp-conf | n: <span style="color:#ae81ff">558</span> | p_success: 0.
 External: placement-conf | n: <span style="color:#ae81ff">572</span> | p_success: 0.988 | overhead: 5.452
 </code></pre></div><ul>
 <li>
-<p>Notice that the <code>plan-motion-holding</code> stream was evaluated a huge number of times. Almost every one of these evaluations was trying to place the <code>foam_brick</code> on the <code>table_square</code> while the <code>mustard</code> was already there.</p>
+<p>Notice that the <code>plan-motion-holding</code> stream has a low probability of success. Almost every one of these evaluations was trying to place the <code>foam_brick</code> on the <code>table_square</code> while the <code>mustard</code> was already there.</p>
 </li>
 <li>
 <p>The grasp and placement streams both have a high probability of success, but they have no information about the objects that the placed object might be in collision with (except the objects welded to the world)</p>
