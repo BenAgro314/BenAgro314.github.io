@@ -366,7 +366,7 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <p><a href="https://www.youtube.com/watch?v=JNOk1rylDpU&amp;list=PLWPCgxnTLbvHRpt6EIrUfxPWkenKhiZFV&amp;index=7">Integrated TAMP Tutorial (Garrett)</a></p>
 </li>
 <li>
-<p><a href="http://dyalab.mines.edu/papers/lagriffoul2018benchmark.pdf">Platform-Independent Benchmarks for Task and Motion Planningi (Lagriffoul et al.)</a> and website with <a href="http://tampbenchmark.aass.oru.se/index.php?title=Problems">problem files</a>. There were some interesting assumptions made in this paper about the types of problems that they cover:</p>
+<p><a href="http://dyalab.mines.edu/papers/lagriffoul2018benchmark.pdf">Platform-Independent Benchmarks for Task and Motion Planning (Lagriffoul et al.)</a> and website with <a href="http://tampbenchmark.aass.oru.se/index.php?title=Problems">problem files</a>. There were some interesting assumptions made in this paper about the types of problems that they cover:</p>
 <ul>
 <li>
 <p><em>&ldquo;Objects that are grasped or placed are kinematically coupled with the parent object and do not move or slide&rdquo;</em>. We have already seen that this is not the case in many of the simulations. Below I describe how I made the friction of the Panda hand more realistic, and the grasp poses are optimized so that they are <em>near the COM of the objects</em>.</p>
@@ -435,18 +435,14 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
 <ul>
 <li>
 <p>Lots of re-engineering and re-writing code</p>
-<ul>
-<li>For <a href="https://coding.abel.nu/2012/06/programmer-time-translation-table/">expected software development times</a> take the expected number of (time) units you think a project will take you, multiply it by two, and add one.</li>
-</ul>
 </li>
 <li>
 <p>For samplers, injected randomness to the mathematical programs so they produce different result each time (aligning with the <a href="https://arxiv.org/abs/1802.08705">PDDLstream</a> philosophy)</p>
-<ul>
-<li>placement poses were deterministic, so it was impossible to place two items on one table.
-<ul>
-<li>in previous demos, the placement planner had information about the other objects on the table</li>
-</ul>
 </li>
+<li>
+<p>placement poses were deterministic, so it was impossible to place two items on one table.
+- in previous demos, the placement planner had information about the other objects on the table</p>
+<ul>
 <li>solution: add a cost for deviation from a random point on the table and a random orientation
 <ul>
 <li>this IK problem is less constrained than randomly generating positions for the object on the table and solving IK for the (possible) joint configuration</li>
@@ -558,15 +554,37 @@ External: placement-conf | n: <span style="color:#ae81ff">572</span> | p_success
 <li>
 <p>Next Steps/Todo:</p>
 <ul>
-<li>New scenarios/domains?</li>
+<li>Preparation for learning/testing:
+<ul>
+<li>Implementing two of the benchmarks discussed in <a href="http://dyalab.mines.edu/papers/lagriffoul2018benchmark.pdf">Platform-Independent Benchmarks for Task and Motion Planning (Lagriffoul et al.)</a>
+<ul>
+<li>Blocks world: <a href="https://www.youtube.com/watch?v=2DgtzdbER8o">video</a>
+<ul>
+<li>stack the blocks in alphabetical order anywhere it is possible</li>
+<li>no more than two blocks can be stacked on the table because of the hovering obstacle</li>
+<li>no more then 5(?) blocks can be stacked on blue tray due to kinematic constraints</li>
+</ul>
+</li>
+<li>Kitchen:
+<ul>
+<li><img src="../../images/Kitchen.png" alt="kitchen"></li>
+<li>Robot must clean two glasses (blue), cook two cabbages (green), and set the table.</li>
+<li>Objects are clean when place on (in?) the dishwasher, and cooked when placed on (in?) the microwave.</li>
+<li>An object must be cleaned before it is cooked</li>
+<li>The radishes (pink blocks) initially obstruct the cabbages on the shelf forcing the robot to move them, but they must also be returned to their initial poses</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Faster streams:
 <ul>
 <li>The slowest part of these streams are the custom costs/constraints I had to add to <code>Drake</code>&rsquo;s inverse kinematics API, written in <code>python</code>. The C++ bindings will find a grasp/placement pose in \(\sim 0.5 s\), while the python code adds a \(10 \times\) slowdown.</li>
 <li>This could probably be fixed by writing the code in C++ and creating python bindings</li>
+<li>The streams can be made far faster if they are made to solve a more specific problem.</li>
 </ul>
 </li>
-<li>Ideas?</li>
-<li>Learning?</li>
 </ul>
 </li>
 </ul>
