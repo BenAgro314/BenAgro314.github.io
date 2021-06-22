@@ -461,16 +461,12 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
     (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;soup_can&#34;</span>, <span style="color:#e6db74">&#34;table_square&#34;</span>),
     (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;mustard&#34;</span>, <span style="color:#e6db74">&#34;table_round&#34;</span>),
 )
-</code></pre></div>
-
-<figure>
-    <iframe width="100%" height="400" name="iframe" src="../../files/week7/cycle.html"></iframe>
-    <figcaption>Placing object on tables. (<a href="../../files/week7/cycle.html">fullscreen</a>)</figcaption>
-</figure>
-
-
-<ul>
-<li><strong>Weakness</strong>: less specific goals
+</code></pre></div><ul>
+<li>
+<p>Placing object on tables: <a href="../../files/week7/cycle.html">fullscreen</a></p>
+</li>
+<li>
+<p><strong>Weakness</strong>: less specific goals</p>
 <ul>
 <li>consider the goal below:</li>
 </ul>
@@ -481,14 +477,9 @@ $$ \tau = k_p (q^d - q) + k_d(\dot{q}^d - \dot{q}) + k_i\int (q^d - q)  \; dt$$<
     (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;foam_brick&#34;</span>, <span style="color:#e6db74">&#34;table_square&#34;</span>),
     (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;mustard&#34;</span>, <span style="color:#e6db74">&#34;table&#34;</span>),
 )
-</code></pre></div>
-
-<figure>
-    <iframe width="100%" height="400" name="iframe" src="../../files/week7/easy_swap.html"></iframe>
-    <figcaption>This plan took 15 seconds to find (<a href="../../files/week7/easy_swap.html">fullscreen</a>)</figcaption>
-</figure>
-
-
+</code></pre></div><ul>
+<li>This plan took 15 seconds to find <a href="../../files/week7/easy_swap.html">fullscreen</a></li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">complexity: 2, 
 cost: 0.000, 
 evaluations: 60, 
@@ -514,15 +505,15 @@ External: placement-conf | n: <span style="color:#ae81ff">597</span> | p_success
     <span style="color:#e6db74">&#34;and&#34;</span>,
     (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;foam_brick&#34;</span>, <span style="color:#e6db74">&#34;table_square&#34;</span>),
 )
-</code></pre></div>
-
-<figure>
-    <iframe width="100%" height="400" name="iframe" src="../../files/week7/BIGBRAIN.html"></iframe>
-    <figcaption>A less specific goal results in a much longer planning process. This particular plan took 22 minutes to find! The full statistics are listed below (<a href="../../files/week7/BIGBRAIN.html">fullscreen</a>). Note that the reason the arm does a big circle to place the mustard is because the bottom-most rotary joint has a 
-    joint limit of [-2.8973, 2.8973].</figcaption>
-</figure>
-
-
+</code></pre></div><ul>
+<li>A less specific goal results in a much longer planning process.
+<ul>
+<li><a href="../../files/week7/BIGBRAIN.html">This</a> particular plan took 22 minutes to find! The full statistics are listed below.</li>
+<li>Note that the reason the arm does a big circle to place the mustard is because the bottom-most rotary joint has a
+joint limit of [-2.8973, 2.8973].</li>
+</ul>
+</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">complexity: 2,
 cost: 0.000,
 evaluations: 18228,
@@ -588,6 +579,175 @@ External: placement-conf | n: <span style="color:#ae81ff">572</span> | p_success
 </ul>
 </li>
 </ul>
+<h3 id="week-8">Week 8</h3>
+<ul>
+<li><a href="http://tampbenchmark.aass.oru.se/index.php?title=Problems">TAMP benchmarking</a>
+<ul>
+<li>Got two problems up and running: <strong>kitchen</strong> and <strong>blocks world</strong></li>
+</ul>
+</li>
+<li><a href="http://tampbenchmark.aass.oru.se/index.php?title=Problems#Problem_5_:_Kitchen">Kitchen</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">goal <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;and&#34;</span>,
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;cabbage1&#34;</span>, (<span style="color:#e6db74">&#34;leftplate&#34;</span>, <span style="color:#e6db74">&#34;base_link&#34;</span>)),
+    (<span style="color:#e6db74">&#34;cooked&#34;</span>, <span style="color:#e6db74">&#34;cabbage1&#34;</span>),
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;cabbage2&#34;</span>, (<span style="color:#e6db74">&#34;rightplate&#34;</span>, <span style="color:#e6db74">&#34;base_link&#34;</span>)),
+    (<span style="color:#e6db74">&#34;cooked&#34;</span>, <span style="color:#e6db74">&#34;cabbage2&#34;</span>),
+    (<span style="color:#e6db74">&#34;clean&#34;</span>, <span style="color:#e6db74">&#34;glass1&#34;</span>),
+    (<span style="color:#e6db74">&#34;clean&#34;</span>, <span style="color:#e6db74">&#34;glass2&#34;</span>),
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;glass1&#34;</span>, (<span style="color:#e6db74">&#34;leftplacemat&#34;</span>, <span style="color:#e6db74">&#34;leftside&#34;</span>)),
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;glass2&#34;</span>, (<span style="color:#e6db74">&#34;rightplacemat&#34;</span>, <span style="color:#e6db74">&#34;leftside&#34;</span>)),
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;raddish1&#34;</span>, (<span style="color:#e6db74">&#34;tray&#34;</span>, <span style="color:#e6db74">&#34;base_link&#34;</span>)),
+    (<span style="color:#e6db74">&#34;in&#34;</span>, <span style="color:#e6db74">&#34;raddish7&#34;</span>, (<span style="color:#e6db74">&#34;tray&#34;</span>, <span style="color:#e6db74">&#34;base_link&#34;</span>)),
+]
+</code></pre></div><ul>
+<li>Note: the tuples <code>(&quot;region&quot;, &quot;link&quot;)</code> specify a region, not a nested predicate</li>
+<li>Abridged <code>domain.pddl</code>:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">define</span> (<span style="color:#a6e22e">domain</span> kitchen)
+    (<span style="color:#e6db74">:requirements</span> <span style="color:#e6db74">:strips</span> <span style="color:#e6db74">:derived-predicates</span> <span style="color:#e6db74">:disjunctive-preconditions</span> <span style="color:#e6db74">:equality</span>)
+    (<span style="color:#e6db74">:predicates</span> 
+        <span style="color:#75715e">;static predicates</span>
+        (<span style="color:#a6e22e">item</span> ?item)
+        (<span style="color:#a6e22e">region</span> ?region)
+        (<span style="color:#a6e22e">sink</span> ?region)
+        (<span style="color:#a6e22e">burner</span> ?region)
+
+        <span style="color:#75715e">; stream certified</span>
+        (<span style="color:#a6e22e">worldpose</span> ?item ?X_WI)
+        (<span style="color:#a6e22e">handpose</span> ?item ?X_HI)
+        (<span style="color:#a6e22e">conf</span> ?q)
+        (<span style="color:#a6e22e">graspconf</span> ?q)
+        (<span style="color:#a6e22e">contained</span> ?item ?X_WI ?region)
+        (<span style="color:#a6e22e">motion</span> ?q1 ?traj ?q2)
+        (<span style="color:#a6e22e">ik</span> ?item ?X_WI ?X_HI ?pre_q ?q)
+        (<span style="color:#a6e22e">colfree</span> ?q ?item ?X_WI)
+
+        <span style="color:#75715e">;fluents predicates</span>
+        (<span style="color:#a6e22e">atconf</span> ?q)
+        (<span style="color:#a6e22e">atpose</span> ?item ?X_WI)
+        (<span style="color:#a6e22e">holding</span> ?item ?X_HI)
+        (<span style="color:#a6e22e">empty</span>)
+        (<span style="color:#a6e22e">cooked</span> ?item)
+        (<span style="color:#a6e22e">clean</span> ?item)
+
+        <span style="color:#75715e">;derived</span>
+        (<span style="color:#a6e22e">in</span> ?item ?region)
+        (<span style="color:#a6e22e">safe</span> ?q ?item)
+    )
+
+    (<span style="color:#e6db74">:derived</span> (<span style="color:#a6e22e">safe</span> ?q ?item) 
+    (<span style="color:#e6db74">:derived</span> (<span style="color:#a6e22e">in</span> ?item ?region) 
+    (<span style="color:#e6db74">:action</span> move
+    (<span style="color:#e6db74">:action</span> pick)
+    (<span style="color:#e6db74">:action</span> place
+    (<span style="color:#e6db74">:action</span> wash)
+    (<span style="color:#e6db74">:action</span> cook)
+)
+</code></pre></div><ul>
+<li>Abridged <code>stream.pddl</code>:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">define</span> (<span style="color:#a6e22e">stream</span> kitchen)
+    (<span style="color:#e6db74">:stream</span> find-traj)
+    (<span style="color:#e6db74">:stream</span> find-grasp)
+    (<span style="color:#e6db74">:stream</span> find-place)
+    (<span style="color:#e6db74">:stream</span> find-ik)
+    (<span style="color:#e6db74">:stream</span> check-safe)
+)
+</code></pre></div><ul>
+<li>Video demo:</li>
+</ul>
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/a_Uo2yVP3NI" title="kitchen video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<ul>
+<li>This level of complexity pushes the limits of the current formulation, here are some of the stats:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Summary: {
+    complexity: <span style="color:#ae81ff">5</span>,
+    cost: <span style="color:#ae81ff">0.000</span>,
+    evaluations: <span style="color:#ae81ff">738</span>,
+    iterations: <span style="color:#ae81ff">7</span>,
+    length: <span style="color:#ae81ff">2</span>,
+    run_time: <span style="color:#ae81ff">314.109</span>,
+    sample_time: <span style="color:#ae81ff">22.651</span>,
+    search_time: <span style="color:#ae81ff">291.458</span>,
+    skeletons: <span style="color:#ae81ff">2</span>,
+    solutions: <span style="color:#ae81ff">1</span>,
+    solved: <span style="color:#66d9ef">True</span>,
+    timeout: <span style="color:#66d9ef">False</span>
+}
+Total External Statistics
+External: find<span style="color:#f92672">-</span>traj <span style="color:#f92672">|</span> n: <span style="color:#ae81ff">866</span> <span style="color:#f92672">|</span> p_success: <span style="color:#ae81ff">0.866</span> <span style="color:#f92672">|</span> overhead: <span style="color:#ae81ff">0.270</span>
+External: find<span style="color:#f92672">-</span>grasp <span style="color:#f92672">|</span> n: <span style="color:#ae81ff">372</span> <span style="color:#f92672">|</span> p_success: <span style="color:#ae81ff">1.000</span> <span style="color:#f92672">|</span> overhead: <span style="color:#ae81ff">0.025</span>
+External: find<span style="color:#f92672">-</span>place <span style="color:#f92672">|</span> n: <span style="color:#ae81ff">667</span> <span style="color:#f92672">|</span> p_success: <span style="color:#ae81ff">1.000</span> <span style="color:#f92672">|</span> overhead: <span style="color:#ae81ff">0.000</span>
+External: find<span style="color:#f92672">-</span>ik <span style="color:#f92672">|</span> n: <span style="color:#ae81ff">2409</span> <span style="color:#f92672">|</span> p_success: <span style="color:#ae81ff">0.672</span> <span style="color:#f92672">|</span> overhead: <span style="color:#ae81ff">0.121</span>
+External: check<span style="color:#f92672">-</span>safe <span style="color:#f92672">|</span> n: <span style="color:#ae81ff">7078</span> <span style="color:#f92672">|</span> p_success: <span style="color:#ae81ff">0.810</span> <span style="color:#f92672">|</span> overhead: <span style="color:#ae81ff">0.002</span>
+</code></pre></div><ul>
+<li>
+<p><a href="http://tampbenchmark.aass.oru.se/index.php?title=Problems#Problem_2_:_Blocks-World_3D">Blocks World</a></p>
+</li>
+<li>
+<p>Still debugging this environement, some (seemingly) simple scenarios are quite difficult to solve.</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">goal <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;and&#34;</span>,
+    (<span style="color:#e6db74">&#34;on-block&#34;</span>, <span style="color:#e6db74">&#34;red_block&#34;</span>, <span style="color:#e6db74">&#34;blue_block&#34;</span>),
+    (<span style="color:#e6db74">&#34;on-block&#34;</span>, <span style="color:#e6db74">&#34;blue_block&#34;</span>, <span style="color:#e6db74">&#34;green_block&#34;</span>),
+]
+</code></pre></div><ul>
+<li>
+<p>Actions: <code>stack</code>, <code>unstack</code>, <code>pick</code>, <code>place</code></p>
+</li>
+<li>
+<p>Video demo:</p>
+</li>
+</ul>
+
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/qLJ6r1H2Xog" title="blocks world video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">Summary: {
+    complexity: <span style="color:#ae81ff">3</span>,
+    cost: <span style="color:#ae81ff">0.000</span>,
+    evaluations: <span style="color:#ae81ff">930</span>,
+    iterations: <span style="color:#ae81ff">5</span>,
+    length: <span style="color:#ae81ff">2</span>,
+    run_time: <span style="color:#ae81ff">74.290</span>,
+    sample_time: <span style="color:#ae81ff">10.382</span>,
+    search_time: <span style="color:#ae81ff">63.908</span>,
+    skeletons: <span style="color:#ae81ff">2</span>,
+    solutions: <span style="color:#ae81ff">1</span>,
+    solved: <span style="color:#66d9ef">True</span>,
+    timeout: <span style="color:#66d9ef">False</span>
+}
+Total External Statistics                                                                                                                                                                
+
+External: find<span style="color:#f92672">-</span>traj <span style="color:#f92672">|</span> n: <span style="color:#ae81ff">740</span> <span style="color:#f92672">|</span> p_success: <span style="color:#ae81ff">0.271</span> <span style="color:#f92672">|</span> overhead: <span style="color:#ae81ff">0.078</span>                                                                                                                                                           
+
+External: find<span style="color:#f92672">-</span>grasp <span style="color:#f92672">|</span> n: <span style="color:#ae81ff">1052</span> <span style="color:#f92672">|</span> p_success: <span style="color:#ae81ff">1.000</span> <span style="color:#f92672">|</span> overhead: <span style="color:#ae81ff">0.000</span>                                                                                                                                                         
+External: find<span style="color:#f92672">-</span>ik <span style="color:#f92672">|</span> n: <span style="color:#ae81ff">3290</span> <span style="color:#f92672">|</span> p_success: <span style="color:#ae81ff">0.102</span> <span style="color:#f92672">|</span> overhead: <span style="color:#ae81ff">0.027</span>                                                                                                                                                            
+External: check<span style="color:#f92672">-</span>colfree<span style="color:#f92672">-</span>block <span style="color:#f92672">|</span> n: <span style="color:#ae81ff">142</span> <span style="color:#f92672">|</span> p_success: <span style="color:#ae81ff">1.000</span> <span style="color:#f92672">|</span> overhead: <span style="color:#ae81ff">0.001</span>                                                                                                                                                 
+External: check<span style="color:#f92672">-</span>colfree<span style="color:#f92672">-</span>arms <span style="color:#f92672">|</span> n: <span style="color:#ae81ff">353</span> <span style="color:#f92672">|</span> p_success: <span style="color:#ae81ff">1.000</span> <span style="color:#f92672">|</span> overhead: <span style="color:#ae81ff">0.000</span>                                                                                                                                                  
+External: find<span style="color:#f92672">-</span>table<span style="color:#f92672">-</span>place <span style="color:#f92672">|</span> n: <span style="color:#ae81ff">95</span> <span style="color:#f92672">|</span> p_success: <span style="color:#ae81ff">1.000</span> <span style="color:#f92672">|</span> overhead: <span style="color:#ae81ff">0.000</span>                                                                                                                                                     
+External: find<span style="color:#f92672">-</span>block<span style="color:#f92672">-</span>place <span style="color:#f92672">|</span> n: <span style="color:#ae81ff">335</span> <span style="color:#f92672">|</span> p_success: <span style="color:#ae81ff">1.000</span> <span style="color:#f92672">|</span> overhead: <span style="color:#ae81ff">0.000</span>
+</code></pre></div><ul>
+<li><strong>Next Steps:</strong>
+<ul>
+<li>refining and reformulating
+<ul>
+<li>signifigant speedups can result from minor changes in the domain/stream specification</li>
+<li>e.g <code>conf</code> -&gt; <code>graspconf</code> and <code>conf</code></li>
+<li><em>blocks world</em> needs the most work</li>
+</ul>
+</li>
+<li>ideas?</li>
+</ul>
+</li>
+</ul>
 <h3 id="references">References</h3>
 
 
@@ -614,10 +774,6 @@ Arsalan Mousavian, Clemens Eppner and Dieter Fox. 6-DOF GraspNet: Variational Gr
 </li>
 </ol>
 </div>
-
-
-
-
 
 
 
