@@ -2,3 +2,10 @@
 .body-div {width:800px; margin:0 auto; overflow-wrap: break-word;}
 .background {background-color: #eeeee4}
 .headshot {border-radius: 50%; height: auto; width: auto; max-width: 150px; max-height: 150px; display: block; margin-left: auto; margin-right: auto;}
+.zoom {
+    transition: transform .5s; /* Animation */
+    margin: 0 auto;
+  }
+  .zoom:hover {
+    transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
