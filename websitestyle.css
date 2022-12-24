@@ -253,11 +253,6 @@ h1 {
 	text-align: center;
 }
 
-.flag-wrapper {
-	text-align: center;
-	position: relative;
-}
-
 .flag {
 	position: relative;
 	display: inline;
@@ -283,36 +278,6 @@ h1 {
 	border-bottom-color: rgb(255, 255, 255);
 	border-width: 8px;
 	pointer-events: none;
-}
-
-.direction-l .flag {
-	-webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
-	-moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
-	box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
-}
-
-.direction-r .flag {
-	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
-	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
-	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
-}
-
-.time-wrapper {
-	display: block;
-	position: relative;
-	margin: 4px 0 0 0;
-	z-index: 14;
-	line-height: 1em;
-	vertical-align: middle;
-	color: #fff;
-}
-
-.direction-l .time-wrapper {
-	float: none;
-}
-
-.direction-r .time-wrapper {
-	float: none;
 }
 
 .time {
