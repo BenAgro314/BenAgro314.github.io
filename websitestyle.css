@@ -6,12 +6,6 @@ body {
 	font-family: 'Source Code Pro', monospace;
 }
 
-.container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	vertical-align: top;
-}
 
 #headshot {
 	width: 200px;
@@ -33,7 +27,6 @@ header {
 	text-align: center;
 	margin-bottom: 0px;
 }
-
 .linkz {
 	color:#f1fa8c;
 	text-decoration: underline;
@@ -54,9 +47,9 @@ header {
 #descrip {
 	padding: 10px;
 	text-align: center;
-	width: 700px;
 	line-height: 1.4;
-	margin: 0px;
+	width: 700px;
+	margin: 0 auto;
 	word-spacing: 1px;
 }
 
@@ -452,6 +445,7 @@ h1 {
 	margin-top: 2px;
 	font-size: 0.8rem;
 	padding: 10px;
+	color: #8be9fd;
 }
 
 .article-picture {
@@ -470,9 +464,7 @@ h1 {
 	color: white;
 }
 
-#title-of-the-article {
-	text-decoration: none;
-}
+
 
 .articles-body {
 	padding: 10px;
