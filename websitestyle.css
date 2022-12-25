@@ -449,3 +449,8 @@ h1 {
 .article {
 	padding-bottom: 30px;
 }
+
+#articles {
+	width: 700px;
+	margin: 0 auto;
+}
