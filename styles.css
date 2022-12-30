@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +10,39 @@ body {
     background-color: #fff;
 }
 
+article {
+    font-family: 'Libre Baskerville', serif;
+}
+
 .page {
+    width: 600px;
     margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5 {
+    text-align: center;
+}
+
+.my-name {
+    font-size: 36pt;
+    margin-top: 10px;
+}
+
+.about {
+    margin-top: 10px;
+}
+
+.nav-sidebar {
+    position: fixed;
+}
+
+.headshot {
+    width: 35%;
+    border-radius: 50%;
+}
+
+.headshot-figure {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
