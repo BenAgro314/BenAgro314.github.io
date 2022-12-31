@@ -108,27 +108,32 @@ h1, h2, h3, h4, h5 {
 
 .nav-div {
     z-index: 1;
-    background-color: var(--bg-color);
-    height: 50px;
-    padding-top: 10pt;
-    padding-bottom: 10pt;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    padding-left: 30px;
+}
+
+.nav-background {
+    z-index: 1;
+    background-color: var(--bg-color);
     border-image: linear-gradient(to right, var(--bg-color), var(--font-color), var(--bg-color)) 10 0 10 0;
     border-bottom-width: 2px;
     border-bottom-style: solid;
 }
 
 .nav-bar {
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    padding-left: 20px;
+    position: relative;
     max-width: 680px;
     margin: 0 auto;
 }
 
 .nav-bar ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: left;
 }
 
@@ -341,6 +346,14 @@ h1, h2, h3, h4, h5 {
     html {
         font-size: 12pt;
     }
+}
+
+.under-construction {
+    text-align: center;
+}
+
+.under-construction i {
+    font-size: 40pt;
 }
 
 @media only screen and (max-width: 500px) {
