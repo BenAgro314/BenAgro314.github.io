@@ -3,37 +3,43 @@
     <head>
         <meta charset='UTF-8'/>
         <title>Ben Agro</title>
+
+        <style> @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap'); </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+
         <link rel='stylesheet' href='styles.css'/>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     </head>
     <body>
-        <nav class="nav-sidebar">                                    
-            <ul>
-              <li><a href='#'>About</a></li>
-              <li><a href='#'>Experience</a></li>
-              <li><a href='#'>Publications</a></li>
-            </ul>
-        </nav>  
+        <div class="nav-div">                                    
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href='#sec-about'>About</a></li>
+                    <li><a href='#sec-experience'>Experience</a></li>
+                    <li><a href='#sec-publications'>Publications</a></li>
+                </ul>
+            </nav>
+        </div>  
         <div class="page">
-            <section class="about">
+            <!--nav class="nav-sidebar filler"></nav-->
+            <section id="sec-about">
                 <figure class="headshot-figure">
                     <img src='images/headshot.jpeg' alt='Picture of Ben Agro' class="headshot"/>
                 </figure>
                 <h1 class="my-name">Ben Agro</h1> 
                 <p>
-
+                    Welcome! This website is under construction as I learn HTML and CSS.
+                    My interests are real-world robotics, understanding (machine) intelligence,
+                    and rock climbing.
                 </p>
             </section>
-            <section>
+            <section id="sec-experience">
                 <h2>Experience</h2> 
-
+                <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
             </section>
-            <section>
+            <section id="sec-publications">
                 <h2>Publications</h2> 
-
+                <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
             </section>
         </div>
     </body>

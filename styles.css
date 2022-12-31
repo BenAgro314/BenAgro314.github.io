@@ -1,39 +1,109 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    background-color: #fff;
+:root {
+    --bg-color: rgb(255, 255, 255);
+    --font-color: rgb(0, 0, 0);
+    --link-color: rgb(0, 0, 0);
+    --hover-link-color: rgb(100, 100, 100);
 }
 
-article {
-    font-family: 'Libre Baskerville', serif;
+html {
+    font-size: 14pt;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Source Serif Pro', serif;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+p:first-of-type {
+    margin-top: 1em;
+}
+p:last-of-type {
+    margin-bottom: 0em;
+}
+
+
+section {
+    border-image: linear-gradient(to right, var(--bg-color), var(--font-color), var(--bg-color)) 10 0 10 0;
+    border-top-width: 2pt;
+    border-top-style: solid;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+
+section:first-of-type {
+    border-top-width: 0px;
 }
 
 .page {
-    width: 600px;
+    position: relative;
+    max-width: 580px;
     margin: 0 auto;
+    margin-top: 30pt;
 }
 
 h1, h2, h3, h4, h5 {
     text-align: center;
+    font-variant: small-caps;
+    font-size: 2.2 rem;
+    font-weight: 600;
 }
 
 .my-name {
-    font-size: 36pt;
+    font-size: 2.5em;
     margin-top: 10px;
 }
 
-.about {
-    margin-top: 10px;
-}
 
-.nav-sidebar {
+.nav-div {
+    z-index: 1;
+    background-color: var(--bg-color);
+    height: 50;
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    width: 100%;
     position: fixed;
+    top: 0;
+    left: 0;
+    padding-left: 30px;
+}
+
+.nav-bar {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.nav-bar ul {
+    display: flex;
+    justify-content: left;
+}
+
+.nav-bar li {
+    list-style: none;
+    padding-right: 30px;
+}
+
+.nav-bar li a, .nav-bar li a:visited{
+    text-decoration: none;
+    color: var(--link-color);
+    font-variant: small-caps;
+}
+
+.nav-bar li a:hover, .nav-ba li a:visited:hover {
+    color: var(--hover-link-color);
 }
 
 .headshot {
@@ -44,5 +114,12 @@ h1, h2, h3, h4, h5 {
 .headshot-figure {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .page {
+        padding-left: 26px;
+        padding-right: 26px;
+    }
 }
