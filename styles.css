@@ -300,6 +300,37 @@ h1, h2, h3, h4, h5 {
     color: var(--navbar-hover-link-color);
 
 }
+
+.website-footer {
+    border-image: linear-gradient(to right, var(--bg-color), var(--font-color), var(--bg-color)) 10 0 0 0;
+    border-top-width: 2px;
+    border-top-style: solid;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 30px;
+}
+
+.website-footer .author {
+    font-size: 0.8rem;
+}
+
+.footer-content {
+    width: 680px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-content a {
+    text-decoration: none;
+    color: var(--navbar-link-color);
+    font-size: 1.1rem;
+}
+.footer-content a:hover, .footer-content a:visited:hover {
+    color: var(--navbar-hover-link-color);
+
+}
+
 @media only screen and (max-width: 720px) {
     .page {
         padding-left: 26px;
