@@ -315,10 +315,12 @@ h1, h2, h3, h4, h5 {
 }
 
 .footer-content {
-    width: 680px;
+    max-width: 680px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .footer-content a {
@@ -348,5 +350,10 @@ h1, h2, h3, h4, h5 {
     .pub-img {
         width: 60%;
         margin: 0 auto;
+    }
+    .pub-meta {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 1.5rem;
     }
 }
