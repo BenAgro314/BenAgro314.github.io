@@ -9,6 +9,7 @@
     --font-color: rgb(0, 0, 0);
     --link-color: rgb(0, 0, 0);
     --hover-link-color: rgb(100, 100, 100);
+    --time-color: rgb(100, 100, 100);
 }
 
 html {
@@ -37,7 +38,7 @@ p:last-of-type {
 
 section {
     border-image: linear-gradient(to right, var(--bg-color), var(--font-color), var(--bg-color)) 10 0 10 0;
-    border-top-width: 2pt;
+    border-top-width: 2px;
     border-top-style: solid;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -50,7 +51,7 @@ section:first-of-type {
 
 .page {
     position: relative;
-    max-width: 580px;
+    max-width: 700px;
     margin: 0 auto;
     margin-top: 30pt;
 }
@@ -60,18 +61,42 @@ h1, h2, h3, h4, h5 {
     font-variant: small-caps;
     font-size: 2.2 rem;
     font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .my-name {
     font-size: 2.5em;
     margin-top: 10px;
+    margin-bottom: 0px;
 }
 
+.icons {
+    display: flex;
+    justify-content: center;
+}
+
+.icons li {
+    padding-right: 20px;
+    list-style: none;
+}
+
+.icons li:last-of-type {
+    padding-right: 0px;
+}
+
+.icons li a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-size: 1.5rem;
+}
+.icons li a:hover, .icons li a:visited:hover {
+    color: var(--hover-link-color);
+}
 
 .nav-div {
     z-index: 1;
     background-color: var(--bg-color);
-    height: 50;
+    height: 50px;
     padding-top: 10pt;
     padding-bottom: 10pt;
     width: 100%;
@@ -79,6 +104,9 @@ h1, h2, h3, h4, h5 {
     top: 0;
     left: 0;
     padding-left: 30px;
+    border-image: linear-gradient(to right, var(--bg-color), var(--font-color), var(--bg-color)) 10 0 10 0;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
 }
 
 .nav-bar {
@@ -117,9 +145,78 @@ h1, h2, h3, h4, h5 {
 }
 
 
-@media only screen and (max-width: 600px) {
+.row-experience {
+    display: flex;
+}
+
+.row-experience > * {
+    padding-top: 25px; /* give sub divs good padding */
+    padding-bottom: 25px;
+}
+
+.experience-desc {
+    margin-left: 20px;
+    flex: 1;
+}
+
+
+.timespan {
+    font-size: 10pt;
+    border-right: var(--font-color) solid 2px;
+    width: 20%;
+    text-align: center;
+    position: relative;
+    padding-right: 20px;
+}
+
+.timespan time {
+    margin-top: 10px;
+    color: var(--time-color);
+}
+
+.timespan:before {
+    flex: initial;
+    content: ""; /* Add an empty content to the ::before pseudo-element */
+    position: absolute; /* Position the ::before pseudo-element absolutely */
+    right: -6px;
+    top: 50%;
+    width: 10px; /* Set the width of the dot */
+    height: 10px; /* Set the height of the dot */
+    background-color: black; /* Set the color of the dot */
+    border-radius: 50%; /* Make the dot a circle */
+  }
+
+.row-experience:first-of-type .timespan {
+    border-image: linear-gradient(to top, var(--font-color), var(--bg-color)) 0 20 0 0;
+    border-right-width: 2px;
+    border-right-style: solid;
+}
+
+.row-experience:last-of-type .timespan {
+    border-image: linear-gradient(to bottom, var(--font-color), var(--bg-color)) 0 20 0 0;
+    border-right-width: 2px;
+    border-right-style: solid;
+}
+
+.experience-desc {
+    width: 80%;
+    padding-left: 10px;
+}
+
+.logo-img {
+    width: 100%;
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width: 720px) {
     .page {
         padding-left: 26px;
         padding-right: 26px;
+    }
+    html {
+        font-size: 12pt;
     }
 }
