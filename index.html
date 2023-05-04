@@ -1,176 +1,288 @@
 <!DOCTYPE html>
 <html lang='en'>
-    <head>
-        <meta charset='UTF-8'/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="images/headshot.jpeg">
-        <title>Ben Agro</title>
-        <!-- Google fonts -->
-        <style> @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap'); </style>
-        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
-        <!-- github icon -->
-        <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"-->
-        <script src="https://kit.fontawesome.com/6b8f993848.js" crossorigin="anonymous"></script>
-        <!-- custom stylesheet -->
-        <link rel='stylesheet' href='styles.css'/>
+
+<head>
+    <meta charset='UTF-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/headshot.jpeg">
+    <title>Ben Agro</title>
+    <!-- Google fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- github icon -->
+    <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"-->
+    <script src="https://kit.fontawesome.com/6b8f993848.js" crossorigin="anonymous"></script>
+    <!-- custom stylesheet -->
+    <link rel='stylesheet' href='styles.css' />
 
 
-    </head>
-    <body>
-        <div class="nav-div">                                    
-            <div class="nav-background">
-                <nav class="nav-bar">
-                    <ul>
-                        <li><a href='#sec-about'>Home</a></li>
-                        <li><a href='#sec-experience'>Experience</a></li>
-                        <li><a href='#sec-publications'>Publications</a></li>
-                        <li><a href='#sec-climbing'>Climbing</a></li>
-                        <li><a href='#sec-blog'>Blog</a></li>
-                        <li><a href='#sec-projects'>Projects</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>  
-        <div class="page">
-            <!--nav class="nav-sidebar filler"></nav-->
-            <section id="sec-about">
-                <figure class="headshot-figure">
-                    <img src='images/headshot.jpeg' alt='Picture of Ben Agro' class="headshot"/>
-                </figure>
-                <h1 class="my-name">Ben Agro</h1> 
-                <ul class="icons">
-                    <li><a href="https://github.com/BenAgro314" class="fa fa-github"></a></li>
-                    <li><a href="https://www.linkedin.com/in/ben-agro-43a619196/" class="fa fa-linkedin"></a></li>
-                    <li><a href="mailto: ben.agro@mail.utoronto.ca" class="fa fa-envelope"></a></li>
+</head>
+
+<body>
+    <div class="nav-div">
+        <div class="nav-background">
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href='#sec-about'>Home</a></li>
+                    <li><a href='#sec-experience'>Experience</a></li>
+                    <li><a href='#sec-publications'>Publications</a></li>
+                    <li><a href='#sec-climbing'>Climbing</a></li>
+                    <li><a href='#sec-blog'>Blog</a></li>
+                    <li><a href='#sec-projects'>Personal Projects</a></li>
                 </ul>
-                <p>
-                    Welcome! This website is under construction as I learn HTML and CSS.
-                    My interests are real-world robotics and understanding (machine) intelligence.
-                    I have been a high-level rock climber for the majority of my life.
-                </p>
-            </section>
-            <section id="sec-experience">
-                <h2>Experience</h2> 
-                <div class="row-experience">
-                    <div class="timespan">
-                        <div>
-                            <a href="https://waabi.ai/" >
-                                <img src="images/Waabi.svg" alt="Waabi Logo" class="logo-img"/>
-                            </a>
-                            <time datetime='2022-5'>May 2022 - Present</time>
-                        </div>
-                    </div>
-                    <div class="experience-desc">
-                        I am a researcher at <a href="https://waabi.ai/">Waabi</a> working on next-generation autonomy systems under <a href="http://www.cs.toronto.edu/~urtasun/">Raquel Urtasun</a>.
-                        I developed novel implicit perception and prediction models that surpass state-of-the-art methods. Details to come!
-                    </div>
-                </div>
-                <div class="row-experience">
-                    <div class="timespan">
-                        <div>
-                            <a href="https://rvl.cs.toronto.edu/#/" >
-                                <img src="images/RVL.png" alt="RVL Logo" class="logo-img"/>
-                            </a>
-                            <time datetime='2021'>Summer 2021</time>
-                        </div>
-                    </div>
-                    <div class="experience-desc">
-                        I was a research intern at the <a href="https://rvl.cs.toronto.edu/#/">Robotics Vision and Learning Lab</a> supervised by <a href="http://www.cs.toronto.edu/~florian/">Florian Shkurti</a>.
-                        We were working on learning methods for task and motion planning, and I developed a new algorithm for <a href="https://github.com/caelan/pddlstream">PDDLStream</a> that learned-task specific
-                        heuristics for expanding the space of possible robot actions.
-                    </div>
-                </div>
-                <div class="row-experience">
-                    <div class="timespan">
-                        <div>
-                            <a href="http://asrl.utias.utoronto.ca/" >
-                                <img src="images/ASRL.png" alt="ASRL Logo" class="logo-img"/>
-                            </a>
-                            <time datetime='2020'>Summer 2020</time>
-                        </div>
-                    </div>
-                    <div class="experience-desc">
-                        I was a research intern at the <a href="http://asrl.utias.utoronto.ca/">Autonomous Space and Robotics Lab</a> supervised by <a href="http://asrl.utias.utoronto.ca/~tdb/">Tim Barfoot</a>.
-                        We worked on self-supervised semantic LiDAR segmentation for autonomous navigation. I developed a simulation of a complex indoor environment complete with dynamic actors and an
-                        augmented navigation stack used to train and evaluate our method.
-                    </div>
-                </div>
-            </section>
-            <section id="sec-publications">
-                <h2>Publications</h2> 
-                <div class="row-publication">
-                    <div class="publication-header">
-                        <div class="pub-img">
-                            <img src="images/panda-pic.png" alt="Picture of a Franka Panda stacking blocks" style="width: 100%; height: 135px; object-fit: cover;"/>
-                        </div>
-                        <div class="pub-meta">
-                            <div>
-                                <h3 class="paper-title">Learning to Search in Task and Motion Planning with Streams</h3>
-                                <ul>
-                                    <li><a href="https://rvl.cs.toronto.edu/learning-based-tamp/" class="fa-solid fa-link"></a></li>
-                                    <li><a href="https://arxiv.org/abs/2111.13144" class="fa-solid fa-file-pdf"></a></li>
-                                    <li><a href="https://github.com/rvl-lab-utoronto/drake-tamp" class="fa fa-github"></a></li>
-                                    <li><a href="https://www.youtube.com/watch?v=pzzpR4wh_Zk" class="fa-brands fa-youtube"></a></li>
-                                </ul>
-                                <h4 class="paper-authors">Mohammed Khodeir<sup>*</sup>, <strong>Ben Agro</strong><sup>*</sup>, Florian Shkurti</h4>
-                                <h4 class="paper-journal">CoRR 2021</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="publication-summary">
-                        Presents a new algorithm for <a href="https://github.com/caelan/pddlstream">PDDLStream</a> that uses a graph neural network to search for geometrically feasible plans in a "best first" manner.
-                    </div>
-                </div>
-                <div class="row-publication">
-                    <div class="publication-header">
-                        <div class="pub-img">
-                            <img src="images/self-supervised-segmentation-asrl.jpg" alt="Diagram of thet semantic segmentation pipeline" />
-                        </div>
-                        <div class="pub-meta">
-                            <div>
-                                <h3 class="paper-title">Self-Supervised Learning of Lidar Segmentation for Autonomous Indoor Navigation</h3>
-                                <ul>
-                                    <li><a href="https://arxiv.org/abs/2012.05897" class="fa-solid fa-file-pdf"></a></li>
-                                    <li><a href="https://github.com/utiasASRL/Crystal_Ball_Nav" class="fa fa-github"></a></li>
-                                    <li><a href="https://www.youtube.com/watch?v=Yyyrbnjqngg" class="fa-brands fa-youtube"></a></li>
-                                </ul>
-                                <h4 class="paper-authors">Hugues Thomas, <strong>Ben Agro</strong>, Mona Gridseth, Jian Zhang, Timothy D. Barfoot</h4>
-                                <h4 class="paper-journal">ICRA 2021</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="publication-summary">
-                        A self-supervised learning approach for semantic segmentation of LiDAR over repeated navigation sessions.
-                    </div>
-                </div>
-            </section>
-            <section id="sec-climbing">
-                <h2>Climbing</h2>
-                <div class="under-construction">
-                    <i class="fa-solid fa-person-digging"></i>
-                    <div>Under Construction</div>
-                </div>
-            </section>
-            <section id="sec-blog">
-                <h2>Blog</h2>
-                <div class="under-construction">
-                    <i class="fa-solid fa-person-digging"></i>
-                    <div>Under Construction</div>
-                </div>
-            </section>
-            <section id="sec-projects">
-                <h2>Projects</h2>
-                <div class="under-construction">
-                    <i class="fa-solid fa-person-digging"></i>
-                    <div>Under Construction</div>
-                </div>
-            </section>
+            </nav>
         </div>
-        <footer class="website-footer">
-            <div class="footer-content">
-                <div class="author">By Ben Agro, <time datetime="2023">2023</time></div>
-                <div><a href="#sec-about" class="fa fa-arrow-up"></a></div>
+    </div>
+    <div class="page">
+        <!--nav class="nav-sidebar filler"></nav-->
+        <section id="sec-about">
+            <figure class="headshot-figure">
+                <img src='images/headshot.jpeg' alt='Picture of Ben Agro' class="headshot" />
+            </figure>
+            <h1 class="my-name">Ben Agro</h1>
+            <ul class="icons">
+                <li><a href="https://github.com/BenAgro314" class="fa fa-github"></a></li>
+                <li><a href="https://www.linkedin.com/in/ben-agro-43a619196/" class="fa fa-linkedin"></a></li>
+                <li><a href="mailto: ben.agro@mail.utoronto.ca" class="fa fa-envelope"></a></li>
+            </ul>
+            <p>
+                Welcome! This website is under construction as I learn HTML and CSS.
+                My interests are real-world robotics and understanding (machine) intelligence.
+                I have been a high-level rock climber for the majority of my life.
+            </p>
+        </section>
+        <section id="sec-experience">
+            <h2>Experience</h2>
+            <div class="row-experience">
+                <div class="timespan">
+                    <div>
+                        <a href="https://waabi.ai/">
+                            <img src="images/Waabi.svg" alt="Waabi Logo" class="logo-img" />
+                        </a>
+                        <time datetime='2022-5'>May 2022 - Present</time>
+                    </div>
+                </div>
+                <div class="experience-desc">
+                    I am a researcher at <a href="https://waabi.ai/">Waabi</a> working on next-generation autonomy
+                    systems under <a href="http://www.cs.toronto.edu/~urtasun/">Raquel Urtasun</a>.
+                    I developed novel implicit perception and prediction models that surpass state-of-the-art methods.
+                    Details to come!
+                </div>
             </div>
-        </footer>
-    </body>
+            <div class="row-experience">
+                <div class="timespan">
+                    <div>
+                        <a href="https://rvl.cs.toronto.edu/#/">
+                            <img src="images/RVL.png" alt="RVL Logo" class="logo-img" />
+                        </a>
+                        <time datetime='2021'>Summer 2021</time>
+                    </div>
+                </div>
+                <div class="experience-desc">
+                    I was a research intern at the <a href="https://rvl.cs.toronto.edu/#/">Robotics Vision and Learning
+                        Lab</a> supervised by <a href="http://www.cs.toronto.edu/~florian/">Florian Shkurti</a>.
+                    We were working on learning methods for task and motion planning, and I developed a new algorithm
+                    for <a href="https://github.com/caelan/pddlstream">PDDLStream</a> that learned-task specific
+                    heuristics for expanding the space of possible robot actions.
+                </div>
+            </div>
+            <div class="row-experience">
+                <div class="timespan">
+                    <div>
+                        <a href="http://asrl.utias.utoronto.ca/">
+                            <img src="images/ASRL.png" alt="ASRL Logo" class="logo-img" />
+                        </a>
+                        <time datetime='2020'>Summer 2020</time>
+                    </div>
+                </div>
+                <div class="experience-desc">
+                    I was a research intern at the <a href="http://asrl.utias.utoronto.ca/">Autonomous Space and
+                        Robotics Lab</a> supervised by <a href="http://asrl.utias.utoronto.ca/~tdb/">Tim Barfoot</a>.
+                    We worked on self-supervised semantic LiDAR segmentation for autonomous navigation. I developed a
+                    simulation of a complex indoor environment complete with dynamic actors and an
+                    augmented navigation stack used to train and evaluate our method.
+                </div>
+            </div>
+        </section>
+        <section id="sec-publications">
+            <h2>Publications</h2>
+            <div class="row-publication">
+                <div class="publication-header">
+                    <!--div class="pub-img">
+                        <img src="images/panda-pic.png" alt="Picture of a Franka Panda stacking blocks"
+                            style="width: 100%; height: 135px; object-fit: cover;" />
+                    </div-->
+                    <div class="pub-meta">
+                        <div>
+                            <h3 class="paper-title">Implicit Occupancy Flow Fields for Perception and Prediction in
+                                Self-Driving</h3>
+                            <!--ul>
+                                <li><a href="https://rvl.cs.toronto.edu/learning-based-tamp/"
+                                        class="fa-solid fa-link"></a></li>
+                                <li><a href="https://arxiv.org/abs/2111.13144" class="fa-solid fa-file-pdf"></a></li>
+                                <li><a href="https://github.com/rvl-lab-utoronto/drake-tamp" class="fa fa-github"></a>
+                                </li>
+                                <li><a href="https://www.youtube.com/watch?v=pzzpR4wh_Zk"
+                                        class="fa-brands fa-youtube"></a></li>
+                            </ul-->
+                            <h4 class="paper-authors"><strong>Ben
+                                    Agro</strong><sup>*</sup>, Quinlan Sykora<sup>*</sup>,
+                                Sergio Casas<sup>*</sup>,
+                                Raquel Urtasun</h4>
+                            <h4 class="paper-journal">CVPR 2023 <b>(Highlight)</b></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-summary">
+                    Details to come along with the paper.
+                </div>
+            </div>
+            <div class="row-publication">
+                <div class="publication-header">
+                    <div class="pub-img">
+                        <img src="images/panda-pic.png" alt="Picture of a Franka Panda stacking blocks"
+                            style="width: 100%; height: 135px; object-fit: cover;" />
+                    </div>
+                    <div class="pub-meta">
+                        <div>
+                            <h3 class="paper-title">Learning to Search in Task and Motion Planning with Streams</h3>
+                            <ul>
+                                <li><a href="https://rvl.cs.toronto.edu/learning-based-tamp/"
+                                        class="fa-solid fa-link"></a></li>
+                                <li><a href="https://arxiv.org/abs/2111.13144" class="fa-solid fa-file-pdf"></a></li>
+                                <li><a href="https://github.com/rvl-lab-utoronto/drake-tamp" class="fa fa-github"></a>
+                                </li>
+                                <li><a href="https://www.youtube.com/watch?v=pzzpR4wh_Zk"
+                                        class="fa-brands fa-youtube"></a></li>
+                            </ul>
+                            <h4 class="paper-authors">Mohammed Khodeir<sup>*</sup>, <strong>Ben
+                                    Agro</strong><sup>*</sup>, Florian Shkurti</h4>
+                            <h4 class="paper-journal">CoRR 2021</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-summary">
+                    Presents a new algorithm for <a href="https://github.com/caelan/pddlstream">PDDLStream</a> that uses
+                    a graph neural network to search for geometrically feasible plans in a "best first" manner.
+                </div>
+            </div>
+            <div class="row-publication">
+                <div class="publication-header">
+                    <div class="pub-img">
+                        <img src="images/self-supervised-segmentation-asrl.jpg"
+                            alt="Diagram of thet semantic segmentation pipeline" />
+                    </div>
+                    <div class="pub-meta">
+                        <div>
+                            <h3 class="paper-title">Self-Supervised Learning of Lidar Segmentation for Autonomous Indoor
+                                Navigation</h3>
+                            <ul>
+                                <li><a href="https://arxiv.org/abs/2012.05897" class="fa-solid fa-file-pdf"></a></li>
+                                <li><a href="https://github.com/utiasASRL/Crystal_Ball_Nav" class="fa fa-github"></a>
+                                </li>
+                                <li><a href="https://www.youtube.com/watch?v=Yyyrbnjqngg"
+                                        class="fa-brands fa-youtube"></a></li>
+                            </ul>
+                            <h4 class="paper-authors">Hugues Thomas, <strong>Ben Agro</strong>, Mona Gridseth, Jian
+                                Zhang, Timothy D. Barfoot</h4>
+                            <h4 class="paper-journal">ICRA 2021</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-summary">
+                    A self-supervised learning approach for semantic segmentation of LiDAR over repeated navigation
+                    sessions.
+                </div>
+            </div>
+        </section>
+        <section id="sec-climbing">
+            <h2>Climbing</h2>
+            <div class="under-construction">
+                <i class="fa-solid fa-person-digging"></i>
+                <div>Under Construction</div>
+            </div>
+        </section>
+        <section id="sec-blog">
+            <h2>Blog</h2>
+            <div class="under-construction">
+                <i class="fa-solid fa-person-digging"></i>
+                <div>Under Construction</div>
+            </div>
+        </section>
+        <section id="sec-projects">
+            <h2>Personal Projects</h2>
+            <div class="row-publication">
+                <div class="publication-header">
+                    <div class="pub-img">
+                        <img src="images/ct4.gif" alt="Video of Captor on CT4"
+                            style="width: 100%; height: 135px; object-fit: cover;" />
+                    </div>
+                    <div class="pub-meta">
+                        <div>
+                            <h3 class="paper-title">Captor (Autonomous Drone)</h3>
+                            <ul>
+                                <!--li><a href="https://rvl.cs.toronto.edu/learning-based-tamp/"
+                                        class="fa-solid fa-link"></a></li-->
+                                <li><a href="files/Captor_Report.pdf" class="fa-solid fa-file-pdf"></a></li>
+                                <li><a href="https://github.com/BenAgro314/rob498_capstone" class="fa fa-github"></a>
+                                </li>
+                                <li><a href="https://youtu.be/bnN9CyDADcY" class="fa-brands fa-youtube"></a></li>
+                            </ul>
+                            <!--h4 class="paper-authors">Mohammed Khodeir<sup>*</sup>, <strong>Ben
+                                    Agro</strong><sup>*</sup>, Florian Shkurti</h4-->
+                            <h4 class="paper-journal">UofT 2023</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-summary">
+                    I built and programmed an autonomous drone with reliable onboard SLAM and vision-only obstacle
+                    avoidance.
+                    The simulator I built for this project is <a
+                        href="https://github.com/BenAgro314/catkin_ws_engsci">here</a>.
+                </div>
+            </div>
+            <div class="row-publication">
+                <div class="publication-header">
+                    <div class="pub-img">
+                        <img src="images/geo_boy_short.gif" alt="Video of Geometry Boy"
+                            style="width: 100%; height: 135px; object-fit: cover;" />
+                    </div>
+                    <div class="pub-meta">
+                        <div>
+                            <h3 class="paper-title">Geometry Boy</h3>
+                            <ul>
+                                <!--li><a href="https://rvl.cs.toronto.edu/learning-based-tamp/"
+                                        class="fa-solid fa-link"></a></li-->
+                                <li><a href="files/Geometry_Boy_Report.pdf" class="fa-solid fa-file-pdf"></a></li>
+                                <li><a href="https://github.com/BenAgro314/MIE438_Project" class="fa fa-github"></a>
+                                </li>
+                                <li><a href="https://youtu.be/1WBaEiE1EUo" class="fa-brands fa-youtube"></a></li>
+                            </ul>
+                            <!--h4 class="paper-authors">Mohammed Khodeir<sup>*</sup>, <strong>Ben
+                                    Agro</strong><sup>*</sup>, Florian Shkurti</h4-->
+                            <h4 class="paper-journal">UofT 2022</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-summary">
+                    I programmed a version of the popular game <a href="https://geometrydash.io/">Geometry Dash</a>
+                    that runs on the original <a href="https://en.wikipedia.org/wiki/Game_Boy">Gameboy</a> hardware.
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="website-footer">
+        <div class="footer-content">
+            <div class="author">By Ben Agro, <time datetime="2023">2023</time></div>
+            <div><a href="#sec-about" class="fa fa-arrow-up"></a></div>
+        </div>
+    </footer>
+</body>
+
 </html>
