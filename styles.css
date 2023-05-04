@@ -100,7 +100,7 @@ h5 {
     list-style: none;
 }
 
-.climbing-list li:not(:last-child) {
+.spaced-list li:not(:last-child) {
     margin-bottom: 5px;
 }
 
