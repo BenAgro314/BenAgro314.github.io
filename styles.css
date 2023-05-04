@@ -28,12 +28,14 @@ body {
     font-size: 1rem;
 }
 
-a, a:visited {
+a,
+a:visited {
     text-decoration: none;
     color: var(--link-color);
 }
 
-a:hover, a:visited:hover {
+a:hover,
+a:visited:hover {
     color: var(--hover-link-color);
 }
 
@@ -44,6 +46,7 @@ p {
 p:first-of-type {
     margin-top: 1em;
 }
+
 p:last-of-type {
     margin-bottom: 0em;
 }
@@ -69,7 +72,11 @@ section:first-of-type {
     margin-top: 60px;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     text-align: center;
     font-variant: small-caps;
     font-size: 2rem;
@@ -93,6 +100,10 @@ h1, h2, h3, h4, h5 {
     list-style: none;
 }
 
+.climbing-list li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
 .icons li:last-of-type {
     padding-right: 0px;
 }
@@ -102,7 +113,9 @@ h1, h2, h3, h4, h5 {
     color: var(--navbar-link-color);
     font-size: 1.5rem;
 }
-.icons li a:hover, .icons li a:visited:hover {
+
+.icons li a:hover,
+.icons li a:visited:hover {
     color: var(--navbar-hover-link-color);
 }
 
@@ -142,13 +155,15 @@ h1, h2, h3, h4, h5 {
     padding-right: 30px;
 }
 
-.nav-bar li a, .nav-bar li a:visited{
+.nav-bar li a,
+.nav-bar li a:visited {
     text-decoration: none;
     color: var(--navbar-link-color);
     font-variant: small-caps;
 }
 
-.nav-bar li a:hover, .nav-ba li a:visited:hover {
+.nav-bar li a:hover,
+.nav-ba li a:visited:hover {
     color: var(--navbar-hover-link-color);
 }
 
@@ -167,8 +182,9 @@ h1, h2, h3, h4, h5 {
     display: flex;
 }
 
-.row-experience > * {
-    padding-top: 25px; /* give sub divs good padding */
+.row-experience>* {
+    padding-top: 25px;
+    /* give sub divs good padding */
     padding-bottom: 25px;
 }
 
@@ -196,15 +212,21 @@ h1, h2, h3, h4, h5 {
 
 .timespan:before {
     flex: initial;
-    content: ""; /* Add an empty content to the ::before pseudo-element */
-    position: absolute; /* Position the ::before pseudo-element absolutely */
+    content: "";
+    /* Add an empty content to the ::before pseudo-element */
+    position: absolute;
+    /* Position the ::before pseudo-element absolutely */
     right: -6px;
     top: 50%;
-    width: 10px; /* Set the width of the dot */
-    height: 10px; /* Set the height of the dot */
-    background-color: black; /* Set the color of the dot */
-    border-radius: 50%; /* Make the dot a circle */
-  }
+    width: 10px;
+    /* Set the width of the dot */
+    height: 10px;
+    /* Set the height of the dot */
+    background-color: black;
+    /* Set the color of the dot */
+    border-radius: 50%;
+    /* Make the dot a circle */
+}
 
 .row-experience:first-of-type .timespan {
     border-image: linear-gradient(to top, var(--font-color), var(--bg-color)) 0 20 0 0;
@@ -243,7 +265,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .pub-img img {
-    width:100%;
+    width: 100%;
 }
 
 .pub-meta {
@@ -301,7 +323,9 @@ h1, h2, h3, h4, h5 {
     color: var(--navbar-link-color);
     font-size: 1.1rem;
 }
-.pub-meta ul li a:hover, .pub-meta ul li a:visited:hover {
+
+.pub-meta ul li a:hover,
+.pub-meta ul li a:visited:hover {
     color: var(--navbar-hover-link-color);
 
 }
@@ -333,7 +357,9 @@ h1, h2, h3, h4, h5 {
     color: var(--navbar-link-color);
     font-size: 1.1rem;
 }
-.footer-content a:hover, .footer-content a:visited:hover {
+
+.footer-content a:hover,
+.footer-content a:visited:hover {
     color: var(--navbar-hover-link-color);
 
 }
@@ -343,6 +369,7 @@ h1, h2, h3, h4, h5 {
         padding-left: 26px;
         padding-right: 26px;
     }
+
     html {
         font-size: 12pt;
     }
@@ -360,15 +387,18 @@ h1, h2, h3, h4, h5 {
     .publication-header {
         flex-direction: column-reverse;
     }
+
     .pub-img {
         width: 60%;
         margin: 0 auto;
     }
+
     .pub-meta {
         width: 100%;
         margin-left: 0;
         margin-bottom: 1.5rem;
     }
+
     .page {
         margin-bottom: 70px;
     }
