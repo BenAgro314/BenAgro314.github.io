@@ -90,6 +90,16 @@ h5 {
     margin-bottom: 0px;
 }
 
+.blog-title {
+    font-size: 2.5em;
+    padding-top: 1em;
+    margin-bottom: 0px;
+}
+
+.blog-date {
+    text-align: center;
+    font-size: 1em;
+}
 
 
 .icons {
