@@ -111,14 +111,53 @@
             </div>
         </section>
         <section id="sec-publications">
+            <!--h2><a href="https://scholar.google.ca/citations?user=FzHJoMcAAAAJ&hl=en">Publications</a></h2-->
             <h2>Publications</h2>
+            <div class="row-publication">
+                <div class="publication-header">
+                    <div class="pub-img">
+                        <div class="pub-img">
+                            <img src="images/detra_teaser.gif" alt="A gif showing DeTras detections and forecasts"
+                                style="width: 350%; object-fit: contain;" />
+                        </div>
+                    </div>
+                    <div class="pub-meta">
+                        <div>
+                            <h3 class="paper-title">DeTra: A Unified Model for Object Detection and Trajectory Forecasting</h3>
+                            <ul>
+                                <li><a href="https://waabi.ai/detra/" class="fa-solid fa-link"></a></li>
+                                <li><a href="https://arxiv.org/abs/2406.04426"
+                                        class="fa-solid fa-file-pdf"></a></li>
+                            </ul>
+                            <h4 class="paper-authors">
+                                Sergio Casas<sup>*</sup>,
+                                <strong>Ben Agro</strong><sup>*</sup>, 
+                                Jiageng Mao<sup>*</sup>,
+                                Thomas Gilles,
+                                Alexander Cui,
+                                Thomas Li,
+                                Raquel Urtasun</h4>
+                            <!--h4 class="paper-journal">CVPR 2024 <b>(Oral, top 0.7%)</b></h4-->
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-summary">
+                    Previous works perform object detection and trajectory forecasting through cascading modules. We reformulate
+                    this as a single unified <i>trajectory refinement</i>  task, which removes the problem of compounding errors.
+                    To fulfill this task, we propose a flexible transformer refinement archiecture that is easily extensible to
+                    alternative input modalities and tasks.
+                </div>
+            </div>
             <div class="row-publication">
                 <div class="publication-header">
                     <div class="pub-img">
                         <!--img src="images/panda-pic.png" alt="Picture of a Franka Panda stacking blocks"
                             style="width: 100%; height: 135px; object-fit: cover;" /-->
-                        <img src="images/uno_logo.png" alt="UnO Logo"
-                            style="width: 100%; height: 200px; object-fit: contain;" />
+                        <!--img src="images/uno_logo.png" alt="UnO Logo"
+                            style="width: 100%; height: 200px; object-fit: contain;" /-->
+                        <video src="images/occ_field.mp4" autoplay loop muted style="width: 100%; height: 200px; object-fit: cover;">
+                            A video of UnO's occupancy forecasts.
+                        </video>
                     </div>
                     <div class="pub-meta">
                         <div>
@@ -138,7 +177,11 @@
                     </div>
                 </div>
                 <div class="publication-summary">
-                    Incoming! <a href="https://eval.ai/web/challenges/challenge-page/1977/leaderboard/4662">Leaderboard</a>.
+                    We introduce a foundation model for the physical world that learns to perceive and forecast
+                    4D (spatio-temporal) occupancy fields with self-supervision from LiDAR data. We show
+                    that this model can be transfered to a variety of downstream tasks, such as LiDAR forecasting
+                    and semantic birds eye view occupancy forecasting.
+                    We came first in the <a href="https://eval.ai/web/challenges/challenge-page/1977/leaderboard/4662">CVPR 2024 Argoverse 2 LiDAR 4D Occupancy Challenge</a>.
                 </div>
             </div>
             <div class="row-publication">
@@ -457,7 +500,7 @@
         <section id="sec-news">
             <h2>News</h2>
             <ul class="spaced-list">
-                <li><b>June 20, 2023</b>: I'll be at CVPR2024 to present UnO! More details to come soon.</li>
+                <li><b>June 20, 2023</b>: I'll be at CVPR2024 to present UnO!</li>
                 <li><b>June 20, 2023</b>: I'll be at CVPR2023 to present <a
                         href="https://waabi.ai/implicito/">ImplicitO</a>!
                 </li>
