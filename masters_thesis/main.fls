@@ -560,13 +560,13 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm
 INPUT ./graphs/dropping_curve.tex
 INPUT ./graphs/dropping_curve.tex
 INPUT graphs/dropping_curve.tex
-INPUT ./tables/forecasting_metrics.tex
-INPUT ./tables/forecasting_metrics.tex
-INPUT tables/forecasting_metrics.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/courier/pcrr7t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
+INPUT ./tables/forecasting_metrics.tex
+INPUT ./tables/forecasting_metrics.tex
+INPUT tables/forecasting_metrics.tex
 INPUT ./tables/more_training_ablations.tex
 INPUT ./tables/more_training_ablations.tex
 INPUT tables/more_training_ablations.tex

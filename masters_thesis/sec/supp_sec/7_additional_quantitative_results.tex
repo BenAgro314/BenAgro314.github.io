@@ -10,7 +10,7 @@ ablating self-attention in the refinement transformer,
 and additional training design experiments --- training with back-propagation through time (BPTT) and accumulating gradients.
 
 
-\paragraph{Full Leaderboard Results:}
+\subsection{Full Leaderboard Results}
 
 In \cref{tab:full-leaderboard-all-classes} we show the performance of \ourmodel{} when enhancing SAFDDet 4f~\cite{safdnet}
 on the WOD test set for all actor classes,
@@ -31,7 +31,7 @@ We find that \ourmodel{} outperforms prior works by a large margin on all actor 
 
 
 \input{graphs/history_curve.tex}
-\paragraph{Performance at different memory horizons:}
+\subsection{Performance at different memory horizons}
 In \cref{fig:history-curve},
 we plot detection performance as a
 function of the memory horizon $T_m s_m$ used at inference time. 
@@ -48,7 +48,7 @@ We find that the performance increases rapidly
 when first introducing memory, and then increases more slowly and saturates
 around 2.7s, due to the redundancy in most memory proposals.
 
-\paragraph{Performance across memory dropping rates:}
+\subsection{Performance across memory dropping rates}
 \input{graphs/dropping_curve.tex}
 To show the importance of the memory at inference time,
 we investigate how the performance of \ourmodel{} changes
@@ -65,7 +65,7 @@ is the second stage of a two-stage detector,
 which have been shown to improve performance~\cite{centerpoint}.
 % \sergio{you can also point to Far3D. They use memory only for training and this brings them gains. I think it's because it adds hard examples for refinement }
 
-\paragraph{Forecasting Results:}
+\subsection{Forecasting Results}
 \input{tables/forecasting_metrics.tex}
 
 While our focus is task
@@ -115,7 +115,7 @@ Notably, HEDNet 1f with memory matches or outperforms HEDNet 4f without memory, 
 %\thomasG{Should we try to explain why it's still slighlty better with drop=1.0?}
 
 
-\paragraph{Additional training design experiments:}
+\subsection{Additional training design experiments}
 
 \input{tables/more_training_ablations.tex}
 In \cref{tab:more-training-ablations} we investigated
@@ -159,7 +159,7 @@ There are four alternative design questions we investigated:
 \end{itemize}
 
 
-\paragraph{Effect of self-attention:}
+\subsection{Effect of self-attention}
 \input{tables/supp_component_ablation.tex}
 \Cref{tab:self-attention-ablation} illustrates the effect of using self-attention in the refinement transformer,
 which brings a small but consistent performance improvement.
@@ -173,7 +173,7 @@ and prior works have shown it to improve forecasting performance~\cite{casas2024
 which would in turn improve \ourmodel{}'s detection performance through the memory.
 Both of these factors could explain the improved performance of \ourmodel{}.
 
-\paragraph{Computational Overhead:}
+\subsection{Computational Overhead}
 
 We report total FLOPs and peak memory measurements per forward pass,
 taking the maximum across 10 random sequences on WOD in \cref{tab:flops}.
@@ -197,7 +197,7 @@ There is minimal computational overhead from \ourmodel{} relative to the base de
 We also note that in most traditional self-driving systems, the 3D detector would be followed by a forecasting module,
 which \ourmodel{} can replace.
 
-\paragraph{Performance on Stationary Objects}
+\subsection{Performance on Stationary Objects}
 
 
 \Cref{fig:stationary-objects} shows the performance of \ourmodel{} on stationary objects on WOD ($\le 0.5$ m/s).
