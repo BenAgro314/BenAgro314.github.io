@@ -1,3 +1,103 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{caesar2020nuscenes}
+Holger Caesar, Varun Bankiti, Alex~H Lang, Sourabh Vora, Venice~Erin Liong, Qiang Xu, Anush Krishnan, Yu~Pan, Giancarlo Baldan, and Oscar Beijbom.
+\newblock nuscenes: A multimodal dataset for autonomous driving.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages 11621--11631, 2020.
+
+\bibitem{casas2024detra}
+Sergio Casas, Ben Agro, Jiageng Mao, Thomas Gilles, Alexander Cui, Thomas Li, and Raquel Urtasun.
+\newblock Detra: A unified model for object detection and trajectory forecasting.
+\newblock 2024.
+
+\bibitem{chen2022mppnet}
+Xuesong Chen, Shaoshuai Shi, Benjin Zhu, Ka~Chun Cheung, Hang Xu, and Hongsheng Li.
+\newblock Mppnet: Multi-frame feature intertwining with proxy points for 3d temporal object detection.
+\newblock In {\em European Conference on Computer Vision}, pages 680--697. Springer, 2022.
+
+\bibitem{frossard2021strobe}
+Davi Frossard, Shun Da~Suo, Sergio Casas, James Tu, and Raquel Urtasun.
+\newblock Strobe: Streaming object detection from lidar packets.
+\newblock In {\em Conference on Robot Learning}, pages 1174--1183. PMLR, 2021.
+
+\bibitem{he2023msf}
+Chenhang He, Ruihuang Li, Yabin Zhang, Shuai Li, and Lei Zhang.
+\newblock Msf: Motion-guided sequential fusion for efficient 3d object detection from point cloud sequences.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 5196--5205, 2023.
+
+\bibitem{he2023lef}
+Tong He, Pei Sun, Zhaoqi Leng, Chenxi Liu, Dragomir Anguelov, and Mingxing Tan.
+\newblock Lef: Late-to-early temporal fusion for lidar 3d object detection.
+\newblock In {\em 2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, pages 1637--1644. IEEE, 2023.
+
+\bibitem{hou2024query}
+Jinghua Hou, Zhe Liu, Zhikang Zou, Xiaoqing Ye, Xiang Bai, et~al.
+\newblock Query-based temporal fusion with explicit motion for 3d object detection.
+\newblock {\em Advances in Neural Information Processing Systems}, 36, 2024.
+
+\bibitem{huang2024ptt}
+Kuan-Chih Huang, Weijie Lyu, Ming-Hsuan Yang, and Yi-Hsuan Tsai.
+\newblock Ptt: Point-trajectory transformer for efficient temporal 3d object detection.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 14938--14947, 2024.
+
+\bibitem{li2023modar}
+Yingwei Li, Charles~R Qi, Yin Zhou, Chenxi Liu, and Dragomir Anguelov.
+\newblock Modar: Using motion forecasting for 3d object detection in point cloud sequences.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 9329--9339, 2023.
+
+\bibitem{li2022bevformer}
+Zhiqi Li, Wenhai Wang, Hongyang Li, Enze Xie, Chonghao Sima, Tong Lu, Yu~Qiao, and Jifeng Dai.
+\newblock Bevformer: Learning bird’s-eye-view representation from multi-camera images via spatiotemporal transformers.
+\newblock In {\em European conference on computer vision}, pages 1--18. Springer, 2022.
+
+\bibitem{liang2020pnpnet}
+Ming Liang, Bin Yang, Wenyuan Zeng, Yun Chen, Rui Hu, Sergio Casas, and Raquel Urtasun.
+\newblock Pnpnet: End-to-end perception and prediction with tracking in the loop.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 11553--11562, 2020.
+
+\bibitem{luo2018fast}
+Wenjie Luo, Bin Yang, and Raquel Urtasun.
+\newblock Fast and furious: Real time end-to-end 3d detection, tracking and motion forecasting with a single convolutional net.
+\newblock In {\em Proceedings of the IEEE conference on Computer Vision and Pattern Recognition}, pages 3569--3577, 2018.
+
+\bibitem{piergiovanni20214d}
+AJ~Piergiovanni, Vincent Casser, Michael~S Ryoo, and Anelia Angelova.
+\newblock 4d-net for learned multi-modal alignment.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on Computer Vision}, pages 15435--15445, 2021.
+
+\bibitem{WOD}
+Pei Sun, Henrik Kretzschmar, Xerxes Dotiwalla, Aurelien Chouard, Vijaysai Patnaik, Paul Tsui, James Guo, Yin Zhou, Yuning Chai, Benjamin Caine, et~al.
+\newblock Scalability in perception for autonomous driving: Waymo open dataset.
+\newblock In {\em CVPR}, 2020.
+
+\bibitem{sun2022swformer}
+Pei Sun, Mingxing Tan, Weiyue Wang, Chenxi Liu, Fei Xia, Zhaoqi Leng, and Dragomir Anguelov.
+\newblock Swformer: Sparse window transformer for 3d object detection in point clouds.
+\newblock In {\em European Conference on Computer Vision}, pages 426--442. Springer, 2022.
+
+\bibitem{wilson2023argoverse}
+Benjamin Wilson, William Qi, Tanmay Agarwal, John Lambert, Jagjeet Singh, Siddhesh Khandelwal, Bowen Pan, Ratnesh Kumar, Andrew Hartnett, Jhony~Kaesemodel Pontes, et~al.
+\newblock Argoverse 2: Next generation datasets for self-driving perception and forecasting.
+\newblock {\em arXiv preprint arXiv:2301.00493}, 2023.
+
+\bibitem{yang20213d}
+Zetong Yang, Yin Zhou, Zhifeng Chen, and Jiquan Ngiam.
+\newblock 3d-man: 3d multi-frame attention network for object detection.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages 1863--1872, 2021.
+
+\bibitem{centerpoint}
+Tianwei Yin, Xingyi Zhou, and Philipp Krahenbuhl.
+\newblock Center-based 3d object detection and tracking.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages 11784--11793, 2021.
+
+\bibitem{zeng2022lift}
+Yihan Zeng, Da~Zhang, Chunwei Wang, Zhenwei Miao, Ting Liu, Xin Zhan, Dayang Hao, and Chao Ma.
+\newblock Lift: Learning 4d lidar image fusion transformer for 3d object detection.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 17172--17181, 2022.
+
+\bibitem{safdnet}
+Gang Zhang, Junnan Chen, Guohuan Gao, Jianmin Li, Si~Liu, and Xiaolin Hu.
+\newblock Safdnet: A simple and effective network for fully sparse 3d object detection.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 14477--14486, 2024.
 
 \end{thebibliography}

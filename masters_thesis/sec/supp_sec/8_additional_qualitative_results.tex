@@ -1,0 +1,34 @@
+\section{Additional Qualitative Results:}
+
+See \cref{fig:supp-quali,fig:supp-quali-2} for additional qualitative results on the WOD validation set.
+We show the memory bank with the boxes $\mathbf{B}^\mathrm{ref}_{t_m}$ with all target timestamps $\mathcal{T}_m$ overlayed,
+the memory proposal bounding boxes $\mathbf{B}^\mathrm{mem}$ (recall these are computed with interpolation along the trajectory forecast in them memory bank),
+the detection proposal bounding boxes $\mathbf{B}^\mathrm{det}$,
+and model output bounding boxes $\mathbf{B}^\mathrm{ref}$.
+% For the detection proposals and \ourmodel{}'s outputs, we threshold the box confidence scores at their respective max F1 scores computed on the WOD validation set.
+% This provides a fair visual comparison between the detection proposals and \ourmodel{}, as during deployment we need to choose an operating point for the detector.
+To visually compare the detection proposals and \ourmodel{}'s outputs, we filter their boxes
+with a threshold on the confidence scores, using the threshold that attains the max F1 score on the WOD validation set (this threshold is computed separately for the detection proposals and \ourmodel{}'s outputs).
+This is a fair comparison as during deployment we need to choose a single operating point for the detector.
+The memory boxes are thresholded at a confidence score of 0.1, and colored by their age $t_m - t$.
+We list some interesting themes which we circle in the figure:
+\begin{enumerate}[label=\alph*)]
+    \item Improved recall on stationary or slow moving vehicles.
+    \item Improved recall on fast moving vehicles.
+    \item Accurate memory trajectory forecast and interpolated position.
+    \item Improved recall on pedestrians or cyclists.
+\end{enumerate}
+We notice that the memory has excellent recall on most objects, and that
+for most objects the interpolated boxes (and thus trajectory forecasts) are quite accurate.
+% Unfortunately, the final model outputs do not have the same level of recall, which occurs because
+% there are many occurrences of labels that disappear due to occlusion in the WOD dataset,
+% which provides mixed signals to the model about when to recall an object or not using the memory.
+% % \sergio{do you also visualize at max F1 threshold for memory? otherwise this could be another reason}
+% % \sergio{I actually think we should explain the visualization a bit more at the beginning of the paragraph, including how we select the thresholds}
+% %
+% The trajectory forecasts are least accurate on turning vehicles
+% (we do not use any map information), which leaves room for improvement in future works.
+
+\input{images/supp_quali.tex}
+
+\input{images/supp_quali_2.tex}

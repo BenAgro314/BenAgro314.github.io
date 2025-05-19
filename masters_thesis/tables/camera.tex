@@ -1,0 +1,21 @@
+\begin{table}[]
+    % https://wandb.ai/waabi-ai/pnp-onboard/runs/ehc8qgvq
+    \centering
+    \footnotesize
+    \begin{tabular}{@{}lcccc@{}}
+    \toprule
+                                    & \multicolumn{4}{c}{Vehicle AP IoU 10 In Camera Field of View} \\ 
+                                    \cmidrule(lr){2-5}        
+    Method                          & Overall & [0, 40)m        & [40, 80)m       & [80, 120)m \\ \midrule
+    FCOS3D~\cite{wang2021fcos3d}    & 37.6             & 73.9            & 34.3            & 4.65          \\
+    \rowcolor{tablecolor}
+    +\ourmodel{} (Ours)             & \textbf{43.6}    & \textbf{82.6}   & \textbf{40.0}   & \textbf{8.11}  \\  \midrule
+    BEVMap~\cite{chang2024bevmap}   & 51.5             & 86.5            & 54.0            & 13.9          \\
+    \rowcolor{tablecolor}
+    +\ourmodel{} (Ours)             & \textbf{53.4}    & \textbf{88.0}   & \textbf{55.1}   & \textbf{17.2}  \\ 
+    \bottomrule
+    \end{tabular}
+    \caption{Adding \ourmodel{} to camera-based 3D detectors on AV2.}
+    \vspace{-5mm}
+    \label{tab:av2-cam}
+\end{table}

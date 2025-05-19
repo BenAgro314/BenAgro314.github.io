@@ -1,0 +1,36 @@
+\begin{table}[t]
+    \centering
+    \small
+    \begin{tabular}{@{}lccccc@{}}
+        \toprule
+        Method                                            & AP L1             & APH L1           & AP L2            & \underline{APH L2} \\ 
+        \midrule
+        CenterFormer~\cite{zhou2022centerformer}      & 82.3 & 80.9 & 77.6 & 76.3 \\
+        BEVFusion~\cite{liu2023bevfusion}             & 82.7 & 81.4 & 77.7 & 76.3 \\
+        MSF~\cite{he2023msf}                          & 83.1 & 81.7 & 78.3 & 77.0 \\
+        FSD++~\cite{fan2023super}                     & 83.5 & 82.1 & 78.4 & 77.1 \\
+        LoGoNet~\cite{li2023logonet}                  & 83.1 & 81.8 & 78.4 & 77.1 \\
+        Octopus\_Noah                                 & 83.1 & 81.7 & 78.7 & 77.3 \\
+        SEED-L~\cite{liu2024seed}                       & 83.5 & 82.2 & 78.7 & 77.3 \\
+        LION~\cite{liu2024lion}                       & 83.7 & 82.4 & 78.7 & 77.4 \\
+        VeuronNet3D                                   & 83.7 & 82.2 & 79.1 & 77.7 \\
+        HIAC                                          & 84.0 & 82.6 & 79.2 & 77.8 \\
+        InceptioLidar                                 & 83.8 & 82.5 & 79.2 & 77.8 \\
+        VADet                                         & 84.1 & 82.8 & 79.4 & 78.2 \\
+        MT3D                                          & 85.0 & 83.7 & 80.1 & 78.7 \\
+        LIVOX Detection                               & 84.8 & 83.5 & 80.2 & 79.0 \\
+        \rowcolor{tablecolor} 
+        MAD (Ours)                                    & \textbf{86.0}  & \textbf{84.3} & \textbf{81.8} & \textbf{80.2} \\
+        \bottomrule
+    \end{tabular}
+    \caption{
+    Results on the WOD test set, as reported on the leaderboard$^2$.
+    We exclude entries that state they use ensembles, test-time augmentations, or are offline (use future sensor data).
+    % For methods that provide no information, we give them the benefit of the doubt and include them.
+    ``Ours'' is using SAFDNet 4f as the 3D detector.
+    % Metrics are averaged over actor classes, and 
+    APH L2 is the ranking metric.
+    }
+    \vspace{-5mm}
+    \label{tab:full-leaderboard}
+\end{table}

@@ -1,0 +1,14 @@
+\begin{table}[t]
+    \centering
+    \footnotesize
+    \begin{tabular}{@{}lccc@{}}
+        \toprule
+        Method                              & Vehicle AP    & Pedestrian AP & Cyclist AP     \\ 
+        \midrule
+        With BPTT                       & 76.9        & 82.1          & 82.9           \\ 
+        Without BPTT                    & \textbf{77.0} & \textbf{82.3} & \textbf{83.3}  \\
+        \bottomrule
+    \end{tabular}
+    \caption{An ablation of \ourmodel{} with and without BPTT on WOD. All metrics are Level 2, and the 3D detector used is SAFDNet 4f.}
+    \label{tab:features}
+\end{table}

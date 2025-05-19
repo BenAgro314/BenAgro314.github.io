@@ -1,5 +1,7 @@
 \documentclass[onehalfspacing, normalmargins, equalmargins, oneside]{ut-thesis}
 
+\input{preamble}
+
 % Author and thesis info
 \author{Ben Agro}
 \title{Memory Augmented Detection for Autonomous Driving}
@@ -11,42 +13,34 @@
 \frontmatter
 \maketitle
 
-\begin{abstract}
-Your abstract goes here. It should be concise and within the prescribed word limit.
-\end{abstract}
+\input{sec/0_abstract.tex}
 
-\begin{dedication}
-    Dedication TODO
-\end{dedication}
+\input{sec/dedication.tex}
 
-\begin{acknowledgements}
-    Ack TODO
-\end{acknowledgements}
+\input{sec/ack.tex}
+
 
 \tableofcontents
 
 \mainmatter
-\chapter{Introduction}
-This is the introduction.
+% \chapter{Introduction}
+% This is the introduction.
+\input{sec/1_intro.tex}
 
-\section{Motivation}
+% \section{Motivation}
 
-\section{Contributions}
+% \section{Contributions}
 
-\section{Outline}
+% \section{Outline}
 
-\chapter{Related Work}
+% \chapter{Related Work}
 % Your content here
+\input{sec/2_related.tex}
 
-\section{3D Object Detection}
-
-\section{Long-Term Temporal Fusion for 3D Detection}
-
-\chapter{Method --- TODO(bagro): rename}
-
-\chapter{Experiments}
-
-\chapter{Conclusions and Future Work}
+\input{sec/3.1_method.tex}
+\input{sec/3.2_method.tex}
+\input{sec/4_experiments.tex}
+\input{sec/5_conclusion.tex}
 
 
 \backmatter

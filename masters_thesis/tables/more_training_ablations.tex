@@ -1,0 +1,41 @@
+% \begin{table}[t]
+%     \centering
+%     \footnotesize
+%     \begin{tabular}{@{}l|lcccc@{}}
+%         \toprule
+%         & \ourmodel{} Variant         & AP L1    & APH L1   & AP L2    & APH L2   \\ 
+%         \midrule
+%         0 & Accumulating gradients    & 83.8   & 82.2          & 78.7   & 77.1   \\
+%         1 & Using $\mathbf{Q}^\mathrm{ref}$             & 85.2   & 83.7          & 80.3   & 78.8   \\
+%         2 & Using $\mathbf{Q}^\mathrm{ref}$ \& BPTT     & \textbf{85.3} & 83.8   & 80.4   & 78.9   \\
+%         \rowcolor{tablecolor}
+%         3 & \ourmodel{} (Ours)             & 85.3   & \textbf{83.8} & \textbf{80.4} & \textbf{79.0}   \\
+%         \bottomrule
+%     \end{tabular}
+%     \caption{Comparison of different training strategies on the WOD validation set.
+%     All trainings are for 45k iterations using a chunk length of 144 and no cache.
+%     Row 3 is \ourmodel{} trained without accumulating gradients without using refinement features $\mathbf{Q}^\mathrm{ref}$ or BPTT.
+%     }
+%     \label{tab:more-training-ablations}
+% \end{table}
+
+\begin{table*}[t]
+    \centering
+    \small
+    \begin{tabular}{@{}l|ccc|cccc@{}}
+        \toprule
+        & Accumulating Gradients & $\mathbf{Q}^\mathrm{ref}$ & BPTT  & AP L1         & APH L1        & AP L2         & APH L2   \\ 
+        \midrule
+        0 & \cmark & \xmark & \xmark & 83.8          & 82.2          & 78.7          & 77.1   \\
+        1 & \xmark & \cmark & \xmark & 85.2          & 83.7          & 80.3          & 78.8   \\
+        2 & \xmark & \cmark & \cmark & \textbf{85.3} & 83.8          & 80.4          & 78.9   \\
+        % \rowcolor{tablecolor}
+        3 & \xmark & \xmark & \xmark & 85.3          & \textbf{83.8} & \textbf{80.4} & \textbf{79.0}   \\
+        \bottomrule
+    \end{tabular}
+    \caption{Comparison of different training strategies on the WOD validation set.
+    All trainings are for 45k iterations using a chunk length of 144 and no cache.
+    % Row 3 is \ourmodel{} trained without accumulating gradients without using refinement features $\mathbf{Q}^\mathrm{ref}$ or BPTT.
+    }
+    \label{tab:more-training-ablations}
+\end{table*}

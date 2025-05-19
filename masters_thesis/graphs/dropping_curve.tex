@@ -1,0 +1,56 @@
+% \documentclass{standalone}
+% \usepackage{pgfplots}
+% \usepgfplotslibrary{groupplots}
+% \usetikzlibrary{patterns}
+
+% \begin{document}
+
+\begin{figure}[t]
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.9* \linewidth,
+            height=5cm,
+            xlabel={Memory Drop Rate},
+            ylabel={Overall Level 2 AP (\%)},
+            xmin=0, xmax=1,
+            ymin=78, ymax=81.2,
+            % legend pos=north east,
+            legend style={at={(0.02,0.5)}, anchor=west},
+            grid=major,
+            ytick={78, 78.5, 79, 79.5, 80, 80.5, 81},
+            xtick={0, 0.2, 0.4, 0.6, 0.8, 1}
+        ]
+        
+        
+        % Plot for '3D Detector'
+        \addplot[color=dark-color3, dashed, line width=1.5pt, mark size=1pt] coordinates {
+            (0, 78.4)
+            (0.2, 78.4)
+            (0.4, 78.4)
+            (0.6, 78.4)
+            (0.8, 78.4)
+            (1, 78.4)
+        };
+        \addlegendentry{\footnotesize{SAFDNet 4f~\cite{safdnet}}}
+
+        % Plot for 'w/ Obj Mem'
+        \addplot[color=dark-color1, mark=*, line width=1.5pt, mark size=1pt] coordinates {
+            (0, 80.97)
+            (0.2, 80.87)
+            (0.4, 80.83)
+            (0.6, 80.55)
+            (0.8, 79.84)
+            (1, 78.68)
+        };
+        \addlegendentry{\footnotesize{+ \ourmodel{}}}
+    
+        \end{axis}
+    \end{tikzpicture}
+
+% \end{document}
+\caption{The effect of randomly dropping memory target timestamps $\mathcal{T}_m$ at inference time on the WOD validation set.
+The base detector is SAFDNet 4f~\cite{safdnet}.}
+\label{fig:dropping-curve}
+    
+\end{figure}

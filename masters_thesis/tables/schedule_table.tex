@@ -1,0 +1,24 @@
+\begin{table}[t]
+    \centering
+    \footnotesize
+    \begin{tabular}{@{}llccccc@{}}
+        \toprule
+           & Chunk Length       & Cache  & AP L1       & APH L1 &  AP L2 & APH L2 \\ 
+        \midrule
+        1a & 144                         & \xmark & 85.4          & 83.9 & 80.5                     & 79.0 \\
+        1b & 144                         & \cmark & 85.2          & 83.7 & 80.3                     & 78.9 \\ \midrule
+        2a & 48                          & \xmark & 85.1          & 83.5 & 80.2                     & 78.6 \\
+        2b & 48                          & \cmark & 85.3          & 83.8 & 80.3                     & 78.9 \\ \midrule
+        3a & 1                           & \xmark & 83.9          & 82.4 & 78.4                     & 77.0 \\
+        3b & 1                           & \cmark & 85.0          & 83.3 & 80.1                     & 78.5 \\ \midrule
+        4a & 1$\veryshortarrow$48$\veryshortarrow$96$\veryshortarrow$144             & \xmark & 84.9                 & 83.3 & 79.9                     & 78.3 \\
+        \rowcolor{tablecolor}
+        4b & 1$\veryshortarrow$48$\veryshortarrow$96$\veryshortarrow$144            & \cmark & \textbf{85.8}         & \textbf{84.2}  & \textbf{81.0}  & \textbf{79.4} \\ 
+        \bottomrule
+    \end{tabular}
+    \caption{
+        Ablating chunk length and the memory cache on WOD, using SAFDNet 4f.
+        }
+        \vspace{-3mm}
+    \label{tab:chunk-length-comparison}
+\end{table}

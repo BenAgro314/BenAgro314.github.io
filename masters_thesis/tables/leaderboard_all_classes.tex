@@ -1,0 +1,31 @@
+\begin{table*}[]
+    \centering
+    \footnotesize
+    \begin{tabular}{@{}llcccccccccccccccc@{}}
+    \toprule
+    &               & \multicolumn{2}{c}{Overall L1} & \multicolumn{2}{c}{Overall L2} & \multicolumn{2}{c}{Vehicle L1} & \multicolumn{2}{c}{Vehicle L2} & \multicolumn{2}{c}{Pedestrian L1} & \multicolumn{2}{c}{Pedestrian L2} & \multicolumn{2}{c}{Cyclist L1} & \multicolumn{2}{c}{Cyclist L2} \\ 
+    \cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8} \cmidrule(lr){9-10} \cmidrule(lr){11-12} \cmidrule(lr){13-14} \cmidrule(lr){15-16} \cmidrule(lr){17-18}
+    & Method                         & AP   & APH  & AP   & \underline{APH}  & AP   & APH  & AP   & APH  & AP   & APH  & AP   & APH  & AP   & APH  & AP   & APH  \\ \midrule
+    % \multicolumn{17}{c}{\textit{Validation Set}} \\ \midrule
+    \multirow{6}{*}{\rotatebox[origin=c]{90}{\textit{Validation}}} 
+    & 3D-MAN~\cite{yang20213d}       & -    & -    & -    & -    & 74.5 & 74.0 & 67.6 & 67.1 & -    & -    & -    & -    & -    & -    & -    & -    \\
+    & MoDAR~\cite{li2023modar}       & -    & -    & -    & 72.5 & 81.0 & 80.5 & 73.4 & 72.9 & 83.5 & 79.4 & 76.1 & 72.1 & -    & -    & -    & -    \\
+    & LEF~\cite{he2023lef}           & 79.6 & 79.2 & 71.4 & 70.9 & -    & -    & -    & -    & -    & -    & -    & -    & -    & -    & -    & -    \\
+    & MPPNet~\cite{chen2022mppnet}   & 81.6 & 81.1 & 76.0 & 74.8 & 82.7 & 82.3 & 75.4 & 75.0 & 84.7 & 82.3 & 77.4 & 75.1 & 77.3 & 78.7 & 75.1 & 74.5 \\
+    & MSF~\cite{he2023msf}           & 82.2 & 80.7 & 76.8 & 75.5 & 82.8 & 82.0 & 75.8 & 75.3 & 85.2 & 82.2 & 78.3 & 75.6 & 78.5 & 77.7 & 76.3 & 75.5 \\
+    & PTT~\cite{huang2024ptt}        & 82.7 & 80.7 & 77.7 & 75.7 & 83.7 & 83.2 & 76.3 & 75.8 & 85.9 & 83.0 & 78.9 & 76.0 & 78.5 & 77.8 & 76.0 & 75.3 \\
+    \rowcolor{tablecolor}
+    & \ourmodel{} (Ours)                           & \textbf{85.8} & \textbf{84.2} & \textbf{81.0} & \textbf{79.4} & \textbf{84.2} & \textbf{83.6}  & \textbf{77.4} & \textbf{76.8} & \textbf{87.9} & \textbf{85.4} & \textbf{82.2} & \textbf{79.7} & \textbf{85.3} & \textbf{83.7} & \textbf{83.3} & \textbf{81.7} \\ \midrule
+    % \multicolumn{17}{c}{\textit{Testing Set}} \\ \midrule
+    \multirow{4}{*}{\rotatebox[origin=c]{90}{\textit{Testing}}} 
+    & 3D-MAN~\cite{yang20213d}       & 49.6 & 48.1 & 44.8 & 43.4 & 78.7 & 78.3 & 70.4 & 70.0 & 70.0 & 66.0 & 64.0 & 60.3 & 49.6 & 48.1 & 44.8 & 43.4  \\
+    & MPPNet~\cite{chen2022mppnet}   & 81.8 & 80.6 & 76.9 & 75.7 & 84.3 & 83.9 & 77.3 & 76.9 & 84.1 & 81.5 & 78.4 & 75.9 & 77.1 & 76.4 & 74.9 & 74.2 \\
+    & MSF~\cite{he2023msf}           & 83.1 & 81.7 & 78.3 & 76.9 & 86.1 & 85.7 & 79.2 & 78.8 & 85.9 & 83.1 & 80.6 & 77.8 & 77.3 & 76.4 & 75.7 & 74.3 \\
+    \rowcolor{tablecolor}
+    & \ourmodel{} (Ours)                           & \textbf{86.0} & \textbf{84.3} & \textbf{81.8} & \textbf{80.2} & \textbf{86.5} & \textbf{85.9}  & \textbf{80.3}  & \textbf{79.7} & \textbf{87.9} & \textbf{85.4} & \textbf{83.4} & \textbf{80.8} & \textbf{83.5} & \textbf{81.6} & \textbf{81.8} & \textbf{79.9} \\ \bottomrule
+    \end{tabular}
+    \caption{Comparison of our method against various methods for learned temporal fusion on WOD. 
+    ``Ours'' is using SAFDNet 4f.
+    }
+    \label{tab:leaderboard-all-classes}
+\end{table*}
