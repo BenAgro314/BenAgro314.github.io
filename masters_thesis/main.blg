@@ -7,45 +7,45 @@ Warning--empty booktitle in casas2024detra
 Warning--can't use both volume and number fields in koh2023mgtanet
 Warning--empty journal in neumann2018relaxed
 Warning--can't use both volume and number fields in wang2015voting
-You've used 83 entries,
+You've used 82 entries,
             2118 wiz_defined-function locations,
-            962 strings with 22507 characters,
-and the built_in function-call counts, 43904 in all, are:
-= -- 4288
-> -- 2530
-< -- 61
-+ -- 998
-- -- 914
-* -- 3123
-:= -- 6684
-add.period$ -- 269
-call.type$ -- 83
-change.case$ -- 699
+            958 strings with 22242 characters,
+and the built_in function-call counts, 43101 in all, are:
+= -- 4213
+> -- 2472
+< -- 60
++ -- 975
+- -- 892
+* -- 3059
+:= -- 6563
+add.period$ -- 266
+call.type$ -- 82
+change.case$ -- 686
 chr.to.int$ -- 0
-cite$ -- 87
-duplicate$ -- 1698
-empty$ -- 3026
-format.name$ -- 914
-if$ -- 9525
+cite$ -- 86
+duplicate$ -- 1671
+empty$ -- 2979
+format.name$ -- 892
+if$ -- 9354
 int.to.chr$ -- 0
-int.to.str$ -- 83
-missing$ -- 83
-newline$ -- 418
-num.names$ -- 166
-pop$ -- 867
+int.to.str$ -- 82
+missing$ -- 82
+newline$ -- 413
+num.names$ -- 164
+pop$ -- 851
 preamble$ -- 1
-purify$ -- 616
+purify$ -- 604
 quote$ -- 0
-skip$ -- 1461
+skip$ -- 1434
 stack$ -- 0
-substring$ -- 2792
-swap$ -- 768
-text.length$ -- 61
+substring$ -- 2739
+swap$ -- 753
+text.length$ -- 60
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 332
+type$ -- 328
 warning$ -- 4
-while$ -- 350
-width$ -- 85
-write$ -- 918
+while$ -- 345
+width$ -- 84
+write$ -- 907
 (There were 4 warnings)

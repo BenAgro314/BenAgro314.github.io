@@ -145,11 +145,6 @@ Hongyang Li, Hao Zhang, Zhaoyang Zeng, Shilong Liu, Feng Li, Tianhe Ren, and Lei
 \newblock Dfa3d: 3d deformable attention for 2d-to-3d feature lifting.
 \newblock In {\em Proceedings of the IEEE/CVF International Conference on Computer Vision}, pages 6684--6693, 2023.
 
-\bibitem{li2023logonet}
-Xin Li, Tao Ma, Yuenan Hou, Botian Shi, Yuchen Yang, Youquan Liu, Xingjiao Wu, Qin Chen, Yikang Li, Yu~Qiao, et~al.
-\newblock Logonet: Towards accurate 3d object detection with local-to-global cross-modal fusion.
-\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 17524--17534, 2023.
-
 \bibitem{li2023modar}
 Yingwei Li, Charles~R Qi, Yin Zhou, Chenxi Liu, and Dragomir Anguelov.
 \newblock Modar: Using motion forecasting for 3d object detection in point cloud sequences.

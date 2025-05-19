@@ -1,33 +1,33 @@
 \section{Additional Quantitative Results}
 \label{sec:additional-quantitative-results}
 
-In this section, we provide additional quantitative experiments on \ourmodel{},
-including full results on WOD leaderboard,
-evaluating the performance using different memory horizons,
-investigating if our proposed memory improves trajectory forecasting performance,
-evaluating the effect of randomly dropping memory at inference time,
-ablating self-attention in the refinement transformer,
-and additional training design experiments --- training with back-propagation through time (BPTT) and accumulating gradients.
+% In this section, we provide additional quantitative experiments on \ourmodel{},
+% including full results on WOD leaderboard,
+% evaluating the performance using different memory horizons,
+% investigating if our proposed memory improves trajectory forecasting performance,
+% evaluating the effect of randomly dropping memory at inference time,
+% ablating self-attention in the refinement transformer,
+% and additional training design experiments --- training with back-propagation through time (BPTT) and accumulating gradients.
 
 
-\subsection{Full Leaderboard Results}
-
-In \cref{tab:full-leaderboard-all-classes} we show the performance of \ourmodel{} when enhancing SAFDDet 4f~\cite{safdnet}
-on the WOD test set for all actor classes,
-comparing against other methods on the leaderboard that do not use ensembles, test-time augmentations, or future sensor data.
-For methods that provide no information on these criteria, we give them the benefit of the doubt and include them.
-We see that \ourmodel{} is strong across all actor classes, particularly on pedestrians and cyclists.
-Our intuition is that these actor classes are smaller and more prone to limited LiDAR observations
-due to occlusions or distance, so our memory mechanism is particularly beneficial.
-
-In \cref{tab:leaderboard-all-classes} we compare against prior methods for learned temporal
-fusion on the WOD validation and test sets.
-We find that \ourmodel{} outperforms prior works by a large margin on all actor classes.
-
-
-\input{tables/full_leaderboard_all_classes.tex}
-
-\input{tables/leaderboard_all_classes.tex}
+% \subsection{Full Leaderboard Results}
+% 
+% In \cref{tab:full-leaderboard-all-classes} we show the performance of \ourmodel{} when enhancing SAFDDet 4f~\cite{safdnet}
+% on the WOD test set for all actor classes,
+% comparing against other methods on the leaderboard that do not use ensembles, test-time augmentations, or future sensor data.
+% For methods that provide no information on these criteria, we give them the benefit of the doubt and include them.
+% We see that \ourmodel{} is strong across all actor classes, particularly on pedestrians and cyclists.
+% Our intuition is that these actor classes are smaller and more prone to limited LiDAR observations
+% due to occlusions or distance, so our memory mechanism is particularly beneficial.
+% 
+% In \cref{tab:leaderboard-all-classes} we compare against prior methods for learned temporal
+% fusion on the WOD validation and test sets.
+% We find that \ourmodel{} outperforms prior works by a large margin on all actor classes.
+% 
+% 
+% \input{tables/full_leaderboard_all_classes.tex}
+% 
+% \input{tables/leaderboard_all_classes.tex}
 
 
 \input{graphs/history_curve.tex}
