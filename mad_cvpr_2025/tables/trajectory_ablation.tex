@@ -1,0 +1,17 @@
+\begin{table}[t]
+    \centering
+    \footnotesize
+    \begin{tabular}{@{}llccccc@{}}
+        \toprule
+        \multicolumn{2}{c}{Method}    & \multicolumn{2}{c}{Overall}   & \multicolumn{1}{c}{Vehicle AP}  & \multicolumn{1}{c}{Cyclist AP}       \\ 
+         \cmidrule(lr){3-4}
+                          &                  & mAP  & mAPH & [20, 30)m/s & [5, 10)m/s \\ 
+        \midrule
+        No Forecasting    &                  & 80.2 & 78.7 & 34.6 & 78.7 \\
+        Forecasting       &                  & \textbf{80.9} & \textbf{79.4} & \textbf{45.2} & \textbf{86.2} \\ 
+        \bottomrule
+    \end{tabular}
+    \caption{A comparison of \ourmodel{} with and without forecasting on WOD.
+    All metrics are Level 2. The 3D detector used is SAFDNet 4f.}
+    \label{tab:forecasting-comparison}
+\end{table}

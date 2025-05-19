@@ -1,0 +1,127 @@
+\section{Memory Augmented 3D Object Detection}
+\label{sec:method}
+
+3D object detectors take a short temporal window of sensor data as input and produce a set of detections.
+Existing approaches typically struggle to perceive occluded and distant objects with limited sensor observations.
+To tackle these challenges, we propose \ourmodel{}, a plug-and-play module to enhance existing 3D object detectors with the ability to perform long-horizon temporal fusion.
+Our only requirement from the detector is that each detection includes an object bounding box, multi-class confidence scores,
+and a feature vector capturing local context.
+We demonstrate the generality of \ourmodel{} by augmenting and improving various LiDAR-based and camera-based detectors.
+
+We enable long-horizon temporal understanding through a memory bank that captures all the relevant information on objects,
+including where we expect them to move.
+These trajectory forecasts allow us to align the memory objects with the current detector proposals in space and time.
+Importantly, we do not require the object detector to provide motion forecasts; instead, \ourmodel{} computes them.
+To compensate for ego-motion, we assume the ego is localized --- which is the norm in modern self-driving platforms~\cite{wilson2023argoverse,WOD} --- and store the ego pose in the memory along with the model outputs.
+
+\subsection{Model} \label{sec:method-arch}
+We start with an overview of our model; refer to \Cref{fig:arch} for an illustration.
+At every inference step, \ourmodel{} takes as input the \textit{detection proposals}, the current timestamp $t$ (e.g., LiDAR sweep-end time or camera capture time),
+and the ego pose $\mathbf{E}_{t}$ in a global coordinate frame.
+It then retrieves objects from memory, aligns them spatially with $\mathbf{E}_t$ and temporally to $t$, and extracts high-dimensional features from the aligned boxes and trajectory forecasts.
+We refer to the aligned boxes and trajectory forecasts
+with the extracted features as \textit{memory proposals}.
+A proposal merging mechanism then fuses detection and memory proposals by rescoring their confidence scores and applying standard post-processing.
+Finally, our refinement transformer iterative refines the object detections and trajectory forecasts in the \textit{merged proposals} with cross-attention to the memory and factorized self-attention.
+In preparation for future inferences, the memory bank is then updated by appending the model outputs (a.k.a. \textit{refined proposals}) and removing older model outputs to keep the memory bounded in size. 
+
+\paragraph{Proposal representation:}  
+We define object \textit{proposals}
+$\mathcal{P} = (\mathbf{B}, \mathbf{C}, \mathbf{T}, \mathbf{Q})$ with
+$N$ bounding boxes $\mathbf{B} \in \mathbb{R}^{N \times 7}$,
+where the last dimension corresponds to $(x, y, z, l, w, h, \theta)$ with
+object 3D centroids $(x, y, z)$,
+headings $\theta$ in a BEV ego-relative coordinate frame,
+and the 3D box dimensions $(w, l, h)$;
+multi-class confidence scores $\mathbf{C} \in [0, 1]^{N \times C}$,
+where $C$ is the number of actor classes;
+trajectory forecasts $\mathbf{T} \in \mathbb{R}^{N \times T_f \times 3}$ describing objects' BEV pose
+$\{(x, y, \theta)_{t+s_f}, \dots, (x, y, \theta)_{t + T_f s_f}\}$
+over $T_f$ future waypoints at a time interval $s_f$;
+and an object feature $\mathbf{Q} \in \mathbb{R}^{N \times (T_f + 1) \times d}$ encoding both local and global features for every object at the present and future timestamps,
+where $d$ is the feature dimensionality.
+We use superscripts to denote the source of the proposals:
+detection proposals $\mathcal{P}^\mathrm{det}$ from the 3D detector,
+memory proposals $\mathcal{P}^\mathrm{mem}$ from the memory bank,
+merged proposals $\mathcal{P}^\mathrm{merge}$ from the proposal merging module,
+and refined proposals $\mathcal{P}^\mathrm{ref}$ from the output of the refinement transformer.
+For detection proposals $\mathcal{P}^{\mathrm{det}}$,
+we generate $\mathbf{T}^\mathrm{det}$
+by assuming the object is static over time since detectors do not provide forecasts (and this is just an initialization before refinement). The object features $\mathbf{Q}^\mathrm{det}$ are obtained by interpolating the feature map from before the detector header at the projected object centroids,
+repeating $(T_f + 1)$ times to get the features for future timestamps, and adding a learned embedding of $\mathbf{B}^\mathrm{det}$ and $\mathbf{C}^\mathrm{det}$.
+In the paragraphs below we describe how we obtain $\mathcal{P}^\mathrm{mem}$, $\mathcal{P}^\mathrm{merge}$ and $\mathcal{P}^\mathrm{ref}$.
+
+\paragraph{Memory Bank and Retrieval:}
+The memory bank is a set of tuples $\big(t_m, \mathbf{E}_{t_m}, \mathcal{P}^{\mathrm{ref}}_{t_m} \big)$
+with timestamped past model outputs and ego pose, sorted by the timestamp $t_m$ at which the outputs were generated.
+During inference at timestamp $t$, we retrieve memory entries
+$\mathcal{P}_{t_m}^\mathrm{ref}$
+at a set of past target timestamps $t_m \in \mathcal{T}_m$, where $\mathcal{T}_m = \{t- s_m, t-2 s_m, \dots, t-T_m s_m\}$.
+$T_m$ is the number of past target timestamps, and $s_m$ is the time stride of the retrieved entries. To be precise, we retrieve the closest memory entry to each timestamp in $\mathcal{T}_m$ to be robust to small sensor delays.
+
+\paragraph{Extracting Memory Proposals:}
+For effective use of the memory at inference,
+we should align each retrieved entry
+$(t_m, \mathbf{E}_{t_m}, \mathcal{P}^{\mathrm{ref}}_{t_m})$
+in space and time with the current detection proposals at time $t$.
+We handle ego-motion by applying the relative transform
+$\mathbf{E}_{t_m \to t} = \mathbf{E}_{t}^{-1} \mathbf{E}_{t_m}$
+to $\mathbf{B}_{t_m}^{\mathrm{ref}}$ and $\mathbf{T}_{t_m}^{\mathrm{ref}}$.
+To handle object motion, we linearly interpolate the stored trajectory forecast to the current timestamp $t$ to obtain the proposal box $\mathbf{B}^\mathrm{mem}$.
+To obtain the proposal forecast $\mathbf{T}^\mathrm{mem}$,
+we also interpolate/extrapolate the stored trajectories as required to obtain waypoints at $\mathcal{T}_f = \{t+s_f, \dots, t + T_f s_f\}$ from stored waypoints at $\{t_m+s_f, \dots, t_m + T_f s_f\}$.
+
+Finally, we extract latent features $\mathbf{Q}^\mathrm{mem}$ at
+$t$ and every future time step $t_f \in \mathcal{T}_f$:
+First, we compute sinusoidal positional embeddings~\cite{vaswani2017attention}
+for the centroid coordinates $\mathbf{B}^{\mathrm{mem}}_{x, y, z}$ and encode
+them with a lightweight MLP.
+Separately, we concatenate other features including
+$\mathbf{B}^{\mathrm{mem}}_{l, w, h, \theta}$ (box dimensions and heading), confidence scores $\mathbf{C}^{\mathrm{mem}}$, the memory age $t - t_m$,
+and a 2D vector pointing to where the proposal was in the current ego coordinate frame at the time $t_m$.
+Finally, we encode the concatenated features with another MLP and add the features from both MLPs together.
+
+\paragraph{Proposal Merging:} 
+The memory and detection proposals can be redundant, particularly in areas with good sensor coverage. 
+To merge proposals, we learn to rescore their multi-class confidence scores.
+Rescoring is essential as the confidence the model should put in a memory proposal
+not only depends on the confidence score at a past timestamp
+$\mathbf{C}_{t_m}^\mathrm{mem}$, but also on the proposal age $t - t_m$, as the forecasting uncertainty grows with the time horizon and other factors.
+For example, the model should trust a fast-moving detection less than a stationary object, or it should trust an object observed 0.5 seconds ago more than one observed 5 seconds ago.
+Furthermore, the detection proposals come from the 3D detector, while the memory proposals are produced by \ourmodel{},
+and detectors have been found to be miscalibrated~\cite{neumann2018relaxed,kuppers2020multivariate,minderer2021revisiting}.
+
+To make the scores comparable, we learn two small MLPs that separately map the features of the detection proposals $\mathbf{Q}^\mathrm{det}$ and the memory proposals $\mathbf{Q}^\mathrm{mem}$
+to new multi-class scores $\mathbf{C}^\mathrm{merge}$.
+As explained in \Cref{sec:method-training},
+these rescoring MLPs are trained under a single detection loss applied to the merged proposals so that the model can decide which proposals to trust from both sources.
+Finally, we filter proposals with score thresholding, non-maximum suppression (NMS), and keep the top $K$
+\textit{merged proposals} sorted by score (maximum over actor classes).
+Post-processing enables the refinement transformer to process a smaller number of queries.
+
+Finally, we add learned time positional embeddings to the merged proposal features $\mathbf{Q}^\mathrm{merge}$
+to indicate the time of the trajectory forecast.
+At this point, we have $N^\mathrm{merge} \overset{\mathrm{def}}{=} N^\mathrm{ref}$ merged proposals $\mathcal{P}^\mathrm{merge}$ ready for refinement.
+
+\paragraph{Refinement Transformer:}
+We utilize a transformer decoder to refine the merged proposals $\mathcal{P}^\mathrm{merge} = \mathcal{P}^{\mathrm{ref}(0)}$
+iteratively over $I$ blocks into $\mathcal{P}^{\mathrm{ref}(1)}$ \dots $\mathcal{P}^{\mathrm{ref}(I)}$,
+where the final model outputs are $\mathcal{P}^\mathrm{ref} = \mathcal{P}^{\mathrm{ref}(I)}$.
+We propose a novel \textit{memory cross-attention}
+mechanism to allow the queries --- proposal features $\mathbf{Q}^{\mathrm{ref}(i)}$ --- to aggregate information from all the memory proposals $\mathbf{Q}^{\mathrm{mem}}$,
+including those that proposal merging filtered out.
+We want to use this information in the refinement transformer because multiple overlapping memory proposals provide significant evidence about an object's presence and location.
+To achieve this, we perform cross attention from the object queries $\mathbf{Q}^{\mathrm{ref}(i)}$ to the memory proposal features $\mathbf{Q}^\mathrm{mem}$.
+For efficiency, we limit the cross attention to the nearest $k$ keys to each object query (computing the nearest neighbors of $\mathbf{B}^{\mathrm{ref}(i)}_{x, y, z}$ in $\mathbf{B}^{\mathrm{mem}}_{x, y, z}$).
+
+Similar to many works~\cite{ngiam2021scene,casas2024detra}, we perform factorized self-attention in each refinement block, which separates \textit{time self-attention} and \textit{object self-attention} for efficiency, where the former attends only to queries from the same object (sequence length $T_f + 1$) and the latter only attends to queries from the same time step (sequence length $N$).
+The updated queries $\mathbf{Q}^{\mathrm{ref}(i+1)}$ are input to the next block.
+
+Finally, we update the explicit proposal information as described in DeTra~\cite{casas2024detra}, by using a simple MLP to produce $\mathbf{B}^{\mathrm{ref}(i+1)}$ and $\mathbf{C}^{\mathrm{ref}(i+1)}$ and a gated recurrent unit (GRU)~\cite{cho2014learning} to update the future trajectory waypoints $\mathbf{T}^{\mathrm{ref}(i+1)}$.
+
+\paragraph{Memory Bank Update:}
+We post-process the refined proposals $\mathcal{P}^{\mathrm{ref}}$ as we did to the merged proposals: score thresholding,
+NMS, and top $K$ based on confidence score,
+adding the result to the memory bank, along with the corresponding timestamp $t$ and ego pose $\mathbf{E}_t$.
+To limit the size of the memory bank when running on long sequences,
+we remove any memory entries older than $t - T_m s_m - \epsilon$ (the past time-horizon used in memory retrieval with a small buffer $\epsilon$).

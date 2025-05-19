@@ -1,0 +1,129 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage[rebuttal]{cvpr}      % To produce the REVIEW version
+\input{preamble.tex}
+\usepackage[dvipsnames]{xcolor}  % Extended colors
+\usepackage[pagebackref,breaklinks,colorlinks,citecolor=blue]{hyperref}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}  % for alignment in tables
+
+%%%%%%%%% PAPER ID  - PLEASE UPDATE
+\def\paperID{7641} % *** Enter the Paper ID here
+\def\confName{CVPR}
+\def\confYear{2025}
+
+% Define color-coded reviewer names
+\newcommand{\reviewerOne}{{\textcolor{TealBlue}{\textbf{C9r4}}}}
+\newcommand{\reviewerTwo}{{\textcolor{Mulberry}{\textbf{3cbw}}}}
+\newcommand{\reviewerThree}{{\textcolor{BurntOrange}{\textbf{z5zn}}}}
+
+%%%%%%%%% TITLE - PLEASE UPDATE
+\title{\vspace{-1mm}[Rebuttal] MAD: \underline{M}emory-\underline{A}ugmented \underline{D}etection of 3D Objects\vspace{-2mm}}
+
+\begin{document}
+
+\makeatletter
+\xpatchcmd{\paragraph}{3.25ex \@plus1ex \@minus.2ex}{0pt plus 0pt minus 0pt}{\typeout{success!}}{\typeout{failure!}}
+\makeatother
+
+\maketitle
+\thispagestyle{empty}
+\appendix
+
+We thank the reviewers for their feedback.
+We are encouraged that \reviewerOne{} appreciated our writing and intuitions; \reviewerTwo{} highlighted our novel training strategy;
+and all reviewers saw our sensor-agnostic add-on approach's ``wide compatibility and applicability'' and acknowledged our ``consistent and notable'' results in both the LiDAR and camera settings and ``SOTA performance'' on the WOD dataset. Next, we will address the reviewers' comments.
+
+\paragraph{[\reviewerOne{}, \reviewerTwo{}, \reviewerThree{}] Computational Overhead:}
+All reviewers inquired about the computational and memory overhead introduced by \ourmodel{}.
+We report total FLOPs and peak memory measurements per forward pass,
+taking the maximum across 10 random sequences on WOD:
+\vspace{-2mm}
+\begin{center}
+\footnotesize
+\begin{tabular}{lcc}
+\toprule
+\textbf{Model} & \textbf{GigaFLOPs} & \textbf{GPU Mem (GB)} \\
+\midrule
+SAFDNet 4f        & 880 & 2.5 \\
+MAD Module        & 50  & 2.8 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{-1mm}
+We report FLOPs because it is more hardware and implementation agnostic.
+As shown, there is minimal computational overhead from \ourmodel{} relative to the base detector.
+We also note that in most traditional self-driving systems, the 3D detector would be followed by a forecasting module,
+which \ourmodel{} can replace.
+
+\paragraph{[\reviewerOne{}, \reviewerThree{}] Training \ourmodel{} Across Different Detectors:}
+We clarify for that \ourmodel{} is trained separately for each base detector, because each detector has different features $\mathbf{Q}^{\textrm{det}}$ and detection distribution and calibration, so simple transfer from one detector to another may not work.
+We agree that developing a version of \ourmodel{} that can be trained once and generalize across multiple detectors is an exciting direction for future work and holds promise for broader applicability. We will make these clarifications in our camera-ready.
+
+\paragraph{[\reviewerTwo{}] Performance on Stationary vs.\ Moving Objects:}
+% \reviewerTwo{} requested evaluation on stationary objects, similar to our focus on fast-moving objects in Tab 5.
+Our moving object metrics were intended to demonstrate the effect of forecasting in \ourmodel{}.
+Below we include similar numbers for stationary objects on WOD ($\le 0.5$ m/s):
+\vspace{-2mm}
+\begin{center}
+\footnotesize
+\begin{tabular}{lccc}
+\toprule
+ & \multicolumn{3}{c}{\textbf{Stationary}} \\
+ & \textbf{Veh. AP} & \textbf{Ped. AP} & \textbf{Cyc. AP} \\
+\midrule
+SAFDNet 4f (Base)  & 73.75 & 54.14 & 34.32 \\
+MAD No Forecasting & 74.92 & 56.15 & 35.93 \\
+MAD                & 74.78 & 56.14 & 36.89 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{-1mm}
+As expected, forecasting provides minimal benefit for detecting stationary objects, and both versions of \ourmodel{} provide improvements over the base detector.
+
+\paragraph{[\reviewerOne{}] Method and Novelty Clarifications:}
+%We clarify that the memory bank does not ``save each object instance separately''; it stores past proposal
+We clarify that the memory bank stores past proposals
+at a given timestamp $t_m$ together in $\mathcal{P}^{\mathrm{ref}}_{t_m}$ (see L227 and supp Fig. 5-7 for a visual), and we may
+save multiple proposals for the same object at different timestamps.
+There is no ``ambiguity about which objects in the memory banks should be retrieved'' because \emph{all} proposals from a given target timestamp are retrieved.
+Together with the factorized self-attention, this allows \ourmodel{} to model agent interactions and produce long-term 5s forecasts (L490). These long-term forecasts are necessary for \ourmodel{} to use proposals from the distant past.
+In contrast, a typical Kalman filter style tracker
+uses a simple constant velocity estimate, which is inaccurate for long-term
+forecasting and does not model interactions.
+For evidence of the inaccuracy of long-term forecasting with a simple motion model on AV2, see Tab 6. of \href{https://arxiv.org/abs/2301.00493}{Argoverse2, Wilson et al.}. % Such inaccurate forecasts
+% would limit a memory methods ability to recover objects with limited current
+% sensor evidence from the distant past.
+%usually forecasts only a single time-step with a simple motion model, independently for each agent.
+%
+Second, we do not consider our approach ``learned tracking''. Tracking systems maintain explicit tracks and IDs for each
+object. In contrast, \ourmodel{} automatically learns how to use past detections and forecasts to improve current predictions.
+Indeed, the update ``rule is learned by transformers from data,'' but there are no tracks, ``since the goal is not to track but to detect objects accurately at the current time, the association is not needed'' [\reviewerOne{}].
+This was an intentional design choice: producing tracks requires hard associations and filtering, which remove information from future predictions.
+Any tracker can be added ontop of \ourmodel{} if tracks are desired.
+
+\paragraph{[\reviewerTwo{}] Dataset Choice:}
+
+% We are glad \reviewerOne{} and \reviewerThree{} find that ``experiments on multiple datasets demonstrate the proposed method’s superior plug-and-play capability,'' and we do not think there is a need for experimentation on nuScenes. We chose WOD and AV2 because they are state-of-the-art datasets for object detection with a combined 1337 hours of driving data across 11 cities. NuScenes, on the other hand, is a very small-scale dataset with only 5.5 hours of data from two cities.
+We are glad \reviewerOne{} and \reviewerThree{} find that ``experiments on multiple datasets demonstrate the proposed method’s superior plug-and-play capability,'' and we do not think there is a need for experimentation on nuScenes. We chose WOD and AV2 because they are state-of-the-art datasets for object detection; WOD consists of 230K annotated frames and 12M 3D labels,
+and AV2 consists of 200K annotated frames and 15M 3D labels. In contrast, nuScenes only has 40K annotated frames and 1.4M 3D labels.
+Moreover, our paper did not claim SOTA in camera-based detection,
+but our experiments are sufficient to show that \ourmodel{}
+can improve camera-based detectors.
+
+% with a combined 1337 hours of driving data across 11 cities. NuScenes, on the other hand, is a very small-scale dataset with only 5.5 hours of data from two cities.
+
+\paragraph{[\reviewerThree{}] Comparison with Other Memory Methods:}
+We highlight that Tab. 4 (and Tab. 9 in supp) compares \ourmodel{} against all memory methods
+on the WOD leaderboard, showing large gains from \ourmodel{} over prior memory methods. Moreover, we extensively ablate the components of \ourmodel{} to show their benefit in Tab 5-7. This provides ample evidence of the benefits of \ourmodel{} and its design choices relative to prior memory methods.
+
+\paragraph{[\reviewerOne{}, \reviewerTwo{}, \reviewerThree{}] Minor Text Issues:}
+We will clean up the loss equation by using a separate line on L455.
+We thank \reviewerThree{} for finding the lack of definition of $\mathcal{T}_f$, which
+should have been included on L273 as $\mathcal{T}_f = \{t + s_f, \dots, t + T_f s_f\}$,
+and the lack of clarity on the definition of $N^{\mathrm{ref}}$, which we meant to denote the number of
+proposals in refinement, which by definition is equal to the number of proposals after merging $N^{\mathrm{ref}} \overset{\mathrm{def}}{=} N^\mathrm{merge}$.
+\reviewerOne{} requested the inclusion of You et al. (ICLR2022) in the related work. This method tackles a different setting where multiple past traversals of the same route are available, but it is still worth discussing.
+We will include all of these requested changes in the camera-ready.
+
+\end{document}

@@ -1,0 +1,56 @@
+% \documentclass{standalone}
+% \usepackage{pgfplots}
+% \usepgfplotslibrary{groupplots}
+% \usetikzlibrary{patterns}
+
+% \begin{document}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+    \begin{axis}[
+        width=0.9*\linewidth,
+        height=5cm,
+        xlabel={Memory Horizon (s)},
+        ylabel={Overall Level 2 AP (\%)},
+        xmin=0, xmax=4.2,
+        ymin=78, ymax=81.2,
+        legend style={at={(0.98,0.5)}, anchor=east}, % Positioning the legend in the middle on the west side
+        grid=major,
+        ytick={78, 78.5, 79, 79.5, 80, 80.5, 81},
+        xtick={0, 0.9, 1.8, 2.7, 3.6, 4.3}
+    ]
+    
+    % Plot for 'SAFDNet 4f'
+    \addplot[color=dark-color3, line width=1.5pt, dashed] coordinates {
+        (0, 78.355)
+        (0.9, 78.355)
+        (1.8, 78.355)
+        (2.4, 78.355)
+        (2.7, 78.355)
+        (3.6, 78.355)
+        (4.2, 78.355)
+    };
+    \addlegendentry{\footnotesize{SAFDNet 4f~\cite{safdnet}}}
+    
+    % Plot for 'w/ Obj Mem'
+    \addplot[color=dark-color1, mark=*, mark size=1.0pt, line width=1.5pt] coordinates {
+        (0, 78.676)
+        (0.9, 80.362)
+        (1.8, 80.827)
+        (2.4, 80.970)
+        (2.7, 80.983)
+        (3.6, 81.016)
+        (4.2, 81.030)
+    };
+    \addlegendentry{\footnotesize{+ \ourmodel{}}}
+
+    \end{axis}
+\end{tikzpicture}% \end{document}
+\caption{The effect of the memory horizon on the WOD validation set.
+We keep the memory target time stride $s_m = 0.3s$ fixed,
+while increasing the number of target timestamps $T_m \in \{0, 3, 6, 8, 9, 14\}$.
+The base detector is SAFDNet 4f~\cite{safdnet}.}
+\label{fig:history-curve}
+    
+\end{figure}

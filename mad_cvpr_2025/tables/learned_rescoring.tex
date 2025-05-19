@@ -1,0 +1,15 @@
+\begin{table}[t]
+    \centering
+    \small
+    \begin{tabular}{@{}lccc@{}}
+        \toprule
+        Method                 & Vehicle AP  & Pedestrian AP & Cyclist AP    \\ 
+        \midrule
+        SAFDNet 4f             & 75.4          & 80.1          & 79.6          \\
+        No rescoring           & 72.7          & 82.0          & 81.2          \\
+        With rescoring         & \textbf{77.0} & \textbf{82.3} & \textbf{83.3} \\ 
+        \bottomrule
+    \end{tabular}
+    \caption{An ablation of \ourmodel{}'s learned rescoring on WOD. All metrics are Level 2, and the 3D detector used is SAFDNet 4f.}
+    \label{tab:rescoring-comparison}
+\end{table}

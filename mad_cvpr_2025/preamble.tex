@@ -1,0 +1,57 @@
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{patterns,positioning}
+\pgfplotsset{compat=1.18}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\usepackage{xpatch}
+\usepackage{bbm}
+\usepackage{soul}
+\usepackage{appendix}
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage{enumitem}
+
+\newcommand{\ben}[1]{\textcolor{blue}{Ben: #1}}
+\newcommand{\sergio}[1]{\textcolor{cyan}{Sergio: #1}}
+\newcommand{\thomasG}[1]{\textcolor{orange}{ThomasG: #1}}
+\newcommand{\raquel}[1]{\textcolor{red}{Raquel: #1}}
+
+
+\newcommand{\suggest}[2]{%
+    \sout{#1}%
+    \textcolor{Green}{#2}%
+}
+
+\newcommand{\remove}[1]{%
+    \textcolor{Green}{\sout{#1}}%
+}
+
+\newcommand{\veryshortarrow}[1][3pt]{\mathrel{%
+   \hbox{\rule[\dimexpr\fontdimen22\textfont2-.2pt\relax]{#1}{.4pt}}%
+   \mkern-4mu\hbox{\usefont{U}{lasy}{m}{n}\symbol{41}}}}
+
+\renewcommand{\ben}[1]{}
+\renewcommand{\sergio}[1]{}
+\renewcommand{\thomasG}[1]{}
+\renewcommand{\raquel}[1]{}
+\renewcommand{\suggest}[2]{}
+\renewcommand{\remove}[1]{}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\pmb{\ding{55}}}%
+\newcommand{\ourmodel}{MAD}
+% \newcommand{\memoryelem}{\texttt{MemoryElement}}
+\newcommand{\memoryelem}{memory element}
+
+\usepackage{colortbl}
+\definecolor{tablecolor}{rgb}{0.9, 0.9, 1.0} % Adjust RGB values if needed

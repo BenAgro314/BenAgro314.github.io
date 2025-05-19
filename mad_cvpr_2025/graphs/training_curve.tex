@@ -1,0 +1,141 @@
+% \documentclass{standalone}
+% \usepackage{pgfplots}
+% \usepgfplotslibrary{groupplots}
+% \usetikzlibrary{patterns}
+
+% \begin{document}
+
+\begin{figure*}[t]
+
+\begin{tikzpicture}
+\footnotesize
+\begin{groupplot}[
+    width=\textwidth * 0.37,
+    group style = {group size = 3 by 1, horizontal sep=0.7cm},
+    height=6cm,
+    % xlabel=Forward Passes, 
+    xtick={10000,20000,30000,40000},
+    xticklabels={10K,20K,30K,40k},
+    ymin=55, ymax=90,
+    legend pos=south east,
+    xticklabel style = {rotate=45, anchor=east},
+    grid=both,
+    scaled ticks=false,
+]
+
+% Plot 1: Vehicle AP Level 2
+\nextgroupplot[title={Vehicle}, ylabel={AP Level 2 (\%)}, 
+    % title={Vehicle AP Level 2},
+    ymin=65, ymax=77,
+    ]
+\addplot[color=dark-color5, very thick] coordinates {
+    % (7500, 71.81) (21000, 73.80) (27000, 74.10) (30000, 74.23)
+    % (33200, 74.67) (36400, 74.82) (39600, 74.86)
+    (3000, 71.19) (9000, 70.58) (21000, 74.21) (27000, 74.65) (30000, 74.89) % (33200, 75.00) (36400, 75.45) (39600, 75.53)
+};
+\addlegendentry{Cache}
+\addplot[color=dark-color5, very thick, dashed, forget plot] coordinates {
+    % (7500, 71.81) (21000, 73.80) (27000, 74.10) (30000, 74.23)
+    % (33200, 74.67) (36400, 74.82) (39600, 74.86)
+    % (3000, 71.19) (9000, 70.58) (21000, 74.21) (27000, 74.65) (30000, 74.89)
+    (30000, 74.89) (33200, 75.00) (36400, 75.45) (39600, 75.53)
+};
+
+\addplot[color=dark-color3, very thick] coordinates {
+    % (7500, 57.05) (21000, 71.41) (27000, 72.30) (30000, 72.66)
+    % (33200, 72.54) (36400, 72.65) (39600, 72.82)
+    (3000, 52.72) (9000, 69.60) (21000, 71.76) (27000, 72.77) (30000, 72.97)
+};
+\addlegendentry{Continuous Chunk}
+\addplot[color=dark-color3, very thick, dashed, forget plot] coordinates {
+    % (7500, 57.05) (21000, 71.41) (27000, 72.30) (30000, 72.66)
+    % (33200, 72.54) (36400, 72.65) (39600, 72.82)
+    (30000, 72.97) (33200, 72.70) (36400, 72.84) (39600, 73.07)
+};
+
+\addplot[dotted, color=dark-color1, very thick] coordinates {(3000, 72.53) (40000, 72.53)};
+\addlegendentry{3D Detector}
+
+% \addplot[dashed, color=black, very thick] coordinates {(30000, 40) (30000, 90)};
+% Dashed vertical line
+
+% Plot 2: Pedestrian AP Level 2
+\nextgroupplot[title={Pedestrian}, 
+    % title={Pedestrian AP Level 2},
+    ymin=70, ymax=81,
+    ]
+\addplot[color=dark-color5, very thick] coordinates {
+    % (7500, 79.74) (21000, 80.65) (27000, 80.93) (30000, 81.23)
+    % (33200, 82.29) (36400, 82.49) (39600, 82.37)
+    (3000, 75.14) (9000, 76.32) (21000, 77.98) (27000, 78.10) (30000, 78.08)
+};
+\addplot[color=dark-color5, very thick, dashed] coordinates {
+    % (7500, 79.74) (21000, 80.65) (27000, 80.93) (30000, 81.23)
+    % (33200, 82.29) (36400, 82.49) (39600, 82.37)
+    (30000, 78.08) (33200, 79.95) (36400, 79.84) (39600, 79.84)
+};
+
+\addplot[color=dark-color3, very thick] coordinates {
+    % (7500, 78.49) (21000, 80.08) (27000, 80.47) (30000, 80.38)
+    % (33200, 80.30) (36400, 80.45) (39600, 80.65)
+    (3000, 58.45) (9000, 75.90) (21000, 77.65) (27000, 78.00) (30000, 78.06)
+};
+\addplot[color=dark-color3, very thick, dashed] coordinates {
+    % (7500, 78.49) (21000, 80.08) (27000, 80.47) (30000, 80.38)
+    % (33200, 80.30) (36400, 80.45) (39600, 80.65)
+    (30000, 78.06) (33200, 77.78) (36400, 77.87) (39600, 78.15)
+};
+\addplot[dotted, color=dark-color1, very thick] coordinates {(3000, 77.15) (40000, 77.15)};
+
+% \addplot[dashed, color=black, very thick] coordinates {(30000, 40) (30000, 90)};
+% Dashed vertical line
+
+% Plot 3: Cyclist AP Level 2
+\nextgroupplot[title={Cyclist}, 
+    % title={Cyclist AP Level 2},
+    ymin=65, ymax=83,
+    ]
+\addplot[color=dark-color5, very thick] coordinates {
+    % (7500, 76.32) (21000, 77.45) (27000, 78.47) (30000, 81.44)
+    % (33200, 85.94) (36400, 82.72) (39600, 84.15)
+    (3000, 76.30) (9000, 78.45) (21000, 77.37) (27000, 79.16) (30000, 80.24) 
+};
+\addplot[color=dark-color5, very thick, dashed] coordinates {
+    % (7500, 76.32) (21000, 77.45) (27000, 78.47) (30000, 81.44)
+    % (33200, 85.94) (36400, 82.72) (39600, 84.15)
+     (30000, 80.24) (33200, 81.09) (36400, 80.80) (39600, 81.37)
+};
+
+\addplot[color=dark-color3, very thick] coordinates {
+    % (7500, 66.67) (21000, 76.15) (27000, 76.83) (30000, 77.40)
+    % (33200, 78.94) (36400, 78.66) (39600, 78.37)
+    (3000, 0.00) (9000, 69.89) (21000, 72.83) (27000, 73.74) (30000, 73.98) 
+};
+
+\addplot[color=dark-color3, very thick, dashed] coordinates {
+    % (7500, 66.67) (21000, 76.15) (27000, 76.83) (30000, 77.40)
+    % (33200, 78.94) (36400, 78.66) (39600, 78.37)
+    (30000, 73.98) (33200, 75.13) (36400, 74.91) (39600, 74.73)
+};
+
+\addplot[dotted, color=dark-color1, very thick] coordinates {(3000, 76.90) (40000, 76.90)};
+
+% \addplot[dashed, color=black, very thick] coordinates {(30000, 40) (30000, 90)};
+% Dashed vertical line
+
+\end{groupplot}
+
+\node[below = 1cm of group c2r1.south] {Number of Forward Passes}; 
+
+\end{tikzpicture}
+
+% \end{document}
+\caption{Validation metric curves of the proposed cache-based training
+vs. continuous chunk training on the Waymo Open Dataset.
+The curves become dashed when fine-tuning begins.
+The horizontal dotted line
+indicates the baseline performance of the 3D detector.
+\ben{TODO: maybe replace numbers with final method}
+}
+    
+\end{figure*}

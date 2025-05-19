@@ -1,0 +1,92 @@
+\input{tables/main_table_wod.tex}
+
+\subsection{Training} \label{sec:method-training}
+
+
+We first train an off-the-shelf 3D detector following their original training strategy.
+This stage can be omitted if a pre-trained 3D detector is available.
+Then, we train all the parameters in \ourmodel{} as a subsequent stage,
+with the 3D detector weights frozen.
+Pre-training and freezing the 3D detector
+is important to ensure the detection proposals
+do not change throughout \ourmodel{} training.
+Note that we train a separate \ourmodel{} for each 3D detector,
+as each detector has different features $\mathbf{Q}^{\textrm{det}}$ and detection distribution and calibration.
+
+Before detailing our proposed \ourmodel{} training, we discuss some possibilities and trade-offs when training temporal fusion models.
+Training on unordered examples has the advantage of
+satisfying the assumption of i.i.d examples (better learning dynamics)~\cite{kiefer1952stochastic,robbins1951stochastic}.
+However, it differs from evaluation, where the model is rolled out on long sequences and consumes its previous outputs.
+Training on long sequences of ordered data has the advantage of being closer to evaluation, but it has worse learning dynamics since consecutive examples are heavily correlated (there are few changes in the scene from one frame to the next).
+If, instead, gradients are accumulated over a long sequence and used to update the model parameters once per sequence, a sequence becomes one example (satisfying the i.i.d assumption), but the
+training duration is multiplied by the sequence length if the number of model updates is kept constant.
+Despite this large space of possibilities and the importance of such choices, prior works on learned temporal fusion neglect details and discussion of their training recipe~\cite{he2023lef,li2023modar,huang2024ptt,he2023msf}.
+
+To tackle these challenges, we design a novel training schedule.
+We propose to train \ourmodel{} on increasingly long chunks of ordered data, using single frames\footnote{We slightly abuse the term ``frame'' here, as some detectors use a window of multiple past frames as input.}
+at the beginning and entire sequences at the end of training.
+To train object memory on short chunks (or even single frames) of data while maintaining a reasonable amount of memory inputs,
+we propose to maintain a cache of memory banks across training and using it to build the memory proposals for each training example.
+Below, we detail this proposed schedule, our cache of memory banks, how we handle augmentations with memory, and our loss function.
+
+\paragraph{Training Schedule:}
+
+The datasets we use (WOD~\cite{WOD}, AV2~\cite{wilson2023argoverse}) organize their data into driving logs, each around 20s in duration with data captured at 10Hz,
+meaning each log has around 200 frames.
+Each log has a unique identifier (\textit{logID}).
+For the first 25\% of training, we sample single frames (that is, consecutive training examples are random frames from random logs).
+Throughout the rest of training, we sample sequential chunks of gradually increasing size: 48 frames for (25\%, 50\%] of training,
+96 frames for (50\%, 75\%], and 144 frames for (75\%, 100\%].
+We train with a single cosine decay learning rate schedule with no resets.
+The intuition behind this is that when the learning rate is high, and the model weights change the most, the model is exposed to more diverse data.
+Then, when the learning rate is lower, the model is tuned to be closer to the evaluation setting, where it consumes its previous outputs.
+
+\paragraph{Exploiting a Cache of Memory Banks:}
+If the schedule described above is followed naively during the individual frame and short chunk training, the model cannot consume its previous outputs and thus would not learn to use memory during this phase of training.
+To address this problem, we introduce a cache of previous memory banks. This cache is a mapping from the unique driving log identifier \textit{logID} to a memory bank. At the start of training, we initialize the cache with empty memory banks for all \textit{logID}s.
+On a given training iteration, we index the cache with the \textit{logID} of the current training example to obtain the memory bank.
+If available, we retrieve the memory proposals from this memory bank as described in \cref{sec:method-arch}.
+We update the retrieved memory bank at the end of the training iteration with the model outputs,
+replacing any existing entry with the same timestamp.
+Note that during training we do not limit the size of the memory bank.
+
+There are a few challenges to training with the object memory cache that we address:
+\begin{itemize}
+    \item To train these models efficiently on large datasets, we use a distributed data training scheme, meaning we split examples in the minibatch across multiple GPUs. Each GPU has a unique index called a \textit{rank}. Each rank maintains a separate cache to prevent the cache from filling up the RAM and avoid synchronization costs. To guarantee high cache hit rates, we ensure that training examples from a given \textit{logID} are always put on the same rank during training.
+    \item The cache is filled with \ourmodel{} outputs, which are inaccurate at the beginning of training. We do not want erroneous model outputs to fill the cache; otherwise, the model may not learn to trust the memory proposals. To mitigate this, we only start filling the cache (and training with memory proposals) after 2.5\% of training, after which performance is reasonable.
+    \item To make the model robust to variable latency and
+    the presence and absence of memory proposals, we randomize the target timestamps $\mathcal{T}_m$ that we retrieve memory elements for during training by randomly sampling the time stride $s_m$, and the number of target timestamps $T_m$.
+\end{itemize}
+
+\input{tables/camera.tex}
+
+\paragraph{Handling Augmentations with Memory:}
+
+Prior works~\cite{safdnet,hednet,centerpoint,leng2023lidar} find that
+data augmentations (e.g., translation, rotation, flipping, and re-scaling) are important for detection performance.
+We apply augmentations to the boxes $\mathbf{B}^{\mathrm{mem}}$ and trajectories $\mathbf{T}^{\mathrm{mem}}$ in memory proposals
+after the memory alignment step. We apply the inverse of the augmentations to $\mathbf{B}^\mathrm{ref}$ and $\mathbf{T}^\mathrm{ref}$ before storing them in the memory bank.
+
+\paragraph{Loss function:} \label{sec:learning}
+
+We optimize a multi-task objective
+$L = L_{\mathrm{rescore}}(\mathbf{C}^\mathrm{merge}) + \sum_{i=1}^I L_{\mathrm{det}}(\mathbf{B}^{\mathrm{ref}(i)}, \mathbf{C}^{\mathrm{ref}(i)}) + L_{\mathrm{for}}(\mathbf{T}^{\mathrm{ref}(i)})$,
+which is a combination of
+a rescoring loss $L_{score}$,
+a detection refinement loss $L_{det}$,
+and a forecasting refinement loss $L_{for}$, where the detection and forecasting losses are computed at
+every refinement block.
+\ben{camera ready: fix sub-scripts here}
+Following \cite{casas2024detra}, $L_{det}$ includes
+a binary focal loss for classification,
+an L1 loss for regression and an IoU loss.
+To calculate the targets for these losses,
+we first match the detections to the ground truth
+bounding boxes through bipartite matching as
+proposed in DETR~\cite{carion2020end}.
+The rescoring loss is similar, except it consists
+only of the focal loss as we are only training the multi-class scores $\mathbf{C}^\mathrm{merge}$ output by the rescoring module.
+The trajectory refinement loss is an L1 loss
+against the ground-truth trajectory, supervised only for
+true-positive detections (with IoU with a ground truth box higher than 0.5).
+See our supplementary for more details.

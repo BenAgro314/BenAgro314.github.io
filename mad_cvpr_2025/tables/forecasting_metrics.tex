@@ -1,0 +1,20 @@
+\begin{table}[t]
+    \centering
+    \footnotesize
+    \begin{tabular}{@{}lcccc@{}}
+        \toprule
+        Detector & Memory   & MR (\%) & ADE (m) & FDE (m) \\ 
+        \midrule
+        HEDNet 1f     & \xmark                   & 23.4          & 2.5     & 4.81    \\
+        \rowcolor{tablecolor}
+        HEDNet 1f     & \cmark                   & 18.1 & 0.89 & 2.05 \\ \midrule
+        HEDNet 4f     & \xmark                   & 18.4          & 0.86    & 2.06    \\
+        \rowcolor{tablecolor}
+        HEDNet 4f     & \cmark                   & \textbf{17.2} & \textbf{0.72} & \textbf{1.75} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Measuring the effect of memory on trajectory forecasting performance on the Vehicle class in the WOD validation set.
+    Metrics are computed on 5s forecasts at 0.5 Hz, at a recall threshold of 80\% with an IoU threshold of 0.5.
+    Miss rate (MR) is computed at a distance threshold of 2\;m.}
+    \label{tab:forecasting-metrics}
+\end{table}

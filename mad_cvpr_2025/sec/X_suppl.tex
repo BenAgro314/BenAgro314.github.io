@@ -1,0 +1,83 @@
+\clearpage
+\setcounter{page}{1}
+\maketitlesupplementary
+
+In this appendix, we describe additional implementation details relevant to \ourmodel{}
+including architecture, training, any implementation details for the 3D detectors,
+additional quantitative and qualitative results,
+and limitations and areas for future work.
+
+\input{sec/supp_sec/6_implementation_details.tex}
+
+
+\input{sec/supp_sec/7_additional_quantitative_results.tex}
+
+
+\input{sec/supp_sec/8_additional_qualitative_results.tex}
+
+\subsection{Limitations and Areas for Future Work}
+
+\paragraph{Trajectory Forecasting:}
+
+\ourmodel{}s trajectory forecasts for turning vehicles can be inaccurate.
+For example, in Scene \#4 of \cref{fig:supp-quali}, there is a right-turning vehicle which has inaccurate interpolated memory.
+This is because we do not use any map information in our model, and we only predict a single future trajectory for each agent.
+Works in trajectory forecasting often incorporate map information and predict multiple possible future trajectories for each agent~\cite{cui2023gorela,casas2024detra}.
+There is room for future work on bringing these improvements to \ourmodel{}.
+
+\paragraph{Using Refinement Features and BPTT:}
+
+We think that using refinement features stored in the memory in conjunction with BPTT should improve performance.
+For example, these features could store more nuanced information about object appearance and uncertainty, which
+would be relevant for deciding if current evidence from the detection proposals is similar to evidence in the memory.
+Unfortunately, we did not see improvements when using the refinement features or BPTT in our experiments (\cref{tab:more-training-ablations}),
+which leaves room for future improvements.
+
+\paragraph{Data Limitations:}
+
+We observe that on WOD and AV2, there are many cases where labels disappear, possibly due to occlusion.
+An example of this is shown in \cref{fig:labels}, where we see a group of parked vehicles at time $t$,
+but they are gone by time $t + 0.3s$, although they are stationary and in the region of interest.
+This provides confusing supervision for temporal models like \ourmodel{}, as it must learn when to recall an object or not,
+possibly based on estimated visibility.
+A dataset with labels that are temporally consistent would be beneficial for future work in temporal object detection.
+
+\paragraph{Generalization Across Base Detectors:}
+
+As discussed in \cref{sec:method-training}, currently \ourmodel{} is trained separately for each base detector.
+Developing a version of \ourmodel{} that can be trained once and generalize
+across multiple base detectors is an exciting direction for future work
+and holds promise for broader applicability.
+
+
+\begin{figure*}
+    \definecolor{gt}{HTML}{2E2E2E}
+    \definecolor{tp}{HTML}{20AEF5}
+    \definecolor{fp}{HTML}{F5F073}
+    \begin{tikzpicture}
+        % Define the distance between rows and columns
+        \def\colsep{0.5*\linewidth}
+        \pgfmathsetlengthmacro{\imw}{0.5\linewidth}
+
+        \node[draw=black,very thick,anchor=north , inner sep=0pt]  (left) at (0, 0) {\includegraphics[width=\imw, viewport=0 0 1152 1152, clip]{images/images_for_supp/161/detections_wod_viz_161_186.pdf}};
+        \node[draw=black,very thick,anchor=west , inner sep=0pt] (right) at (left.east)  {\includegraphics[width=\imw, viewport=0 0 1152 1152, clip]{images/images_for_supp/161/detections_wod_viz_161_192.pdf}};
+
+        \node[anchor=south] at (left.north) {Time $t$};
+        \node[anchor=south] at (right.north) {Time $t + 0.3s$};
+
+        \node[circle, draw=purple, minimum size=0.12*\imw*2, inner sep=0pt, anchor=center, dashed, very thick] at (left.center)   [xshift=0.12*\imw, yshift=0.38*\imw] {};
+        \node[circle, draw=purple, minimum size=0.12*\imw*2, inner sep=0pt, anchor=center, dashed, very thick]  at (right.center) [xshift=0.12*\imw, yshift=0.38*\imw] {};
+\end{tikzpicture}
+\caption{An illustration of disappearing labels, circled in \textcolor{purple}{purple}, from the WOD dataset. Labels are shown with filled boxes
+(same as \cref{fig:supp-quali,fig:supp-quali-2}).}
+% O\caption{Visualization of bounding box proposals of \ourmodel{} enhancing CenterPoint 1f~\cite{centerpoint} on the WOD validation set.
+% We threshold at the max f1 score for the detection proposals and model outputs.
+% Filled boxes are labels: \colorbox{gt}{\textcolor{white}{black}} are matched labels, \colorbox{red}{red} boxes are false negatives,
+% and dotted boxes have $< 1$ LiDAR point observation
+% Box outlines are predictions: \textcolor{tp}{\fbox{blue}} boxes are true positive proposals, and \textcolor{fp}{\fbox{yellow}} boxes are false positives.
+% Annotations which we refer to in the main text are in \textcolor{green}{green}.
+% For computing the matching boxes in visualization, we use IoU thresholds of 0.5, 0.1, and 0.1 for Veh., Ped., and Cyc., respectively.
+% % \ben{TODO: remove arrows on pedestrians in memory}
+% }
+\label{fig:labels}
+\end{figure*}

@@ -1,0 +1,11 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+In this paper, we propose \ourmodel{} --- a simple, effective, and sensor-modality-agnostic add-on for enhancing any existing
+3D object detector with long-term memory.
+To achieve this, we
+design a transformer-based model
+that uses joint detection and trajectory forecasting to populate a memory bank with spatial-temporal object trajectories.
+Our model can effectively fuse memory proposals with detection proposals by reading previous memory entries and aligning them with the current time and ego pose.
+We also propose a novel training strategy that increases data diversity while keeping the training-to-inference gap low.
+Our approach is very general --- bringing impressive improvements to a variety of LiDAR-based and camera-based detectors, and very effective --- achieving SOTA performance on Waymo Open Dataset when paired to the base detector SAFDNet 4f~\cite{safdnet}.
