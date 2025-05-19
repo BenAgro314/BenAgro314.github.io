@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1747667881.22943 "main.aux" "main.bbl" "main" 1747667882.88965 0
+["bibtex main"] 1747668301.76913 "main.aux" "main.bbl" "main" 1747668310.45606 0
   "./references.bib" 1747665530.71997 33040 c7100b65035aec508839b32154da91f9 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1747667882.67387 39302 8a1c957757a0e9df7f11b938cc45786c "pdflatex"
+  "main.aux" 1747668310.2095 39441 c64dca8dccb0259e2507a185689a8160 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1747667881.30766 "/Users/benagro/BenAgro314.github.io/masters_thesis/main.tex" "main.pdf" "main" 1747667882.88979 0
+["pdflatex"] 1747668308.87594 "/Users/benagro/BenAgro314.github.io/masters_thesis/main.tex" "main.pdf" "main" 1747668310.45623 0
   "/Users/benagro/BenAgro314.github.io/masters_thesis/main.tex" 1747631714.38024 811 1509ee1437af2201fa022857b9a6ccbe ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -333,23 +333,23 @@
   "images/images_for_supp/98/original_det_anchors_wod_viz_98_138.pdf" 1747631039.04871 367743 3d75f2be8edc58ceaa96d1489e2496cf ""
   "images/supp_quali.tex" 1747631039.00559 11658 345b4522e04c10276a4b204d850cedeb ""
   "images/supp_quali_2.tex" 1747631039.05975 12732 a3ae1efe5b2c453533844b8313b176c5 ""
-  "main.aux" 1747667882.67387 39302 8a1c957757a0e9df7f11b938cc45786c "pdflatex"
-  "main.bbl" 1747667881.30457 23361 0a0fa8a7b80635b52f81b6a4b265f4ab "bibtex main"
-  "main.brf" 1747667882.67615 7227 f040306f1ad289a877390ab64265591a "pdflatex"
-  "main.out" 1747667882.676 7997 496a7c3c4260f45a87ec6a11a08966d4 "pdflatex"
+  "main.aux" 1747668310.2095 39441 c64dca8dccb0259e2507a185689a8160 "pdflatex"
+  "main.bbl" 1747668301.8417 23361 0a0fa8a7b80635b52f81b6a4b265f4ab "bibtex main"
+  "main.brf" 1747668310.21175 7227 f040306f1ad289a877390ab64265591a "pdflatex"
+  "main.out" 1747668310.21159 7997 496a7c3c4260f45a87ec6a11a08966d4 "pdflatex"
   "main.tex" 1747631714.38024 811 1509ee1437af2201fa022857b9a6ccbe ""
-  "main.toc" 1747667882.67633 4619 9fcb1e6b6da5dc5574ac573d6a170dfe "pdflatex"
+  "main.toc" 1747668310.21194 4619 9fcb1e6b6da5dc5574ac573d6a170dfe "pdflatex"
   "preamble.tex" 1747666773.18742 1962 f9dbf4de4a61555f892e23be1c660f02 ""
   "sec/0_abstract.tex" 1747630471.92965 1204 d4ce8d032e43c9d5718472c3dfa2c160 ""
-  "sec/1_intro.tex" 1747666390.6102 4944 2a9a3086c7ce32aaacfc351557c3217a ""
+  "sec/1_intro.tex" 1747668308.68017 5138 49495f1ce1370e600006d133f8d2f63d ""
   "sec/2_related.tex" 1747666845.19086 6505 d6552dd79306e704bf14e294749a044b ""
   "sec/3.1_method.tex" 1747666694.29323 11399 5c309a11c025ac3904409a0ed9f0a9e6 ""
   "sec/3.2_method.tex" 1747666743.93996 7671 5bd7740c50162f078f2389befba056e4 ""
-  "sec/4_experiments.tex" 1747667860.48465 8646 ccba2161cd7a054b6149056e447583c5 ""
+  "sec/4_experiments.tex" 1747668176.10046 8668 75e4a7df1b44bc48941ed08b26adb874 ""
   "sec/5_conclusion.tex" 1747667274.1072 5383 af505861e100b9434f8a9c1014e33444 ""
   "sec/ack.tex" 1747666010.70658 760 766e9038da511bf460d39f80d4e0ee97 ""
   "sec/dedication.tex" 1747665286.9015 76 a4591e00005610a8244be459b3bfe98f ""
-  "sec/imp.tex" 1747667139.36886 7339 7d095ec56669f83afde11cc3e98e3f09 ""
+  "sec/imp.tex" 1747668300.01216 7335 9999fc032f45f05c478db91c4618b9c7 ""
   "sec/method.tex" 1747666939.83338 105 f049c5e34d39632a1a41435d3a228629 ""
   "sec/supp_sec/7_additional_quantitative_results.tex" 1747667879.38059 14145 63b62551aa71bfdad72fc1bde0734b52 ""
   "sec/supp_sec/8_additional_qualitative_results.tex" 1747667560.22657 2692 1200a9b8d3a792c11da9384d99661ef7 ""
