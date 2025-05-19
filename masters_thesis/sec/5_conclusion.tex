@@ -12,7 +12,7 @@ Our approach is very general --- bringing impressive improvements to a variety o
 
 \section{Future Work}
 
-\paragraph{Trajectory Forecasting:}
+\subsection{Improved Trajectory Forecasting}
 
 \ourmodel{}s trajectory forecasts for turning vehicles can be inaccurate.
 For example, in Scene \#4 of \cref{fig:supp-quali}, there is a right-turning vehicle which has inaccurate interpolated memory.
@@ -20,7 +20,7 @@ This is because we do not use any map information in our model, and we only pred
 Works in trajectory forecasting often incorporate map information and predict multiple possible future trajectories for each agent~\cite{cui2023gorela,casas2024detra}.
 There is room for future work on bringing these improvements to \ourmodel{}.
 
-\paragraph{Using Refinement Features and BPTT:}
+\subsection{Using Refinement Features and BPTT}
 
 We think that using refinement features stored in the memory in conjunction with BPTT should improve performance.
 For example, these features could store more nuanced information about object appearance and uncertainty, which
@@ -28,7 +28,7 @@ would be relevant for deciding if current evidence from the detection proposals 
 Unfortunately, we did not see improvements when using the refinement features or BPTT in our experiments (\cref{tab:more-training-ablations}),
 which leaves room for future improvements.
 
-\paragraph{Data Limitations:}
+\subsection{Data Limitations}
 
 We observe that on WOD and AV2, there are many cases where labels disappear, possibly due to occlusion.
 An example of this is shown in \cref{fig:labels}, where we see a group of parked vehicles at time $t$,
@@ -37,7 +37,7 @@ This provides confusing supervision for temporal models like \ourmodel{}, as it 
 possibly based on estimated visibility.
 A dataset with labels that are temporally consistent would be beneficial for future work in temporal object detection.
 
-\paragraph{Generalization Across Base Detectors:}
+\subsection{Generalization Across Base Detectors}
 
 As discussed in \cref{sec:method-training}, currently \ourmodel{} is trained separately for each base detector.
 Developing a version of \ourmodel{} that can be trained once and generalize
