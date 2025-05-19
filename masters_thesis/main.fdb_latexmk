@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1742013557.85724 "main.aux" "main.bbl" "main" 1742013628.24667 0
+["bibtex main"] 1742014077.13475 "main.aux" "main.bbl" "main" 1742014077.68891 0
   "./references.bib" 1742012211.56826 314 ca8dacbb1ec9faf40380ba2e642b32b7 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1742013628.09874 788 da66180b76c0f33635ba10258e0f89a2 "pdflatex"
+  "main.aux" 1742014077.43838 1524 03fa3bf464fde98cbff88a05f6ec1d29 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1742013627.88004 "/Users/benagro/BenAgro314.github.io/masters_thesis/main.tex" "main.pdf" "main" 1742013628.24675 0
-  "/Users/benagro/BenAgro314.github.io/masters_thesis/main.tex" 1742013627.70002 752 694994315e20dc536ae403861b4c8bda ""
+["pdflatex"] 1742014077.20671 "/Users/benagro/BenAgro314.github.io/masters_thesis/main.tex" "main.pdf" "main" 1742014077.68899 0
+  "/Users/benagro/BenAgro314.github.io/masters_thesis/main.tex" 1742014076.57431 995 4de2b1a10700334e2b4bf3f1eabbc3ba ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -36,10 +36,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1742013180 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "main.aux" 1742013628.09874 788 da66180b76c0f33635ba10258e0f89a2 "pdflatex"
-  "main.bbl" 1742013557.92384 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
-  "main.tex" 1742013627.70002 752 694994315e20dc536ae403861b4c8bda ""
-  "main.toc" 1742013628.099 250 8cedea63750851e788b97bf7eebfc8ef "pdflatex"
+  "main.aux" 1742014077.43838 1524 03fa3bf464fde98cbff88a05f6ec1d29 "pdflatex"
+  "main.bbl" 1742014077.20565 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
+  "main.tex" 1742014076.57431 995 4de2b1a10700334e2b4bf3f1eabbc3ba ""
+  "main.toc" 1742014077.43888 663 cf6ed01b55906d5714bf29d1bf05965c "pdflatex"
   (generated)
   "main.aux"
   "main.log"
