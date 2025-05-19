@@ -119,3 +119,7 @@ Training with shorter chunks (\cref{tab:chunk-length-comparison}.2a,3a) performs
 Including the cache helps significantly by closing the gap to evaluation but does not fully reach the long chunk performance (\cref{tab:chunk-length-comparison}.2b,3b).
 As hypothesized in \cref{sec:method-training}, there is room for improvement by training with our proposed schedule and memory bank cache (\cref{tab:chunk-length-comparison}.4b). This strategy allows \ourmodel{} to learn generalized patterns over a diverse set of examples quickly by training on short chunks (more i.i.d. data) at the beginning when the learning rate is higher while refining its understanding on long chunks (closer to the deployment setting) towards the end when the learning rate is lower.
 \Cref{tab:chunk-length-comparison}.4a shows the importance of the cache when using this training schedule; otherwise, training with small chunks is ineffective as the model would not learn to use the memory.
+
+\input{sec/supp_sec/7_additional_quantitative_results.tex}
+
+\input{sec/supp_sec/8_additional_qualitative_results.tex}
