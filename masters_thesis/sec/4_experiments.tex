@@ -11,31 +11,11 @@ Finally, we conduct thorough ablation studies to understand the architectural ch
 Refer to our supplementary for more implementation details,
 experimental results, and ablations.
 
-\paragraph{Implementation Details:}
-
-The refinement transformer uses $I = 3$ refinement blocks, and the dimension of all embeddings is $d = 128$.
-We forecast $T_f = 10$ future timestamps at stride of $s_f = 0.5\text{s}$, yielding a 5s prediction horizon.
-Unless otherwise stated, we use target timestamps of $\mathcal{T}_m = \{-0.3s, -0.6s, \dots, -2.4s\}$ (i.e., $s_m = 0.3\text{s}$, $T_m = 8$) for reading from the memory bank at inference.
-In the memory cross attention we use the nearest $k=4$ neighbors.
-Following prior works~\cite{hednet,safdnet,centerpoint}, for any detection post-processing, we use a 0.1 confidence threshold; per-class NMS IoU thresholds of $\{0.75, 0.6, 0.55\}$ for vehicles, pedestrians, and cyclists, respectively; and a top $K=500$.
-\ourmodel{} has $3.8$M parameters, while the base detectors have anywhere from $8$M (Centerpoint~\cite{centerpoint}) to $53$M (BEVMap~\cite{chang2024bevmap}) parameters.
-For each base detector, we train \ourmodel{} for 60k update steps (roughly equivalent to 6 epochs on WOD and AV2), with batch size 16.
-We use a cosine learning rate decay with a max learning rate of $8 \times 10^{-4}$,
-and a linear warm-up for the first 1000 steps, beginning with a learning
-rate of $8 \times 10^{-5}$.
-During training,
-we use a variable set of memory target timestamps
-$T_m \sim \texttt{uniform}(\{6, 7, 8, 9, 10\})$
-with a variable stride $s_m \sim \texttt{uniform}(\{0.2s, 0.3s, 0.4s\})$.
-% centerpoint: 8M
-% safdnet: 10M
-% hednet: 13M
-% fcos3d: 53M 
-% bevmap: 53M 
 
 \input{tables/leaderboard.tex}
 
-\paragraph{Metrics:}
+\section{Metrics}
+\label{sec:metrics}
 
 We report the detection metrics from the official WOD leaderboard~\cite{WOD},
 which include average precision (AP) and AP weighted
@@ -53,7 +33,12 @@ We report the macro-average over all classes if the actor class is not specified
 
 \input{tables/proposal_eval.tex}
 
-\paragraph{Augmenting off-the-shelf 3D Detectors with \ourmodel{}:}
+\section{Main Experiments}
+\label{sec:main-exp}
+
+\subsection{Augmenting off-the-shelf 3D Detectors with \ourmodel{}}
+\label{sec:aug}
+
 \cref{tab:main-table-wod} and \cref{tab:av2-cam} show the performance of \ourmodel{} applied to off-the-shelf 3D detectors on WOD and AV2, respectively.%\thomasG{I think this sentence should be at the start of the subsection}
 To show the generality of our approach, we experiment with multiple base detectors trained on different datasets and sensor modalities.
 We enhanced three LiDAR-based methods with \ourmodel{} on WOD:
@@ -73,7 +58,8 @@ These gains are largest for single-frame detectors, where the memory provides th
 The fact that the \ourmodel{}-augmented single-frame detectors are better than the multi-frame detectors clearly shows the effectiveness of our method relative to the common point aggregation approach.
 Please visit the supplementary materials for qualitative comparisons.
 
-\paragraph{Comparison against SOTA:}
+\subsection{Comparison against SOTA}
+\label{sec:sota}
 By augmenting SAFDNet 4f with \ourmodel{},
 we show in \cref{tab:full-leaderboard} that we achieve the best performance on the WOD leaderboard\footnote{\label{wod_leaderboard2}\href{https://waymo.com/open/challenges/2020/3d-detection/}{https://waymo.com/open/challenges/2020/3d-detection/} as of submission (14/11/2024)}, among all online methods that do not use ensembles or test-time augmentation.
 \Cref{tab:leaderboard} compares \ourmodel{}
@@ -81,6 +67,7 @@ to prior learned temporal fusion methods on
 the WOD validation and test set, where we achieve substantial gains.
 Please refer to our supplementary for full \cref{tab:full-leaderboard,tab:leaderboard} with metrics for all actor classes.
 
+\subsection{Ablations}
 
 \paragraph{Effect of memory proposals and memory attention:}
 We ablate the different components of our memory pipeline in \cref{tab:component-ablation}.
@@ -106,7 +93,7 @@ Each refinement block brings further gains, illustrating the strength of our pro
 
 \input{tables/schedule_table.tex}
 
-\paragraph{Training Procedure Study:}
+\section{Training Procedure Study}
 
 \Cref{tab:chunk-length-comparison} provides evidence supporting the effectiveness of our proposed training schedule.
 We first train \ourmodel{} with three different chunk sizes
@@ -120,6 +107,10 @@ Including the cache helps significantly by closing the gap to evaluation but doe
 As hypothesized in \cref{sec:method-training}, there is room for improvement by training with our proposed schedule and memory bank cache (\cref{tab:chunk-length-comparison}.4b). This strategy allows \ourmodel{} to learn generalized patterns over a diverse set of examples quickly by training on short chunks (more i.i.d. data) at the beginning when the learning rate is higher while refining its understanding on long chunks (closer to the deployment setting) towards the end when the learning rate is lower.
 \Cref{tab:chunk-length-comparison}.4a shows the importance of the cache when using this training schedule; otherwise, training with small chunks is ineffective as the model would not learn to use the memory.
 
+\ben{TODO: integrate these results throughout the paper!}
 \input{sec/supp_sec/7_additional_quantitative_results.tex}
 
 \input{sec/supp_sec/8_additional_qualitative_results.tex}
+
+
+\input{sec/imp.tex}

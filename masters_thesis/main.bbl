@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{MAD}
+Ben Agro, Sergio Casas, Patrick Wang, Thomas Gilles, and Raquel Urtasun.
+\newblock Mad: Memory-augmented detection of 3d objects.
+\newblock In {\em CVPR}, 2025.
+
 \bibitem{caesar2020nuscenes}
 Holger Caesar, Varun Bankiti, Alex~H Lang, Sourabh Vora, Venice~Erin Liong, Qiang Xu, Anush Krishnan, Yu~Pan, Giancarlo Baldan, and Oscar Beijbom.
 \newblock nuscenes: A multimodal dataset for autonomous driving.

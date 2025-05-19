@@ -1,6 +1,8 @@
 \chapter{Introduction}
 \label{sec:intro}
 
+\section{Motivation}
+
 Most self-driving vehicles (SDVs) utilize a 3D object detector to recognize and localize objects in 3D space.
 This task is challenging due to occlusion, large intra-class variability, and distant objects, which typically have limited sensor observations.
 To overcome these challenges, human drivers rely on their memory.
@@ -25,6 +27,8 @@ Other approaches associate objects in memory over time via tracking~\cite{liang2
 However, the associations from the tracker may contain mistakes that can compound over time and lead to information loss. 
 Other methods leverage attention from current detection proposals to the past sensor or object information~\cite{he2023msf,yang20213d,hou2024query}. Still, they can be challenging to scale to long histories and suffer from false negatives as the proposals refined into the final detections only come from the present time.
 
+\section{Contributions}
+
 In this paper, we present a simple and sensor-agnostic
 add-on for enhancing any existing 3D object detector with long-term memory. We refer to it as \ourmodel{} --- short for \underline{M}emory-\underline{A}ugmented \underline{D}etection, and \cref{fig:hook} illustrates the high-level idea.
 \ourmodel{} is a transformer-based model that fuses proposals from a detector with proposals from a memory bank representing past beliefs.
@@ -42,3 +46,12 @@ we use cached model outputs from previous training iterations.%we cache model ou
 
 We demonstrate the generality of our approach by enhancing existing LiDAR-based and camera-based 3D object detection networks with \ourmodel{}, and show considerable improvements over the base detectors on two large-scale datasets: Waymo Open dataset (WOD)~\cite{WOD} and  Argoverse 2 Sensor dataset (AV2)~\cite{wilson2023argoverse}.
 Notably, SAFDNet~\cite{safdnet} enhanced with \ourmodel{} achieves state-of-the-art performance on WOD for online detection methods without requiring ensembles or test-time augmentation.
+
+\section{Outline}
+
+This thesis is structured as follows: \cref{sec:related} surveys related work
+in 3D object detection and long-term temporal fusion for object detection, 
+\cref{sec:method-arch} describes our archiecture and \cref{sec:method-training}
+our training procedure, with implementation details in \cref{sec:implementation}.
+\cref{sec:experiments} benchmarks our approach against alternatives
+\ben{TODO: fill this section out when format is done}

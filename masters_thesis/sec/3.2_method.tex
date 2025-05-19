@@ -1,6 +1,6 @@
 \input{tables/main_table_wod.tex}
 
-\subsection{Training} \label{sec:method-training}
+\section{Training} \label{sec:method-training}
 
 
 We first train an off-the-shelf 3D detector following their original training strategy.
@@ -29,7 +29,7 @@ To train object memory on short chunks (or even single frames) of data while mai
 we propose to maintain a cache of memory banks across training and using it to build the memory proposals for each training example.
 Below, we detail this proposed schedule, our cache of memory banks, how we handle augmentations with memory, and our loss function.
 
-\paragraph{Training Schedule:}
+\subsection{Training Schedule}
 
 The datasets we use (WOD~\cite{WOD}, AV2~\cite{wilson2023argoverse}) organize their data into driving logs, each around 20s in duration with data captured at 10Hz,
 meaning each log has around 200 frames.
@@ -41,7 +41,7 @@ We train with a single cosine decay learning rate schedule with no resets.
 The intuition behind this is that when the learning rate is high, and the model weights change the most, the model is exposed to more diverse data.
 Then, when the learning rate is lower, the model is tuned to be closer to the evaluation setting, where it consumes its previous outputs.
 
-\paragraph{Exploiting a Cache of Memory Banks:}
+\subsection{Exploiting a Cache of Memory Banks}
 If the schedule described above is followed naively during the individual frame and short chunk training, the model cannot consume its previous outputs and thus would not learn to use memory during this phase of training.
 To address this problem, we introduce a cache of previous memory banks. This cache is a mapping from the unique driving log identifier \textit{logID} to a memory bank. At the start of training, we initialize the cache with empty memory banks for all \textit{logID}s.
 On a given training iteration, we index the cache with the \textit{logID} of the current training example to obtain the memory bank.
@@ -60,14 +60,14 @@ There are a few challenges to training with the object memory cache that we addr
 
 \input{tables/camera.tex}
 
-\paragraph{Handling Augmentations with Memory:}
+\subsection{Handling Augmentations with Memory}
 
 Prior works~\cite{safdnet,hednet,centerpoint,leng2023lidar} find that
 data augmentations (e.g., translation, rotation, flipping, and re-scaling) are important for detection performance.
 We apply augmentations to the boxes $\mathbf{B}^{\mathrm{mem}}$ and trajectories $\mathbf{T}^{\mathrm{mem}}$ in memory proposals
 after the memory alignment step. We apply the inverse of the augmentations to $\mathbf{B}^\mathrm{ref}$ and $\mathbf{T}^\mathrm{ref}$ before storing them in the memory bank.
 
-\paragraph{Loss function:} \label{sec:learning}
+\subsection{Loss function} \label{sec:learning}
 
 We optimize a multi-task objective
 $L = L_{\mathrm{rescore}}(\mathbf{C}^\mathrm{merge}) + \sum_{i=1}^I L_{\mathrm{det}}(\mathbf{B}^{\mathrm{ref}(i)}, \mathbf{C}^{\mathrm{ref}(i)}) + L_{\mathrm{for}}(\mathbf{T}^{\mathrm{ref}(i)})$,

@@ -1,49 +1,55 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Contributions}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Outline}{2}{section.1.3}%
 \contentsline {chapter}{\numberline {2}Related Work}{3}{chapter.2}%
-\contentsline {paragraph}{3D Object Detection:}{3}{section*.4}%
-\contentsline {paragraph}{Long-Term Temporal Fusion for 3D Detection:}{3}{section*.5}%
+\contentsline {section}{\numberline {2.1}3D Object Detection}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Long-Term Temporal Fusion for 3D Detection}{3}{section.2.2}%
 \contentsline {chapter}{\numberline {3}Memory Augmented 3D Object Detection}{5}{chapter.3}%
-\contentsline {subsection}{\numberline {3.0.1}Model}{5}{subsection.3.0.1}%
-\contentsline {paragraph}{Proposal representation:}{6}{section*.6}%
-\contentsline {paragraph}{Memory Bank and Retrieval:}{6}{section*.7}%
-\contentsline {paragraph}{Extracting Memory Proposals:}{6}{section*.8}%
-\contentsline {paragraph}{Proposal Merging:}{6}{section*.9}%
-\contentsline {paragraph}{Refinement Transformer:}{7}{section*.10}%
-\contentsline {paragraph}{Memory Bank Update:}{7}{section*.11}%
-\contentsline {subsection}{\numberline {3.0.2}Training}{7}{subsection.3.0.2}%
-\contentsline {paragraph}{Training Schedule:}{8}{section*.12}%
-\contentsline {paragraph}{Exploiting a Cache of Memory Banks:}{9}{section*.13}%
-\contentsline {paragraph}{Handling Augmentations with Memory:}{9}{section*.14}%
-\contentsline {paragraph}{Loss function:}{9}{section*.15}%
-\contentsline {section}{\numberline {3.1}Additional Implementation Details}{10}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Architecture}{10}{subsection.3.1.1}%
-\contentsline {paragraph}{Trajectory Forecasting Header:}{10}{section*.16}%
-\contentsline {subsection}{\numberline {3.1.2}Training}{10}{subsection.3.1.2}%
-\contentsline {paragraph}{Augmentations:}{10}{section*.17}%
-\contentsline {paragraph}{Loss Functions:}{10}{section*.18}%
-\contentsline {subsection}{\numberline {3.1.3}3D Detector Implementation Details}{11}{subsection.3.1.3}%
-\contentsline {chapter}{\numberline {4}Experiments}{12}{chapter.4}%
-\contentsline {paragraph}{Implementation Details:}{12}{section*.19}%
-\contentsline {paragraph}{Metrics:}{12}{section*.20}%
-\contentsline {paragraph}{Augmenting off-the-shelf 3D Detectors with MAD{}:}{13}{section*.21}%
-\contentsline {paragraph}{Comparison against SOTA:}{13}{section*.22}%
-\contentsline {paragraph}{Effect of memory proposals and memory attention:}{14}{section*.23}%
-\contentsline {paragraph}{Effect of forecasting:}{14}{section*.24}%
-\contentsline {paragraph}{Effect of learned proposal merging:}{14}{section*.25}%
-\contentsline {paragraph}{Training Procedure Study:}{14}{section*.26}%
-\contentsline {section}{\numberline {4.1}Additional Quantitative Results}{15}{section.4.1}%
-\contentsline {paragraph}{Full Leaderboard Results:}{15}{section*.27}%
-\contentsline {paragraph}{Performance at different memory horizons:}{17}{section*.28}%
-\contentsline {paragraph}{Performance across memory dropping rates:}{17}{figure.4.2}%
-\contentsline {paragraph}{Forecasting Results:}{17}{table.4.7}%
-\contentsline {paragraph}{Additional training design experiments:}{18}{table.4.8}%
-\contentsline {paragraph}{Effect of self-attention:}{19}{table.4.9}%
-\contentsline {paragraph}{Computational Overhead:}{19}{section*.33}%
-\contentsline {paragraph}{Performance on Stationary Objects}{19}{section*.34}%
-\contentsline {section}{\numberline {4.2}Additional Qualitative Results:}{20}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Conclusions and Future Work}{23}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Limitations and Areas for Future Work}{23}{section.5.1}%
-\contentsline {paragraph}{Trajectory Forecasting:}{23}{section*.35}%
-\contentsline {paragraph}{Using Refinement Features and BPTT:}{23}{section*.36}%
-\contentsline {paragraph}{Data Limitations:}{23}{section*.37}%
-\contentsline {paragraph}{Generalization Across Base Detectors:}{24}{section*.38}%
+\contentsline {section}{\numberline {3.1}Model}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Proposal representation}{6}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Memory Bank and Retrieval}{6}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Extracting Memory Proposals}{6}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Proposal Merging}{6}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Refinement Transformer}{7}{subsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.1.6}Memory Bank Update}{7}{subsection.3.1.6}%
+\contentsline {section}{\numberline {3.2}Training}{8}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Training Schedule}{9}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Exploiting a Cache of Memory Banks}{9}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Handling Augmentations with Memory}{9}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Loss function}{10}{subsection.3.2.4}%
+\contentsline {chapter}{\numberline {4}Experiments}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Metrics}{11}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Main Experiments}{12}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Augmenting off-the-shelf 3D Detectors with MAD{}}{12}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Comparison against SOTA}{12}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Ablations}{13}{subsection.4.2.3}%
+\contentsline {paragraph}{Effect of memory proposals and memory attention:}{13}{section*.4}%
+\contentsline {paragraph}{Effect of forecasting:}{13}{section*.5}%
+\contentsline {paragraph}{Effect of learned proposal merging:}{13}{section*.6}%
+\contentsline {section}{\numberline {4.3}Training Procedure Study}{13}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Additional Quantitative Results}{14}{section.4.4}%
+\contentsline {paragraph}{Full Leaderboard Results:}{14}{section*.7}%
+\contentsline {paragraph}{Performance at different memory horizons:}{15}{section*.8}%
+\contentsline {paragraph}{Performance across memory dropping rates:}{15}{figure.4.2}%
+\contentsline {paragraph}{Forecasting Results:}{16}{table.4.7}%
+\contentsline {paragraph}{Additional training design experiments:}{16}{table.4.8}%
+\contentsline {paragraph}{Effect of self-attention:}{18}{table.4.9}%
+\contentsline {paragraph}{Computational Overhead:}{18}{section*.13}%
+\contentsline {paragraph}{Performance on Stationary Objects}{18}{section*.14}%
+\contentsline {section}{\numberline {4.5}Additional Qualitative Results:}{18}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Implementation Details}{19}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Architecture}{19}{subsection.4.6.1}%
+\contentsline {paragraph}{Refinement Transformer}{19}{section*.15}%
+\contentsline {paragraph}{Trajectory Forecasting Header:}{19}{section*.16}%
+\contentsline {subsection}{\numberline {4.6.2}Training}{19}{subsection.4.6.2}%
+\contentsline {paragraph}{Scheduling:}{19}{section*.17}%
+\contentsline {paragraph}{Augmentations:}{19}{section*.18}%
+\contentsline {paragraph}{Loss Functions:}{22}{section*.19}%
+\contentsline {subsection}{\numberline {4.6.3}3D Detector Implementation Details}{22}{subsection.4.6.3}%
+\contentsline {chapter}{\numberline {5}Conclusions}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Future Work}{23}{section.5.1}%
+\contentsline {paragraph}{Trajectory Forecasting:}{23}{section*.20}%
+\contentsline {paragraph}{Using Refinement Features and BPTT:}{23}{section*.21}%
+\contentsline {paragraph}{Data Limitations:}{23}{section*.22}%
+\contentsline {paragraph}{Generalization Across Base Detectors:}{24}{section*.23}%

@@ -1,7 +1,7 @@
 \chapter{Related Work}
 \label{sec:related}
 
-\paragraph{3D Object Detection:}
+\section{3D Object Detection}
 
 We can categorize 3D detectors by their input modality (e.g., LiDAR, camera), scene representation (e.g., point clouds, voxels), and number of stages (e.g., single-stage or multi-stage)
 
@@ -30,7 +30,7 @@ and iteratively refine the bounding boxes.
 \ourmodel{} is a sensor-modality-agnostic module that we can add to any detector as a subsequent refinement stage.
 In our work we utilize CenterPoint~\cite{centerpoint}, SAFDNet~\cite{safdnet}, HEDNet~\cite{hednet}, FCOS3D~\cite{wang2021fcos3d}, and BEVMap~\cite{chang2024bevmap} as proposal networks.
 
-\paragraph{Long-Term Temporal Fusion for 3D Detection:}
+\section{Long-Term Temporal Fusion for 3D Detection}
 
 Various works attempt to solve the shortcomings of sensor aggregation by learning to use multiple seconds of sensor evidence to improve object detection.
 

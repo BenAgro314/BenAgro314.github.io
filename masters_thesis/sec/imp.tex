@@ -1,13 +1,24 @@
-\section{Additional Implementation Details}
-
-In this section, we describe some additional implementation details of \ourmodel{} ---
-its architecture and training ---
-and implementation details for our off-the-shelf 3D detectors.
+\section{Implementation Details}
+\label{sec:exp-imp}
 
 \subsection{Architecture}
 
-\paragraph{Trajectory Forecasting Header:}
+\paragraph{Refinement Transformer}
 
+The refinement transformer uses $I = 3$ refinement blocks, and the dimension of all embeddings is $d = 128$.
+We forecast $T_f = 10$ future timestamps at stride of $s_f = 0.5\text{s}$, yielding a 5s prediction horizon.
+Unless otherwise stated, we use target timestamps of $\mathcal{T}_m = \{-0.3s, -0.6s, \dots, -2.4s\}$ (i.e., $s_m = 0.3\text{s}$, $T_m = 8$) for reading from the memory bank at inference.
+In the memory cross attention we use the nearest $k=4$ neighbors.
+Following prior works~\cite{hednet,safdnet,centerpoint}, for any detection post-processing, we use a 0.1 confidence threshold; per-class NMS IoU thresholds of $\{0.75, 0.6, 0.55\}$ for vehicles, pedestrians, and cyclists, respectively; and a top $K=500$.
+\ourmodel{} has $3.8$M parameters, while the base detectors have anywhere from $8$M (Centerpoint~\cite{centerpoint}) to $53$M (BEVMap~\cite{chang2024bevmap}) parameters.
+% centerpoint: 8M
+% safdnet: 10M
+% hednet: 13M
+% fcos3d: 53M 
+% bevmap: 53M 
+
+
+\paragraph{Trajectory Forecasting Header:}
 
 % Inspired by \cite{casas2024detra} and \cite{chitta2022transfuser},
 Each refinement block predicts trajectory forecasts from the refinement features $\mathbf{Q}^{\mathrm{ref}(i)} \in \mathbb{R}^{N^\mathrm{ref} \times T_f + 1 \times d}$ using a
@@ -22,6 +33,17 @@ Note while the GRU sequence length is $T_f + 1$, we only use the last $T_f$ outp
 
 
 \subsection{Training}
+
+\paragraph{Scheduling:}
+
+For each base detector, we train \ourmodel{} for 60k update steps (roughly equivalent to 6 epochs on WOD and AV2), with batch size 16.
+We use a cosine learning rate decay with a max learning rate of $8 \times 10^{-4}$,
+and a linear warm-up for the first 1000 steps, beginning with a learning
+rate of $8 \times 10^{-5}$.
+During training,
+we use a variable set of memory target timestamps
+$T_m \sim \texttt{uniform}(\{6, 7, 8, 9, 10\})$
+with a variable stride $s_m \sim \texttt{uniform}(\{0.2s, 0.3s, 0.4s\})$.
 
 \paragraph{Augmentations:}
 
