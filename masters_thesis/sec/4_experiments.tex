@@ -8,11 +8,7 @@ from three perspectives.
 First, we add \ourmodel{} to existing 3D detectors, showing significant improvements. We use both LiDAR-based and camera-based detectors on WOD~\cite{WOD} and AV2~\cite{wilson2023argoverse}, respectively.
 Second, we compare the best version of \ourmodel{} to the state-of-the-art methods on WOD, setting a new record on the WOD leaderboard among online methods without ensembles or test-time augmentation and outperforming prior learned temporal fusion methods by a large margin.
 Finally, we conduct thorough ablation studies to understand the architectural choices that make \ourmodel{} effective and the impact of different training procedures.
-Refer to our supplementary for more implementation details,
-experimental results, and ablations.
-
-
-% \input{tables/leaderboard.tex}
+See \cref{sec:imp} for more implementation details.
 
 \input{tables/full_leaderboard_all_classes.tex}
 
@@ -55,12 +51,12 @@ we cannot simply re-use pre-trained models).
 We also enhance two camera-based methods on AV2, FCOS3D~\cite{wang2021fcos3d}
 and BEVMap~\cite{chang2024bevmap},
 which takes the most recent image from the front camera as input.
-We use the official implementation for both FCOS3D~\cite{wang2021fcos3d} and BEVMap~\cite{chang2024bevmap}. Training details are in the supplementary.
+We use the official implementation for both FCOS3D~\cite{wang2021fcos3d} and BEVMap~\cite{chang2024bevmap}. 
+See \cref{sec:off-the-shelf-imp} for implementation details.
 
 Our model brings significant improvements to all detectors on both datasets.
 These gains are largest for single-frame detectors, where the memory provides the most additional information.
 The fact that the \ourmodel{}-augmented single-frame detectors are better than the multi-frame detectors clearly shows the effectiveness of our method relative to the common point aggregation approach.
-Please visit the supplementary materials for qualitative comparisons.
 
 \subsection{Comparison against SOTA}
 \label{sec:sota}
@@ -69,7 +65,6 @@ we show in \cref{tab:full-leaderboard-all-classes} that we achieve the best perf
 \Cref{tab:leaderboard-all-classes} compares \ourmodel{}
 to prior learned temporal fusion methods on
 the WOD validation and test set, where we achieve substantial gains.
-% Please refer to our supplementary for full \cref{tab:full-leaderboard,tab:leaderboard} with metrics for all actor classes.
 
 \subsection{Ablations}
 \label{sec:ablations}

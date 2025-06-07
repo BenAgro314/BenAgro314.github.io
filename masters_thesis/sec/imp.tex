@@ -56,36 +56,7 @@ occurring with equal probability.
 We do not use any ground-truth sampling~\cite{yan2018second} because
 it is difficult to make consistent and realistic over time and thus incompatible with memory training.
 
-
-\paragraph{Loss Functions:}
-
-Recall our loss function described in \cref{sec:method-training},
-\begin{footnotesize}
-\begin{align}
-L = L_{\mathrm{rescore}}(\mathbf{C}^\mathrm{merge}) + \sum_{i=1}^I L_{\mathrm{det}}(\mathbf{B}^{\mathrm{ref}(i)}, \mathbf{C}^{\mathrm{ref}(i)}) + L_{\mathrm{for}}(\mathbf{T}^{\mathrm{ref}(i)}),
-\end{align}
-\end{footnotesize}
-which is a combination of
-a rescoring loss $L_\mathrm{rescore}$,
-a detection refinement loss $L_\mathrm{det}$,
-and a forecasting refinement loss $L_\mathrm{for}$, where the detection and forecasting losses are computed at every refinement block.
-For brevity, in the above formula we omit the labels in the inputs to the above loss functions.
-The labels consist of the bounding boxes for $L_\mathrm{rescore}$ and $L_\mathrm{det}$,
-and the ground truth future trajectories for $L_\mathrm{for}$.
-% \sergio{I think this last sentence is a bit confusing. Should we say we just omit the labels instead of the inputs?}
-
-Our detection refinement loss $L_\textrm{det}(\mathbf{B}^{\mathrm{ref}(i)}, \mathbf{C}^{\mathrm{ref}(i)})$,
-includes a binary focal loss $L_\textrm{det}^\textrm{cls}$ for classification,
-and an L1 loss $L_\textrm{det}^\textrm{L1}$ and IoU loss $L_\textrm{det}^\textrm{IoU}$ to regress
-the bounding box parameters: $L_\textrm{det} = \lambda_\mathrm{cls} L_\textrm{det}^\textrm{cls} + \lambda_\mathrm{L1} L_\textrm{det}^\textrm{L1} + \lambda_\mathrm{IoU} L_\textrm{det}^\textrm{IoU}$.
-For $L_\textrm{det}^\textrm{cls}$ we use focal loss parameters $\alpha = 0.5, \gamma = 2.0$.
-We use loss weightings of $\lambda_\mathrm{cls} = 1.0$, $\lambda_\mathrm{L1} = 0.1$, and $\lambda_\mathrm{IoU} = 4.0$.
-To calculate the targets for these losses, we first match the detections to the ground truth bounding boxes through bipartite matching as proposed in DETR~\cite{carion2020end}.
-We use the same costs for bipartite matching as in DETR except that we omit the L1 component of the box cost, and use 3D IoU instead of 2D IoU.
-
-The rescoring loss $L_\mathrm{rescore}$ is the same as the detection refinement loss described above but without regression $\lambda_{\mathrm{L1}} = \lambda_{\mathrm{IoU}} = 0$.
-
-\subsection{3D Detector Implementation Details}
+\subsection{3D Detector Implementation Details} \label{sec:off-the-shelf-imp}
 
 We use the official implementations for all 3D detectors in our experiments:
 single stage CenterPoint~\cite{centerpoint}\footnote{\href{https://github.com/tianweiy/CenterPoint}{https://github.com/tianweiy/CenterPoint}},

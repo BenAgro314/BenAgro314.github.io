@@ -44,7 +44,6 @@
 \contentsline {subsection}{\numberline {4.6.2}Training}{19}{subsection.4.6.2}%
 \contentsline {paragraph}{Scheduling:}{19}{section*.27}%
 \contentsline {paragraph}{Augmentations:}{22}{section*.28}%
-\contentsline {paragraph}{Loss Functions:}{22}{section*.29}%
 \contentsline {subsection}{\numberline {4.6.3}3D Detector Implementation Details}{22}{subsection.4.6.3}%
 \contentsline {chapter}{\numberline {5}Conclusions}{23}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Future Work}{23}{section.5.1}%

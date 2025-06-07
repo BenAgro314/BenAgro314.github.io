@@ -47,12 +47,12 @@
 \backcite {ngiam2021scene,casas2024detra}{{7}{3.1.5}{subsection.3.1.5}}
 \backcite {casas2024detra}{{7}{3.1.5}{subsection.3.1.5}}
 \backcite {cho2014learning}{{7}{3.1.5}{subsection.3.1.5}}
-\backcite {centerpoint}{{8}{\caption@xref {??}{ on input line 9}}{table.caption.6}}
-\backcite {centerpoint}{{8}{\caption@xref {??}{ on input line 12}}{table.caption.6}}
-\backcite {hednet}{{8}{\caption@xref {??}{ on input line 15}}{table.caption.6}}
-\backcite {hednet}{{8}{\caption@xref {??}{ on input line 18}}{table.caption.6}}
-\backcite {safdnet}{{8}{\caption@xref {??}{ on input line 21}}{table.caption.6}}
-\backcite {safdnet}{{8}{\caption@xref {??}{ on input line 24}}{table.caption.6}}
+\backcite {centerpoint}{{8}{\caption@xref {??}{ on input line 10}}{table.caption.6}}
+\backcite {centerpoint}{{8}{\caption@xref {??}{ on input line 13}}{table.caption.6}}
+\backcite {hednet}{{8}{\caption@xref {??}{ on input line 16}}{table.caption.6}}
+\backcite {hednet}{{8}{\caption@xref {??}{ on input line 19}}{table.caption.6}}
+\backcite {safdnet}{{8}{\caption@xref {??}{ on input line 22}}{table.caption.6}}
+\backcite {safdnet}{{8}{\caption@xref {??}{ on input line 25}}{table.caption.6}}
 \backcite {kiefer1952stochastic,robbins1951stochastic}{{8}{3.2}{section.3.2}}
 \backcite {he2023lef,li2023modar,huang2024ptt,he2023msf}{{8}{3.2}{section.3.2}}
 \backcite {WOD}{{9}{3.2.1}{subsection.3.2.1}}
@@ -104,7 +104,6 @@
 \backcite {centerpoint}{{21}{4.4}{figure.caption.24}}
 \backcite {safdnet,hednet,wang2023dsvt}{{22}{4.6.2}{section*.28}}
 \backcite {yan2018second}{{22}{4.6.2}{section*.28}}
-\backcite {carion2020end}{{22}{4.6.2}{equation.4.1}}
 \backcite {centerpoint}{{22}{4.6.3}{subsection.4.6.3}}
 \backcite {hednet}{{22}{4.6.3}{subsection.4.6.3}}
 \backcite {safdnet}{{22}{4.6.3}{subsection.4.6.3}}

@@ -217,12 +217,12 @@
 \citation{he2023msf}
 \citation{WOD}
 \citation{wilson2023argoverse}
-\@writefile{brf}{\backcite{centerpoint}{{8}{\caption@xref {??}{ on input line 9}}{table.caption.6}}}
-\@writefile{brf}{\backcite{centerpoint}{{8}{\caption@xref {??}{ on input line 12}}{table.caption.6}}}
-\@writefile{brf}{\backcite{hednet}{{8}{\caption@xref {??}{ on input line 15}}{table.caption.6}}}
-\@writefile{brf}{\backcite{hednet}{{8}{\caption@xref {??}{ on input line 18}}{table.caption.6}}}
-\@writefile{brf}{\backcite{safdnet}{{8}{\caption@xref {??}{ on input line 21}}{table.caption.6}}}
-\@writefile{brf}{\backcite{safdnet}{{8}{\caption@xref {??}{ on input line 24}}{table.caption.6}}}
+\@writefile{brf}{\backcite{centerpoint}{{8}{\caption@xref {??}{ on input line 10}}{table.caption.6}}}
+\@writefile{brf}{\backcite{centerpoint}{{8}{\caption@xref {??}{ on input line 13}}{table.caption.6}}}
+\@writefile{brf}{\backcite{hednet}{{8}{\caption@xref {??}{ on input line 16}}{table.caption.6}}}
+\@writefile{brf}{\backcite{hednet}{{8}{\caption@xref {??}{ on input line 19}}{table.caption.6}}}
+\@writefile{brf}{\backcite{safdnet}{{8}{\caption@xref {??}{ on input line 22}}{table.caption.6}}}
+\@writefile{brf}{\backcite{safdnet}{{8}{\caption@xref {??}{ on input line 25}}{table.caption.6}}}
 \@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces  Comparing the performance of various off-the-shelf LiDAR object detectors with and without MAD{} on the WOD validation set. Base detector results are reproduced using official code. MAD{} consistently boosts the performance of all detectors across all metrics. }}{8}{table.caption.6}\protected@file@percent }
 \newlabel{tab:main-table-wod}{{3.1}{8}{Comparing the performance of various off-the-shelf LiDAR object detectors with and without \ourmodel {} on the WOD validation set. Base detector results are reproduced using official code. \ourmodel {} consistently boosts the performance of all detectors across all metrics}{table.caption.6}{}}
 \newlabel{tab:main-table-wod@cref}{{[table][1][3]3.1}{[1][7][]8}{}{}{}}
@@ -237,14 +237,14 @@
 \citation{hednet}
 \citation{centerpoint}
 \citation{leng2023lidar}
-\citation{casas2024detra}
-\citation{carion2020end}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Training Schedule}{9}{subsection.3.2.1}\protected@file@percent }
 \@writefile{brf}{\backcite{WOD}{{9}{3.2.1}{subsection.3.2.1}}}
 \@writefile{brf}{\backcite{wilson2023argoverse}{{9}{3.2.1}{subsection.3.2.1}}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Exploiting a Cache of Memory Banks}{9}{subsection.3.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Handling Augmentations with Memory}{9}{subsection.3.2.3}\protected@file@percent }
 \@writefile{brf}{\backcite{safdnet,hednet,centerpoint,leng2023lidar}{{9}{3.2.3}{subsection.3.2.3}}}
+\citation{casas2024detra}
+\citation{carion2020end}
 \@writefile{brf}{\backcite{wang2021fcos3d}{{10}{\caption@xref {??}{ on input line 10}}{table.caption.7}}}
 \@writefile{brf}{\backcite{chang2024bevmap}{{10}{\caption@xref {??}{ on input line 13}}{table.caption.7}}}
 \@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Adding MAD{} to camera-based 3D detectors on AV2.}}{10}{table.caption.7}\protected@file@percent }
@@ -438,7 +438,6 @@
 \@writefile{brf}{\backcite{centerpoint}{{21}{4.4}{figure.caption.24}}}
 \newlabel{fig:supp-quali-2}{{4.4}{21}{Visualization of bounding box proposals of \ourmodel {} enhancing CenterPoint 1f~\cite {centerpoint} on the WOD validation set. We threshold at the max f1 score for the detection proposals and model outputs. Filled boxes are labels: \colorbox {gt}{\textcolor {white}{black}} are matched labels, \colorbox {red}{red} boxes are false negatives, and dotted boxes have $< 1$ LiDAR point observation Box outlines are predictions: \textcolor {tp}{\fbox {blue}} boxes are true positive proposals, and \textcolor {fp}{\fbox {yellow}} boxes are false positives. Annotations which we refer to in the main text are in \textcolor {green}{green}. For computing the matching boxes in visualization, we use IoU thresholds of 0.5, 0.1, and 0.1 for Veh., Ped., and Cyc., respectively}{figure.caption.24}{}}
 \newlabel{fig:supp-quali-2@cref}{{[figure][4][4]4.4}{[1][19][]21}{}{}{}}
-\citation{carion2020end}
 \citation{centerpoint}
 \citation{hednet}
 \citation{safdnet}
@@ -454,9 +453,9 @@
 \@writefile{toc}{\contentsline {paragraph}{Augmentations:}{22}{section*.28}\protected@file@percent }
 \@writefile{brf}{\backcite{safdnet,hednet,wang2023dsvt}{{22}{4.6.2}{section*.28}}}
 \@writefile{brf}{\backcite{yan2018second}{{22}{4.6.2}{section*.28}}}
-\@writefile{toc}{\contentsline {paragraph}{Loss Functions:}{22}{section*.29}\protected@file@percent }
-\@writefile{brf}{\backcite{carion2020end}{{22}{4.6.2}{equation.4.1}}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.6.3}3D Detector Implementation Details}{22}{subsection.4.6.3}\protected@file@percent }
+\newlabel{sec:off-the-shelf-imp}{{4.6.3}{22}{3D Detector Implementation Details}{subsection.4.6.3}{}}
+\newlabel{sec:off-the-shelf-imp@cref}{{[subsection][3][4,6]4.6.3}{[1][22][]22}{}{}{}}
 \@writefile{brf}{\backcite{centerpoint}{{22}{4.6.3}{subsection.4.6.3}}}
 \@writefile{brf}{\backcite{hednet}{{22}{4.6.3}{subsection.4.6.3}}}
 \@writefile{brf}{\backcite{safdnet}{{22}{4.6.3}{subsection.4.6.3}}}
@@ -482,8 +481,8 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Improved Trajectory Forecasting}{23}{subsection.5.1.1}\protected@file@percent }
 \@writefile{brf}{\backcite{cui2023gorela,casas2024detra}{{23}{5.1.1}{subsection.5.1.1}}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Using Refinement Features and BPTT}{23}{subsection.5.1.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces An illustration of disappearing labels, circled in \textcolor {purple}{purple}, from the WOD dataset. Labels are shown with filled boxes (same as \cref  {fig:supp-quali,fig:supp-quali-2}).}}{24}{figure.caption.30}\protected@file@percent }
-\newlabel{fig:labels}{{5.1}{24}{An illustration of disappearing labels, circled in \textcolor {purple}{purple}, from the WOD dataset. Labels are shown with filled boxes (same as \cref {fig:supp-quali,fig:supp-quali-2})}{figure.caption.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces An illustration of disappearing labels, circled in \textcolor {purple}{purple}, from the WOD dataset. Labels are shown with filled boxes (same as \cref  {fig:supp-quali,fig:supp-quali-2}).}}{24}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:labels}{{5.1}{24}{An illustration of disappearing labels, circled in \textcolor {purple}{purple}, from the WOD dataset. Labels are shown with filled boxes (same as \cref {fig:supp-quali,fig:supp-quali-2})}{figure.caption.29}{}}
 \newlabel{fig:labels@cref}{{[figure][1][5]5.1}{[1][24][]24}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Data Limitations}{24}{subsection.5.1.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1.4}Generalization Across Base Detectors}{24}{subsection.5.1.4}\protected@file@percent }

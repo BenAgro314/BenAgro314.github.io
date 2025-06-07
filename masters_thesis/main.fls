@@ -538,10 +538,10 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT ./tables/camera.tex
 INPUT ./tables/camera.tex
 INPUT tables/camera.tex
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT ./sec/4_experiments.tex
 INPUT ./sec/4_experiments.tex
 INPUT sec/4_experiments.tex
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT ./tables/full_leaderboard_all_classes.tex
 INPUT ./tables/full_leaderboard_all_classes.tex
 INPUT tables/full_leaderboard_all_classes.tex

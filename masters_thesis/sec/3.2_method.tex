@@ -2,8 +2,7 @@
 
 \section{Training} \label{sec:method-training}
 
-
-We first train an off-the-shelf 3D detector following their original training strategy.
+We first train an off-the-shelf 3D detector following training strategy of the original method.
 This stage can be omitted if a pre-trained 3D detector is available.
 Then, we train all the parameters in \ourmodel{} as a subsequent stage,
 with the 3D detector weights frozen.
@@ -69,24 +68,19 @@ after the memory alignment step. We apply the inverse of the augmentations to $\
 
 \subsection{Loss function} \label{sec:learning}
 
-We optimize a multi-task objective
-$L = L_{\mathrm{rescore}}(\mathbf{C}^\mathrm{merge}) + \sum_{i=1}^I L_{\mathrm{det}}(\mathbf{B}^{\mathrm{ref}(i)}, \mathbf{C}^{\mathrm{ref}(i)}) + L_{\mathrm{for}}(\mathbf{T}^{\mathrm{ref}(i)})$,
-which is a combination of
-a rescoring loss $L_{score}$,
-a detection refinement loss $L_{det}$,
-and a forecasting refinement loss $L_{for}$, where the detection and forecasting losses are computed at
-every refinement block.
-\ben{camera ready: fix sub-scripts here}
-Following \cite{casas2024detra}, $L_{det}$ includes
-a binary focal loss for classification,
-an L1 loss for regression and an IoU loss.
-To calculate the targets for these losses,
-we first match the detections to the ground truth
-bounding boxes through bipartite matching as
-proposed in DETR~\cite{carion2020end}.
-The rescoring loss is similar, except it consists
-only of the focal loss as we are only training the multi-class scores $\mathbf{C}^\mathrm{merge}$ output by the rescoring module.
-The trajectory refinement loss is an L1 loss
-against the ground-truth trajectory, supervised only for
-true-positive detections (with IoU with a ground truth box higher than 0.5).
-See our supplementary for more details.
+We optimize the following multi‐task objective:
+\[
+  L = L_{\mathrm{rescore}}(\mathbf{C}^\mathrm{merge})
+    + \sum_{i=1}^I \Bigl[
+        L_{\mathrm{det}}(\mathbf{B}^{\mathrm{ref}(i)}, \mathbf{C}^{\mathrm{ref}(i)})
+        + L_{\mathrm{for}}(\mathbf{T}^{\mathrm{ref}(i)})
+      \Bigr],
+\]
+which combines a rescoring loss \(L_{\mathrm{rescore}}\), a detection‐refinement loss \(L_{\mathrm{det}}\), and a forecasting‐refinement loss \(L_{\mathrm{for}}\), each computed at every refinement block. For brevity we omit the explicit ground‐truth labels in the notation: the inputs to \(L_{\mathrm{rescore}}\) and \(L_{\mathrm{det}}\) assume matched bounding‐box targets, while \(L_{\mathrm{for}}\) uses the ground‐truth future trajectories. Following~\cite{casas2024detra}, the detection loss
+\[
+  L_{\mathrm{det}}(\mathbf{B},\mathbf{C})
+    = \lambda_{\mathrm{cls}}\,L_{\mathrm{det}}^{\mathrm{cls}}
+    + \lambda_{\mathrm{L1}}\,L_{\mathrm{det}}^{\mathrm{L1}}
+    + \lambda_{\mathrm{IoU}}\,L_{\mathrm{det}}^{\mathrm{IoU}},
+\]
+comprises a binary focal‐classification term \(L_{\mathrm{det}}^{\mathrm{cls}}\) (with \(\alpha=0.5,\gamma=2\)) plus an L1 regression term and an IoU regression term (we set \(\lambda_{\mathrm{cls}}=1.0\), \(\lambda_{\mathrm{L1}}=0.1\), \(\lambda_{\mathrm{IoU}}=4.0\)). Targets are defined via DETR’s bipartite matching~\cite{carion2020end}, using classification and 3D‐IoU costs (omitting DETR’s L1 cost). The rescoring loss \(L_{\mathrm{rescore}}\) is identical to \(L_{\mathrm{det}}\) but with \(\lambda_{\mathrm{L1}}=\lambda_{\mathrm{IoU}}=0\), training only the multi‐class scores \(\mathbf{C}^\mathrm{merge}\). Finally, the trajectory loss \(L_{\mathrm{for}}\) is an L1 distance against the ground‐truth future path, applied only to true‐positive detections.
