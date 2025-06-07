@@ -549,6 +549,8 @@ INPUT ./tables/leaderboard_all_classes.tex
 INPUT ./tables/leaderboard_all_classes.tex
 INPUT tables/leaderboard_all_classes.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT ./tables/component_ablation.tex
 INPUT ./tables/component_ablation.tex
 INPUT tables/component_ablation.tex
@@ -556,8 +558,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm
 INPUT ./tables/proposal_eval.tex
 INPUT ./tables/proposal_eval.tex
 INPUT tables/proposal_eval.tex
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT ./tables/schedule_table.tex
 INPUT ./tables/schedule_table.tex
 INPUT tables/schedule_table.tex
@@ -577,11 +577,11 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/courier/pcrr7t.vf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
 INPUT ./graphs/dropping_curve.tex
 INPUT ./graphs/dropping_curve.tex
 INPUT graphs/dropping_curve.tex
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/courier/pcrr7t.vf
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
 INPUT ./tables/forecasting_metrics.tex
 INPUT ./tables/forecasting_metrics.tex
 INPUT tables/forecasting_metrics.tex

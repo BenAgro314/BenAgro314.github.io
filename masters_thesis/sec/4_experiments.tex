@@ -10,9 +10,6 @@ Second, we compare the best version of \ourmodel{} to the state-of-the-art metho
 Finally, we conduct thorough ablation studies to understand the architectural choices that make \ourmodel{} effective and the impact of different training procedures.
 See \cref{sec:imp} for more implementation details.
 
-\input{tables/full_leaderboard_all_classes.tex}
-
-\input{tables/leaderboard_all_classes.tex}
 
 \section{Metrics}
 \label{sec:metrics}
@@ -29,9 +26,6 @@ and Level (L2) includes all boxes that have $> 0$ LiDAR points (a superset of L1
 For camera experiments on AV2, we report the mean average precision (AP) for vehicles in the camera field of view at an IoU threshold of 0.1.
 We report the macro-average over all classes if the actor class is not specified.
 
-\input{tables/component_ablation.tex}
-
-\input{tables/proposal_eval.tex}
 
 \section{Main Experiments}
 \label{sec:main-exp}
@@ -39,7 +33,7 @@ We report the macro-average over all classes if the actor class is not specified
 \subsection{Augmenting off-the-shelf 3D Detectors with \ourmodel{}}
 \label{sec:aug}
 
-\cref{tab:main-table-wod} and \cref{tab:av2-cam} show the performance of \ourmodel{} applied to off-the-shelf 3D detectors on WOD and AV2, respectively.%\thomasG{I think this sentence should be at the start of the subsection}
+\Cref{tab:main-table-wod} and \cref{tab:av2-cam} show the performance of \ourmodel{} applied to off-the-shelf 3D detectors on WOD and AV2, respectively.%\thomasG{I think this sentence should be at the start of the subsection}
 To show the generality of our approach, we experiment with multiple base detectors trained on different datasets and sensor modalities.
 We enhanced three LiDAR-based methods with \ourmodel{} on WOD:
 CenterPoint~\cite{centerpoint}
@@ -66,6 +60,10 @@ we show in \cref{tab:full-leaderboard-all-classes} that we achieve the best perf
 to prior learned temporal fusion methods on
 the WOD validation and test set, where we achieve substantial gains.
 
+\input{tables/full_leaderboard_all_classes.tex}
+
+\input{tables/leaderboard_all_classes.tex}
+
 \subsection{Ablations}
 \label{sec:ablations}
 
@@ -91,7 +89,10 @@ Naively concatenating the combined proposals is much worse than the base detecto
 After proposal merging, $\mathcal{P}^\mathrm{merge}$ already improves over the base detector.
 Each refinement block brings further gains, illustrating the strength of our proposed refinement transformer.
 
-\input{tables/schedule_table.tex}
+\input{tables/component_ablation.tex}
+
+\input{tables/proposal_eval.tex}
+
 
 \section{Training Procedure Study}
 
@@ -106,6 +107,8 @@ Training with shorter chunks (\cref{tab:chunk-length-comparison}.2a,3a) performs
 Including the cache helps significantly by closing the gap to evaluation but does not fully reach the long chunk performance (\cref{tab:chunk-length-comparison}.2b,3b).
 As hypothesized in \cref{sec:method-training}, there is room for improvement by training with our proposed schedule and memory bank cache (\cref{tab:chunk-length-comparison}.4b). This strategy allows \ourmodel{} to learn generalized patterns over a diverse set of examples quickly by training on short chunks (more i.i.d. data) at the beginning when the learning rate is higher while refining its understanding on long chunks (closer to the deployment setting) towards the end when the learning rate is lower.
 \Cref{tab:chunk-length-comparison}.4a shows the importance of the cache when using this training schedule; otherwise, training with small chunks is ineffective as the model would not learn to use the memory.
+
+\input{tables/schedule_table.tex}
 
 \ben{TODO: integrate these results throughout the paper!}
 \input{sec/supp_sec/7_additional_quantitative_results.tex}

@@ -68,53 +68,53 @@
 \backcite {centerpoint}{{11}{4.2.1}{subsection.4.2.1}}
 \backcite {hednet}{{11}{4.2.1}{subsection.4.2.1}}
 \backcite {safdnet}{{11}{4.2.1}{subsection.4.2.1}}
-\backcite {zhou2022centerformer}{{12}{\caption@xref {??}{ on input line 10}}{table.caption.8}}
-\backcite {liu2023bevfusion}{{12}{\caption@xref {??}{ on input line 11}}{table.caption.8}}
-\backcite {he2023msf}{{12}{\caption@xref {??}{ on input line 12}}{table.caption.8}}
-\backcite {fan2023super}{{12}{\caption@xref {??}{ on input line 13}}{table.caption.8}}
-\backcite {liu2024seed}{{12}{\caption@xref {??}{ on input line 15}}{table.caption.8}}
-\backcite {liu2024lion}{{12}{\caption@xref {??}{ on input line 16}}{table.caption.8}}
-\backcite {yang20213d}{{12}{\caption@xref {??}{ on input line 11}}{table.caption.9}}
-\backcite {li2023modar}{{12}{\caption@xref {??}{ on input line 12}}{table.caption.9}}
-\backcite {he2023lef}{{12}{\caption@xref {??}{ on input line 13}}{table.caption.9}}
-\backcite {chen2022mppnet}{{12}{\caption@xref {??}{ on input line 14}}{table.caption.9}}
-\backcite {he2023msf}{{12}{\caption@xref {??}{ on input line 15}}{table.caption.9}}
-\backcite {huang2024ptt}{{12}{\caption@xref {??}{ on input line 16}}{table.caption.9}}
-\backcite {yang20213d}{{12}{\caption@xref {??}{ on input line 21}}{table.caption.9}}
-\backcite {chen2022mppnet}{{12}{\caption@xref {??}{ on input line 22}}{table.caption.9}}
-\backcite {he2023msf}{{12}{\caption@xref {??}{ on input line 23}}{table.caption.9}}
-\backcite {safdnet}{{13}{4.3}{table.caption.10}}
-\backcite {wang2021fcos3d}{{13}{4.2.1}{subsection.4.2.1}}
-\backcite {chang2024bevmap}{{13}{4.2.1}{subsection.4.2.1}}
-\backcite {wang2021fcos3d}{{13}{4.2.1}{subsection.4.2.1}}
-\backcite {chang2024bevmap}{{13}{4.2.1}{subsection.4.2.1}}
-\backcite {safdnet}{{15}{\caption@xref {??}{ on input line 48}}{figure.caption.16}}
-\backcite {safdnet}{{15}{4.1}{figure.caption.16}}
+\backcite {zhou2022centerformer}{{12}{\caption@xref {??}{ on input line 11}}{table.caption.8}}
+\backcite {liu2023bevfusion}{{12}{\caption@xref {??}{ on input line 12}}{table.caption.8}}
+\backcite {he2023msf}{{12}{\caption@xref {??}{ on input line 13}}{table.caption.8}}
+\backcite {fan2023super}{{12}{\caption@xref {??}{ on input line 14}}{table.caption.8}}
+\backcite {liu2024seed}{{12}{\caption@xref {??}{ on input line 16}}{table.caption.8}}
+\backcite {liu2024lion}{{12}{\caption@xref {??}{ on input line 17}}{table.caption.8}}
+\backcite {yang20213d}{{12}{\caption@xref {??}{ on input line 12}}{table.caption.9}}
+\backcite {li2023modar}{{12}{\caption@xref {??}{ on input line 13}}{table.caption.9}}
+\backcite {he2023lef}{{12}{\caption@xref {??}{ on input line 14}}{table.caption.9}}
+\backcite {chen2022mppnet}{{12}{\caption@xref {??}{ on input line 15}}{table.caption.9}}
+\backcite {he2023msf}{{12}{\caption@xref {??}{ on input line 16}}{table.caption.9}}
+\backcite {huang2024ptt}{{12}{\caption@xref {??}{ on input line 17}}{table.caption.9}}
+\backcite {yang20213d}{{12}{\caption@xref {??}{ on input line 22}}{table.caption.9}}
+\backcite {chen2022mppnet}{{12}{\caption@xref {??}{ on input line 23}}{table.caption.9}}
+\backcite {he2023msf}{{12}{\caption@xref {??}{ on input line 24}}{table.caption.9}}
+\backcite {wang2021fcos3d}{{12}{4.2.1}{subsection.4.2.1}}
+\backcite {chang2024bevmap}{{12}{4.2.1}{subsection.4.2.1}}
+\backcite {wang2021fcos3d}{{12}{4.2.1}{subsection.4.2.1}}
+\backcite {chang2024bevmap}{{12}{4.2.1}{subsection.4.2.1}}
+\backcite {safdnet}{{13}{4.3}{table.caption.13}}
+\backcite {safdnet}{{14}{\caption@xref {??}{ on input line 48}}{figure.caption.16}}
+\backcite {safdnet}{{14}{4.1}{figure.caption.16}}
 \backcite {safdnet}{{15}{\caption@xref {??}{ on input line 48}}{figure.caption.17}}
 \backcite {safdnet}{{15}{4.2}{figure.caption.17}}
-\backcite {centerpoint}{{16}{4.4.2}{figure.caption.17}}
-\backcite {chai2019multipath,varadarajan2022multipath++,cui2019multimodal,phan2020covernet,cui2023gorela,ngiam2021scene}{{16}{4.4.3}{table.caption.18}}
-\backcite {hednet}{{16}{4.4.3}{table.caption.18}}
-\backcite {casas2024detra}{{18}{4.4.5}{table.caption.20}}
-\backcite {hednet,safdnet,centerpoint}{{19}{4.6.1}{section*.25}}
-\backcite {centerpoint}{{19}{4.6.1}{section*.25}}
-\backcite {chang2024bevmap}{{19}{4.6.1}{section*.25}}
-\backcite {cho2014learning}{{19}{4.6.1}{section*.26}}
-\backcite {centerpoint}{{20}{4.3}{figure.caption.23}}
-\backcite {centerpoint}{{21}{4.4}{figure.caption.24}}
-\backcite {safdnet,hednet,wang2023dsvt}{{22}{4.6.2}{section*.28}}
-\backcite {yan2018second}{{22}{4.6.2}{section*.28}}
-\backcite {centerpoint}{{22}{4.6.3}{subsection.4.6.3}}
-\backcite {hednet}{{22}{4.6.3}{subsection.4.6.3}}
-\backcite {safdnet}{{22}{4.6.3}{subsection.4.6.3}}
-\backcite {wang2021fcos3d}{{22}{4.6.3}{subsection.4.6.3}}
-\backcite {chang2024bevmap}{{22}{4.6.3}{subsection.4.6.3}}
-\backcite {centerpoint}{{22}{4.6.3}{subsection.4.6.3}}
-\backcite {hednet}{{22}{4.6.3}{subsection.4.6.3}}
-\backcite {safdnet}{{22}{4.6.3}{subsection.4.6.3}}
-\backcite {centerpoint}{{22}{4.6.3}{subsection.4.6.3}}
-\backcite {hednet}{{22}{4.6.3}{subsection.4.6.3}}
-\backcite {safdnet}{{22}{4.6.3}{subsection.4.6.3}}
-\backcite {chang2024bevmap}{{22}{4.6.3}{subsection.4.6.3}}
-\backcite {safdnet}{{23}{5}{chapter.5}}
-\backcite {cui2023gorela,casas2024detra}{{23}{5.1.1}{subsection.5.1.1}}
+\backcite {centerpoint}{{15}{4.4.2}{figure.caption.17}}
+\backcite {chai2019multipath,varadarajan2022multipath++,cui2019multimodal,phan2020covernet,cui2023gorela,ngiam2021scene}{{15}{4.4.3}{table.caption.18}}
+\backcite {hednet}{{15}{4.4.3}{table.caption.18}}
+\backcite {casas2024detra}{{17}{4.4.5}{table.caption.20}}
+\backcite {hednet,safdnet,centerpoint}{{18}{4.6.1}{section*.25}}
+\backcite {centerpoint}{{19}{4.3}{figure.caption.23}}
+\backcite {centerpoint}{{20}{4.4}{figure.caption.24}}
+\backcite {centerpoint}{{21}{4.6.1}{section*.25}}
+\backcite {chang2024bevmap}{{21}{4.6.1}{section*.25}}
+\backcite {cho2014learning}{{21}{4.6.1}{section*.26}}
+\backcite {safdnet,hednet,wang2023dsvt}{{21}{4.6.2}{section*.28}}
+\backcite {yan2018second}{{21}{4.6.2}{section*.28}}
+\backcite {centerpoint}{{21}{4.6.3}{subsection.4.6.3}}
+\backcite {hednet}{{21}{4.6.3}{subsection.4.6.3}}
+\backcite {safdnet}{{21}{4.6.3}{subsection.4.6.3}}
+\backcite {wang2021fcos3d}{{21}{4.6.3}{subsection.4.6.3}}
+\backcite {chang2024bevmap}{{21}{4.6.3}{subsection.4.6.3}}
+\backcite {centerpoint}{{21}{4.6.3}{subsection.4.6.3}}
+\backcite {hednet}{{21}{4.6.3}{subsection.4.6.3}}
+\backcite {safdnet}{{21}{4.6.3}{subsection.4.6.3}}
+\backcite {centerpoint}{{21}{4.6.3}{subsection.4.6.3}}
+\backcite {hednet}{{21}{4.6.3}{subsection.4.6.3}}
+\backcite {safdnet}{{21}{4.6.3}{subsection.4.6.3}}
+\backcite {chang2024bevmap}{{21}{4.6.3}{subsection.4.6.3}}
+\backcite {safdnet}{{22}{5}{chapter.5}}
+\backcite {cui2023gorela,casas2024detra}{{22}{5.1.1}{subsection.5.1.1}}

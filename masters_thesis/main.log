@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  7 JUN 2025 09:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  7 JUN 2025 09:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -899,13 +899,17 @@ LaTeX Warning: No positions in optional float specifier.
 
 [10]
 Chapter 4.
-(./tables/full_leaderboard_all_classes.tex
+
+
+[11
+
+] (./tables/full_leaderboard_all_classes.tex
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 1.
 
 
-Overfull \hbox (74.89795pt too wide) in paragraph at lines 4--31
+Overfull \hbox (14.89795pt too wide) in paragraph at lines 5--32
  [][] 
  []
 
@@ -915,22 +919,13 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 1.
 
 
-Overfull \hbox (68.14606pt too wide) in paragraph at lines 4--29
+Overfull \hbox (8.14606pt too wide) in paragraph at lines 5--30
  [][] 
  []
 
-) (./tables/component_ablation.tex
-Overfull \hbox (25.95316pt too wide) in paragraph at lines 88--104
- [][] 
- []
+)
 
-) (./tables/proposal_eval.tex)
-
-[11
-
-]
-
-[12]
+[12] (./tables/component_ablation.tex) (./tables/proposal_eval.tex)
 
 [13] (./tables/schedule_table.tex
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 14.
@@ -942,91 +937,89 @@ LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 39
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 
-[14] (./graphs/dropping_curve.tex)
+[14] (./graphs/dropping_curve.tex) (./tables/forecasting_metrics.tex)
 
-[15] (./tables/forecasting_metrics.tex) (./tables/more_training_ablations.tex)
+[15] (./tables/more_training_ablations.tex)
 
-[16] (./tables/supp_component_ablation.tex)
+[16] (./tables/supp_component_ablation.tex))
 
-[17]) (./sec/supp_sec/8_additional_qualitative_results.tex
-
-[18] (./images/supp_quali.tex
-<images/images_for_supp/66/original_det_anchors_wod_viz_66_126.pdf, id=802, 1156.32pt x 1156.32pt>
+[17] (./sec/supp_sec/8_additional_qualitative_results.tex (./images/supp_quali.tex
+<images/images_for_supp/66/original_det_anchors_wod_viz_66_126.pdf, id=795, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/66/original_det_anchors_wod_viz_66_126.pdf Graphic file (type pdf)
 <use images/images_for_supp/66/original_det_anchors_wod_viz_66_126.pdf>
 Package pdftex.def Info: images/images_for_supp/66/original_det_anchors_wod_viz_66_126.pdf  used on input line 16.
 (pdftex.def)             Requested size: 99.73074pt x 99.72412pt.
-<images/images_for_supp/66/interpolated_det_anchors_wod_viz_66_126.pdf, id=804, 1156.32pt x 1156.32pt>
+<images/images_for_supp/66/interpolated_det_anchors_wod_viz_66_126.pdf, id=797, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/66/interpolated_det_anchors_wod_viz_66_126.pdf Graphic file (type pdf)
 <use images/images_for_supp/66/interpolated_det_anchors_wod_viz_66_126.pdf>
 Package pdftex.def Info: images/images_for_supp/66/interpolated_det_anchors_wod_viz_66_126.pdf  used on input line 17.
 (pdftex.def)             Requested size: 99.73074pt x 99.72412pt.
-<images/images_for_supp/66/lidar_proposals_wod_viz_66_126.pdf, id=806, 1156.32pt x 1156.32pt>
+<images/images_for_supp/66/lidar_proposals_wod_viz_66_126.pdf, id=799, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/66/lidar_proposals_wod_viz_66_126.pdf Graphic file (type pdf)
 <use images/images_for_supp/66/lidar_proposals_wod_viz_66_126.pdf>
 Package pdftex.def Info: images/images_for_supp/66/lidar_proposals_wod_viz_66_126.pdf  used on input line 18.
 (pdftex.def)             Requested size: 99.73074pt x 99.72412pt.
-<images/images_for_supp/66/detections_wod_viz_66_126.pdf, id=808, 1156.32pt x 1156.32pt>
+<images/images_for_supp/66/detections_wod_viz_66_126.pdf, id=801, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/66/detections_wod_viz_66_126.pdf Graphic file (type pdf)
 <use images/images_for_supp/66/detections_wod_viz_66_126.pdf>
 Package pdftex.def Info: images/images_for_supp/66/detections_wod_viz_66_126.pdf  used on input line 19.
 (pdftex.def)             Requested size: 99.73074pt x 99.72412pt.
-<images/images_for_supp/98/original_det_anchors_wod_viz_98_138.pdf, id=810, 1156.32pt x 1156.32pt>
+<images/images_for_supp/98/original_det_anchors_wod_viz_98_138.pdf, id=803, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/98/original_det_anchors_wod_viz_98_138.pdf Graphic file (type pdf)
 <use images/images_for_supp/98/original_det_anchors_wod_viz_98_138.pdf>
 Package pdftex.def Info: images/images_for_supp/98/original_det_anchors_wod_viz_98_138.pdf  used on input line 26.
 (pdftex.def)             Requested size: 99.73074pt x 99.72522pt.
-<images/images_for_supp/98/interpolated_det_anchors_wod_viz_98_138.pdf, id=812, 1156.32pt x 1156.32pt>
+<images/images_for_supp/98/interpolated_det_anchors_wod_viz_98_138.pdf, id=805, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/98/interpolated_det_anchors_wod_viz_98_138.pdf Graphic file (type pdf)
 <use images/images_for_supp/98/interpolated_det_anchors_wod_viz_98_138.pdf>
 Package pdftex.def Info: images/images_for_supp/98/interpolated_det_anchors_wod_viz_98_138.pdf  used on input line 27.
 (pdftex.def)             Requested size: 99.73074pt x 99.72522pt.
-<images/images_for_supp/98/lidar_proposals_wod_viz_98_138.pdf, id=814, 1156.32pt x 1156.32pt>
+<images/images_for_supp/98/lidar_proposals_wod_viz_98_138.pdf, id=807, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/98/lidar_proposals_wod_viz_98_138.pdf Graphic file (type pdf)
 <use images/images_for_supp/98/lidar_proposals_wod_viz_98_138.pdf>
 Package pdftex.def Info: images/images_for_supp/98/lidar_proposals_wod_viz_98_138.pdf  used on input line 28.
 (pdftex.def)             Requested size: 99.73074pt x 99.72522pt.
-<images/images_for_supp/98/detections_wod_viz_98_138.pdf, id=816, 1156.32pt x 1156.32pt>
+<images/images_for_supp/98/detections_wod_viz_98_138.pdf, id=809, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/98/detections_wod_viz_98_138.pdf Graphic file (type pdf)
 <use images/images_for_supp/98/detections_wod_viz_98_138.pdf>
 Package pdftex.def Info: images/images_for_supp/98/detections_wod_viz_98_138.pdf  used on input line 29.
 (pdftex.def)             Requested size: 99.73074pt x 99.72522pt.
-<images/images_for_supp/64/original_det_anchors_wod_viz_64_90.pdf, id=818, 1156.32pt x 1156.32pt>
+<images/images_for_supp/64/original_det_anchors_wod_viz_64_90.pdf, id=811, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/64/original_det_anchors_wod_viz_64_90.pdf Graphic file (type pdf)
 <use images/images_for_supp/64/original_det_anchors_wod_viz_64_90.pdf>
 Package pdftex.def Info: images/images_for_supp/64/original_det_anchors_wod_viz_64_90.pdf  used on input line 32.
 (pdftex.def)             Requested size: 99.73074pt x 99.72412pt.
-<images/images_for_supp/64/interpolated_det_anchors_wod_viz_64_90.pdf, id=820, 1156.32pt x 1156.32pt>
+<images/images_for_supp/64/interpolated_det_anchors_wod_viz_64_90.pdf, id=813, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/64/interpolated_det_anchors_wod_viz_64_90.pdf Graphic file (type pdf)
 <use images/images_for_supp/64/interpolated_det_anchors_wod_viz_64_90.pdf>
 Package pdftex.def Info: images/images_for_supp/64/interpolated_det_anchors_wod_viz_64_90.pdf  used on input line 33.
 (pdftex.def)             Requested size: 99.73074pt x 99.72412pt.
-<images/images_for_supp/64/lidar_proposals_wod_viz_64_90.pdf, id=822, 1156.32pt x 1156.32pt>
+<images/images_for_supp/64/lidar_proposals_wod_viz_64_90.pdf, id=815, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/64/lidar_proposals_wod_viz_64_90.pdf Graphic file (type pdf)
 <use images/images_for_supp/64/lidar_proposals_wod_viz_64_90.pdf>
 Package pdftex.def Info: images/images_for_supp/64/lidar_proposals_wod_viz_64_90.pdf  used on input line 34.
 (pdftex.def)             Requested size: 99.73074pt x 99.72412pt.
-<images/images_for_supp/64/detections_wod_viz_64_90.pdf, id=824, 1156.32pt x 1156.32pt>
+<images/images_for_supp/64/detections_wod_viz_64_90.pdf, id=817, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/64/detections_wod_viz_64_90.pdf Graphic file (type pdf)
 <use images/images_for_supp/64/detections_wod_viz_64_90.pdf>
 Package pdftex.def Info: images/images_for_supp/64/detections_wod_viz_64_90.pdf  used on input line 35.
 (pdftex.def)             Requested size: 99.73074pt x 99.72412pt.
-<images/images_for_supp/73/original_det_anchors_wod_viz_73_126.pdf, id=826, 1156.32pt x 1156.32pt>
+<images/images_for_supp/73/original_det_anchors_wod_viz_73_126.pdf, id=819, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/73/original_det_anchors_wod_viz_73_126.pdf Graphic file (type pdf)
 <use images/images_for_supp/73/original_det_anchors_wod_viz_73_126.pdf>
 Package pdftex.def Info: images/images_for_supp/73/original_det_anchors_wod_viz_73_126.pdf  used on input line 37.
 (pdftex.def)             Requested size: 99.73074pt x 99.72302pt.
-<images/images_for_supp/73/interpolated_det_anchors_wod_viz_73_126.pdf, id=828, 1156.32pt x 1156.32pt>
+<images/images_for_supp/73/interpolated_det_anchors_wod_viz_73_126.pdf, id=821, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/73/interpolated_det_anchors_wod_viz_73_126.pdf Graphic file (type pdf)
 <use images/images_for_supp/73/interpolated_det_anchors_wod_viz_73_126.pdf>
 Package pdftex.def Info: images/images_for_supp/73/interpolated_det_anchors_wod_viz_73_126.pdf  used on input line 38.
 (pdftex.def)             Requested size: 99.73074pt x 99.72302pt.
-<images/images_for_supp/73/lidar_proposals_wod_viz_73_126.pdf, id=830, 1156.32pt x 1156.32pt>
+<images/images_for_supp/73/lidar_proposals_wod_viz_73_126.pdf, id=823, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/73/lidar_proposals_wod_viz_73_126.pdf Graphic file (type pdf)
 <use images/images_for_supp/73/lidar_proposals_wod_viz_73_126.pdf>
 Package pdftex.def Info: images/images_for_supp/73/lidar_proposals_wod_viz_73_126.pdf  used on input line 39.
 (pdftex.def)             Requested size: 99.73074pt x 99.72302pt.
-<images/images_for_supp/73/detections_wod_viz_73_126.pdf, id=832, 1156.32pt x 1156.32pt>
+<images/images_for_supp/73/detections_wod_viz_73_126.pdf, id=825, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/73/detections_wod_viz_73_126.pdf Graphic file (type pdf)
 <use images/images_for_supp/73/detections_wod_viz_73_126.pdf>
 Package pdftex.def Info: images/images_for_supp/73/detections_wod_viz_73_126.pdf  used on input line 40.
@@ -1040,82 +1033,82 @@ File: images/images_for_hook_light/cool_colormap.png Graphic file (type png)
 Package pdftex.def Info: images/images_for_hook_light/cool_colormap.png  used on input line 56.
 (pdftex.def)             Requested size: 95.38127pt x 7.99896pt.
 ) (./images/supp_quali_2.tex
-<images/images_for_supp/31/original_det_anchors_wod_viz_31_198.pdf, id=838, 1156.32pt x 1156.32pt>
+<images/images_for_supp/31/original_det_anchors_wod_viz_31_198.pdf, id=831, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/31/original_det_anchors_wod_viz_31_198.pdf Graphic file (type pdf)
 <use images/images_for_supp/31/original_det_anchors_wod_viz_31_198.pdf>
 Package pdftex.def Info: images/images_for_supp/31/original_det_anchors_wod_viz_31_198.pdf  used on input line 16.
 (pdftex.def)             Requested size: 99.73074pt x 99.72357pt.
-<images/images_for_supp/31/interpolated_det_anchors_wod_viz_31_198.pdf, id=840, 1156.32pt x 1156.32pt>
+<images/images_for_supp/31/interpolated_det_anchors_wod_viz_31_198.pdf, id=833, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/31/interpolated_det_anchors_wod_viz_31_198.pdf Graphic file (type pdf)
 <use images/images_for_supp/31/interpolated_det_anchors_wod_viz_31_198.pdf>
 Package pdftex.def Info: images/images_for_supp/31/interpolated_det_anchors_wod_viz_31_198.pdf  used on input line 17.
 (pdftex.def)             Requested size: 99.73074pt x 99.72357pt.
-<images/images_for_supp/31/lidar_proposals_wod_viz_31_198.pdf, id=842, 1156.32pt x 1156.32pt>
+<images/images_for_supp/31/lidar_proposals_wod_viz_31_198.pdf, id=835, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/31/lidar_proposals_wod_viz_31_198.pdf Graphic file (type pdf)
 <use images/images_for_supp/31/lidar_proposals_wod_viz_31_198.pdf>
 Package pdftex.def Info: images/images_for_supp/31/lidar_proposals_wod_viz_31_198.pdf  used on input line 18.
 (pdftex.def)             Requested size: 99.73074pt x 99.72357pt.
-<images/images_for_supp/31/detections_wod_viz_31_198.pdf, id=844, 1156.32pt x 1156.32pt>
+<images/images_for_supp/31/detections_wod_viz_31_198.pdf, id=837, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/31/detections_wod_viz_31_198.pdf Graphic file (type pdf)
 <use images/images_for_supp/31/detections_wod_viz_31_198.pdf>
 Package pdftex.def Info: images/images_for_supp/31/detections_wod_viz_31_198.pdf  used on input line 19.
 (pdftex.def)             Requested size: 99.73074pt x 99.72357pt.
-<images/images_for_supp/82/original_det_anchors_wod_viz_82_120.pdf, id=846, 1156.32pt x 1156.32pt>
+<images/images_for_supp/82/original_det_anchors_wod_viz_82_120.pdf, id=839, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/82/original_det_anchors_wod_viz_82_120.pdf Graphic file (type pdf)
 <use images/images_for_supp/82/original_det_anchors_wod_viz_82_120.pdf>
 Package pdftex.def Info: images/images_for_supp/82/original_det_anchors_wod_viz_82_120.pdf  used on input line 26.
 (pdftex.def)             Requested size: 99.73074pt x 99.72835pt.
-<images/images_for_supp/82/interpolated_det_anchors_wod_viz_82_120.pdf, id=848, 1156.32pt x 1156.32pt>
+<images/images_for_supp/82/interpolated_det_anchors_wod_viz_82_120.pdf, id=841, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/82/interpolated_det_anchors_wod_viz_82_120.pdf Graphic file (type pdf)
 <use images/images_for_supp/82/interpolated_det_anchors_wod_viz_82_120.pdf>
 Package pdftex.def Info: images/images_for_supp/82/interpolated_det_anchors_wod_viz_82_120.pdf  used on input line 27.
 (pdftex.def)             Requested size: 99.73074pt x 99.72835pt.
-<images/images_for_supp/82/lidar_proposals_wod_viz_82_120.pdf, id=850, 1156.32pt x 1156.32pt>
+<images/images_for_supp/82/lidar_proposals_wod_viz_82_120.pdf, id=843, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/82/lidar_proposals_wod_viz_82_120.pdf Graphic file (type pdf)
 <use images/images_for_supp/82/lidar_proposals_wod_viz_82_120.pdf>
 Package pdftex.def Info: images/images_for_supp/82/lidar_proposals_wod_viz_82_120.pdf  used on input line 28.
 (pdftex.def)             Requested size: 99.73074pt x 99.72835pt.
-<images/images_for_supp/82/detections_wod_viz_82_120.pdf, id=852, 1156.32pt x 1156.32pt>
+<images/images_for_supp/82/detections_wod_viz_82_120.pdf, id=845, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/82/detections_wod_viz_82_120.pdf Graphic file (type pdf)
 <use images/images_for_supp/82/detections_wod_viz_82_120.pdf>
 Package pdftex.def Info: images/images_for_supp/82/detections_wod_viz_82_120.pdf  used on input line 29.
 (pdftex.def)             Requested size: 99.73074pt x 99.72835pt.
-<images/images_for_supp/91/original_det_anchors_wod_viz_91_144.pdf, id=854, 1156.32pt x 1156.32pt>
+<images/images_for_supp/91/original_det_anchors_wod_viz_91_144.pdf, id=847, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/91/original_det_anchors_wod_viz_91_144.pdf Graphic file (type pdf)
 <use images/images_for_supp/91/original_det_anchors_wod_viz_91_144.pdf>
 Package pdftex.def Info: images/images_for_supp/91/original_det_anchors_wod_viz_91_144.pdf  used on input line 32.
 (pdftex.def)             Requested size: 99.73074pt x 99.73083pt.
-<images/images_for_supp/91/interpolated_det_anchors_wod_viz_91_144.pdf, id=856, 1156.32pt x 1156.32pt>
+<images/images_for_supp/91/interpolated_det_anchors_wod_viz_91_144.pdf, id=849, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/91/interpolated_det_anchors_wod_viz_91_144.pdf Graphic file (type pdf)
 <use images/images_for_supp/91/interpolated_det_anchors_wod_viz_91_144.pdf>
 Package pdftex.def Info: images/images_for_supp/91/interpolated_det_anchors_wod_viz_91_144.pdf  used on input line 33.
 (pdftex.def)             Requested size: 99.73074pt x 99.73083pt.
-<images/images_for_supp/91/lidar_proposals_wod_viz_91_144.pdf, id=858, 1156.32pt x 1156.32pt>
+<images/images_for_supp/91/lidar_proposals_wod_viz_91_144.pdf, id=851, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/91/lidar_proposals_wod_viz_91_144.pdf Graphic file (type pdf)
 <use images/images_for_supp/91/lidar_proposals_wod_viz_91_144.pdf>
 Package pdftex.def Info: images/images_for_supp/91/lidar_proposals_wod_viz_91_144.pdf  used on input line 34.
 (pdftex.def)             Requested size: 99.73074pt x 99.73083pt.
-<images/images_for_supp/91/detections_wod_viz_91_144.pdf, id=860, 1156.32pt x 1156.32pt>
+<images/images_for_supp/91/detections_wod_viz_91_144.pdf, id=853, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/91/detections_wod_viz_91_144.pdf Graphic file (type pdf)
 <use images/images_for_supp/91/detections_wod_viz_91_144.pdf>
 Package pdftex.def Info: images/images_for_supp/91/detections_wod_viz_91_144.pdf  used on input line 35.
 (pdftex.def)             Requested size: 99.73074pt x 99.73083pt.
-<images/images_for_supp/161/original_det_anchors_wod_viz_161_138.pdf, id=862, 1156.32pt x 1156.32pt>
+<images/images_for_supp/161/original_det_anchors_wod_viz_161_138.pdf, id=855, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/161/original_det_anchors_wod_viz_161_138.pdf Graphic file (type pdf)
 <use images/images_for_supp/161/original_det_anchors_wod_viz_161_138.pdf>
 Package pdftex.def Info: images/images_for_supp/161/original_det_anchors_wod_viz_161_138.pdf  used on input line 37.
 (pdftex.def)             Requested size: 99.73074pt x 99.72437pt.
-<images/images_for_supp/161/interpolated_det_anchors_wod_viz_161_138.pdf, id=864, 1156.32pt x 1156.32pt>
+<images/images_for_supp/161/interpolated_det_anchors_wod_viz_161_138.pdf, id=857, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/161/interpolated_det_anchors_wod_viz_161_138.pdf Graphic file (type pdf)
 <use images/images_for_supp/161/interpolated_det_anchors_wod_viz_161_138.pdf>
 Package pdftex.def Info: images/images_for_supp/161/interpolated_det_anchors_wod_viz_161_138.pdf  used on input line 38.
 (pdftex.def)             Requested size: 99.73074pt x 99.72437pt.
-<images/images_for_supp/161/lidar_proposals_wod_viz_161_138.pdf, id=866, 1156.32pt x 1156.32pt>
+<images/images_for_supp/161/lidar_proposals_wod_viz_161_138.pdf, id=859, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/161/lidar_proposals_wod_viz_161_138.pdf Graphic file (type pdf)
 <use images/images_for_supp/161/lidar_proposals_wod_viz_161_138.pdf>
 Package pdftex.def Info: images/images_for_supp/161/lidar_proposals_wod_viz_161_138.pdf  used on input line 39.
 (pdftex.def)             Requested size: 99.73074pt x 99.72437pt.
-<images/images_for_supp/161/detections_wod_viz_161_138.pdf, id=868, 1156.32pt x 1156.32pt>
+<images/images_for_supp/161/detections_wod_viz_161_138.pdf, id=861, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/161/detections_wod_viz_161_138.pdf Graphic file (type pdf)
 <use images/images_for_supp/161/detections_wod_viz_161_138.pdf>
 Package pdftex.def Info: images/images_for_supp/161/detections_wod_viz_161_138.pdf  used on input line 40.
@@ -1130,25 +1123,25 @@ Package pdftex.def Info: images/images_for_hook_light/cool_colormap.png  used on
 (pdftex.def)             Requested size: 95.38127pt x 7.99896pt.
 )) (./sec/imp.tex
 
-[19]
+[18]
 
-[20 <./images/images_for_supp/66/original_det_anchors_wod_viz_66_126.pdf> <./images/images_for_supp/66/interpolated_det_anchors_wod_viz_66_126.pdf> <./images/images_for_supp/66/lidar_proposals_wod_viz_66_126.pdf> <./images/images_for_supp/66/detections_wod_viz_66_126.pdf> <./images/images_for_supp/98/original_det_anchors_wod_viz_98_138.pdf> <./images/images_for_supp/98/interpolated_det_anchors_wod_viz_98_138.pdf> <./images/images_for_supp/98/lidar_proposals_wod_viz_98_138.pdf> <./images/images_for_supp/98/detections_wod_viz_98_138.pdf> <./images/images_for_supp/64/original_det_anchors_wod_viz_64_90.pdf> <./images/images_for_supp/64/interpolated_det_anchors_wod_viz_64_90.pdf> <./images/images_for_supp/64/lidar_proposals_wod_viz_64_90.pdf> <./images/images_for_supp/64/detections_wod_viz_64_90.pdf> <./images/images_for_supp/73/original_det_anchors_wod_viz_73_126.pdf> <./images/images_for_supp/73/interpolated_det_anchors_wod_viz_73_126.pdf> <./images/images_for_supp/73/lidar_proposals_wod_viz_73_126.pdf> <./images/images_for_supp/73/detections_wod_viz_73_126.pdf>]
+[19 <./images/images_for_supp/66/original_det_anchors_wod_viz_66_126.pdf> <./images/images_for_supp/66/interpolated_det_anchors_wod_viz_66_126.pdf> <./images/images_for_supp/66/lidar_proposals_wod_viz_66_126.pdf> <./images/images_for_supp/66/detections_wod_viz_66_126.pdf> <./images/images_for_supp/98/original_det_anchors_wod_viz_98_138.pdf> <./images/images_for_supp/98/interpolated_det_anchors_wod_viz_98_138.pdf> <./images/images_for_supp/98/lidar_proposals_wod_viz_98_138.pdf> <./images/images_for_supp/98/detections_wod_viz_98_138.pdf> <./images/images_for_supp/64/original_det_anchors_wod_viz_64_90.pdf> <./images/images_for_supp/64/interpolated_det_anchors_wod_viz_64_90.pdf> <./images/images_for_supp/64/lidar_proposals_wod_viz_64_90.pdf> <./images/images_for_supp/64/detections_wod_viz_64_90.pdf> <./images/images_for_supp/73/original_det_anchors_wod_viz_73_126.pdf> <./images/images_for_supp/73/interpolated_det_anchors_wod_viz_73_126.pdf> <./images/images_for_supp/73/lidar_proposals_wod_viz_73_126.pdf> <./images/images_for_supp/73/detections_wod_viz_73_126.pdf>]
 
-[21 <./images/images_for_supp/31/original_det_anchors_wod_viz_31_198.pdf> <./images/images_for_supp/31/interpolated_det_anchors_wod_viz_31_198.pdf> <./images/images_for_supp/31/lidar_proposals_wod_viz_31_198.pdf> <./images/images_for_supp/31/detections_wod_viz_31_198.pdf> <./images/images_for_supp/82/original_det_anchors_wod_viz_82_120.pdf> <./images/images_for_supp/82/interpolated_det_anchors_wod_viz_82_120.pdf> <./images/images_for_supp/82/lidar_proposals_wod_viz_82_120.pdf> <./images/images_for_supp/82/detections_wod_viz_82_120.pdf> <./images/images_for_supp/91/original_det_anchors_wod_viz_91_144.pdf> <./images/images_for_supp/91/interpolated_det_anchors_wod_viz_91_144.pdf> <./images/images_for_supp/91/lidar_proposals_wod_viz_91_144.pdf> <./images/images_for_supp/91/detections_wod_viz_91_144.pdf> <./images/images_for_supp/161/original_det_anchors_wod_viz_161_138.pdf> <./images/images_for_supp/161/interpolated_det_anchors_wod_viz_161_138.pdf> <./images/images_for_supp/161/lidar_proposals_wod_viz_161_138.pdf> <./images/images_for_supp/161/detections_wod_viz_161_138.pdf>])) (./sec/5_conclusion.tex
+[20 <./images/images_for_supp/31/original_det_anchors_wod_viz_31_198.pdf> <./images/images_for_supp/31/interpolated_det_anchors_wod_viz_31_198.pdf> <./images/images_for_supp/31/lidar_proposals_wod_viz_31_198.pdf> <./images/images_for_supp/31/detections_wod_viz_31_198.pdf> <./images/images_for_supp/82/original_det_anchors_wod_viz_82_120.pdf> <./images/images_for_supp/82/interpolated_det_anchors_wod_viz_82_120.pdf> <./images/images_for_supp/82/lidar_proposals_wod_viz_82_120.pdf> <./images/images_for_supp/82/detections_wod_viz_82_120.pdf> <./images/images_for_supp/91/original_det_anchors_wod_viz_91_144.pdf> <./images/images_for_supp/91/interpolated_det_anchors_wod_viz_91_144.pdf> <./images/images_for_supp/91/lidar_proposals_wod_viz_91_144.pdf> <./images/images_for_supp/91/detections_wod_viz_91_144.pdf> <./images/images_for_supp/161/original_det_anchors_wod_viz_161_138.pdf> <./images/images_for_supp/161/interpolated_det_anchors_wod_viz_161_138.pdf> <./images/images_for_supp/161/lidar_proposals_wod_viz_161_138.pdf> <./images/images_for_supp/161/detections_wod_viz_161_138.pdf>])) (./sec/5_conclusion.tex
 
-[22]
+[21]
 Chapter 5.
 
 
-[23
+[22
 
 ]
-<images/images_for_supp/161/detections_wod_viz_161_186.pdf, id=1101, 1156.32pt x 1156.32pt>
+<images/images_for_supp/161/detections_wod_viz_161_186.pdf, id=1097, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/161/detections_wod_viz_161_186.pdf Graphic file (type pdf)
 <use images/images_for_supp/161/detections_wod_viz_161_186.pdf>
 Package pdftex.def Info: images/images_for_supp/161/detections_wod_viz_161_186.pdf  used on input line 57.
 (pdftex.def)             Requested size: 216.81001pt x 216.81pt.
-<images/images_for_supp/161/detections_wod_viz_161_192.pdf, id=1103, 1156.32pt x 1156.32pt>
+<images/images_for_supp/161/detections_wod_viz_161_192.pdf, id=1099, 1156.32pt x 1156.32pt>
 File: images/images_for_supp/161/detections_wod_viz_161_192.pdf Graphic file (type pdf)
 <use images/images_for_supp/161/detections_wod_viz_161_192.pdf>
 Package pdftex.def Info: images/images_for_supp/161/detections_wod_viz_161_192.pdf  used on input line 58.
@@ -1160,16 +1153,18 @@ Overfull \hbox (2.39992pt too wide) in paragraph at lines 65--67
 
 )
 
-[24 <./images/images_for_supp/161/detections_wod_viz_161_186.pdf> <./images/images_for_supp/161/detections_wod_viz_161_192.pdf>] (./main.bbl (./main.brf)
+[23 <./images/images_for_supp/161/detections_wod_viz_161_186.pdf> <./images/images_for_supp/161/detections_wod_viz_161_192.pdf>] (./main.bbl (./main.brf)
 \tf@brf=\write6
 \openout6 = `main.brf'.
 
 
 
-[25
+[24
 
 
 ]
+
+[25]
 
 [26]
 
@@ -1177,11 +1172,9 @@ Overfull \hbox (2.39992pt too wide) in paragraph at lines 65--67
 
 [28]
 
-[29]
+[29])
 
-[30])
-
-[31] (./main.aux)
+[30] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1189,21 +1182,21 @@ L3 programming layer <2020/03/25>
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 496A7C3C4260F45A87EC6A11A08966D4;7997.
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: 76B0E4BCCD66381C688C3294D5F61F4A;8240.
+(rerunfilecheck)             Checksum: 57371477C1D0CC242B2F11EF3F4B180C;8240.
  ) 
 Here is how much of TeX's memory you used:
- 42005 strings out of 473190
- 1008455 string characters out of 5715801
- 1488583 words of memory out of 5000000
+ 42004 strings out of 473190
+ 1008448 string characters out of 5715801
+ 1485718 words of memory out of 5000000
  64319 multiletter control sequences out of 15000+600000
  602544 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,19n,108p,1280b,2272s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (37 pages, 8553583 bytes).
+Output written on main.pdf (36 pages, 8554008 bytes).
 PDF statistics:
- 1476 PDF objects out of 1728 (max. 8388607)
- 1190 compressed objects within 12 object streams
- 206 named destinations out of 1000 (max. 500000)
+ 1469 PDF objects out of 1728 (max. 8388607)
+ 1184 compressed objects within 12 object streams
+ 205 named destinations out of 1000 (max. 500000)
  828 words of extra memory for PDF output out of 10000 (max. 10000000)
 
