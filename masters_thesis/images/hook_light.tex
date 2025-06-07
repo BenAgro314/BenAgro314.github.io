@@ -1,43 +1,54 @@
-\centering
-\begin{tikzpicture}
+\begin{figure}[htbp]
+  \centering
+  \setlength{\fboxsep}{1pt}%
+  \begin{tikzpicture}
     \pgfmathsetlengthmacro{\imw}{0.33\linewidth}
     \pgfmathsetlengthmacro{\imws}{0.325\linewidth}
 
-    % First image
-    \node[inner sep=0pt, draw=black, very thick] (image1) at (0,0)
-        {\includegraphics[width=\imw, trim={0cm, 60cm, 0cm, 0cm}, clip]{images/images_for_hook_light/lidar_proposals_wod_viz_5_198.png}};
-    \node[inner sep=0pt, anchor=south, yshift=0.25em] (title1) at (image1.north) {(a) 3D Detector};
-    
-    % Second image
-    \node[inner sep=0pt,anchor=west, draw=black, very thick] (image2) at ($(image1.east)+(0.5em,0em)$)
-        {\includegraphics[width=\imw, trim={0cm, 60cm, 0cm, 0cm}, clip]{images/images_for_hook_light/memory_proposals_wod_viz_5_198.png}};
-    \node[inner sep=0pt,anchor=south, yshift=0.25em] (title2) at (image2.north) {(b) Object Memory};
-    
-    % Third image
-    \node[inner sep=0pt,anchor=west, draw=black, very thick] (image3) at ($(image2.east)+(0.05em,0)$)
-        {\includegraphics[width=\imw, trim={0cm, 60cm, 0cm, 0cm}, clip]{images/images_for_hook_light/detections_wod_viz_5_198.png}};
-    \node[inner sep=0pt,anchor=south, yshift=0.25em] (title3) at (image3.north) {(c) \underline{M}emory \underline{A}ugmented \underline{D}etections};
+    % (a) 3D Detector
+    \node[inner sep=0pt,draw=black,very thick] (image1) at (0,0) {%
+      \includegraphics[width=\imw,trim=0cm 60cm 0cm 0cm,clip]{images/images_for_hook_light/lidar_proposals_wod_viz_5_198.png}%
+    };%
+    \node[anchor=south,yshift=0.25em] at (image1.north) {(a) 3D Detector};
+
+    % (b) Object Memory
+    \node[inner sep=0pt,anchor=west,draw=black,very thick] (image2)
+      at ($(image1.east)+(0.5em,0)$) {%
+      \includegraphics[width=\imw,trim=0cm 60cm 0cm 0cm,clip]{images/images_for_hook_light/memory_proposals_wod_viz_5_198.png}%
+    };%
+    \node[anchor=south,yshift=0.25em] at (image2.north) {(b) Object Memory};
+
+    % (c) Memory-Augmented Detections
+    \node[inner sep=0pt,anchor=west,draw=black,very thick] (image3)
+      at ($(image2.east)+(0.05em,0)$) {%
+      \includegraphics[width=\imw,trim=0cm 60cm 0cm 0cm,clip]{images/images_for_hook_light/detections_wod_viz_5_198.png}%
+    };%
+    \node[anchor=south,yshift=0.25em] at (image3.north)
+      {(c) \underline{M}emory \underline{A}ugmented \underline{D}etections};
 
     % colormap
-    \node[inner sep=0pt,anchor=north] (cmap) at ($(image2.north)+(0,-0.1em)$)
-        {\includegraphics[width=\imws, height=0.8em, trim={2mm, 2mm, 2mm, 2mm}, clip, angle=180]{images/images_for_hook_light/cool_colormap.png}};
-    \node[inner sep=0pt,anchor=east] (0) at ([xshift=-0.1em]cmap.east) {\footnotesize 0.0s};
-    \node[inner sep=0pt,anchor=west] (1) at ([xshift=0.1em]cmap.west) {\footnotesize -2.4s};
-    \node[inner sep=0pt,anchor=west, anchor=center] (2) at (cmap) {\footnotesize Memory Age};
+    \node[inner sep=0pt,anchor=north] (cmap)
+      at ($(image2.north)+(0,-0.1em)$) {%
+      \includegraphics[width=\imws,height=0.8em,trim=2mm 2mm 2mm 2mm,clip,angle=180]{images/images_for_hook_light/cool_colormap.png}%
+    };%
+    \node[anchor=east] at ([xshift=-0.1em]cmap.east) {\footnotesize 0.0s};
+    \node[anchor=west] at ([xshift=0.1em]cmap.west) {\footnotesize –2.4s};
+    \node[anchor=center] at (cmap) {\footnotesize Memory Age};
 
-    \node[circle, draw=red, thick, dashed, minimum size=0.3*\imw, inner sep=0pt, anchor=center] (fn) at (image1) [xshift=0.05*\imw, yshift=-0.06*\imw] {};
-    \node[red, inner sep=0pt, anchor=east] (fn-text) at (fn.west) [xshift=-0.25em] {False Negative};
-    \draw[black, ->, very thick] ([xshift=-1em]image2.east) -- ([xshift=1em]image3.west);
+    % False negative highlight
+    \node[circle,draw=red,thick,dashed,minimum size=0.3*\imw,inner sep=0pt]
+      (fn) at ([xshift=0.05*\imw,yshift=-0.06*\imw]image1) {};%
+    \node[red,anchor=east] at ([xshift=-0.25em]fn.west) {\small False Negative};
 
-    % \node[inner sep=0pt, anchor=north east, yshift=0.25em] (legend1) at ([xshift=-0.5em,yshift=-0.5em]image1.north east) {\textcolor{green}{\fbox{\footnotesize Detection}}};
-    
-\end{tikzpicture}
-\vspace*{-7mm}
-\captionof{figure}{
-    \label{fig:hook}
-    \setlength{\fboxsep}{1pt}
+    % Arrow from (b) → (c)
+    \draw[very thick,->] ([xshift=-1em]image2.east) -- ([xshift=1em]image3.west);
+
+  \end{tikzpicture}
+  % \vspace{-7mm}
+  \caption{%
     Detectors without long-term temporal fusion (a) miss heavily occluded objects.
-    Our approach enhances detectors (b)
-    to remember past predictions, (c) recovering from occlusion.
-    Detections are in \textcolor{Green}{\fbox{green}}, labels are in \fbox{black}, lidar points are in \textcolor{gray}{$\bullet$ gray}. 
-}
+    Our approach enhances detectors (b) to remember past predictions,
+    (c) recovering from occlusion. Detections are in \textcolor{green}{\fbox{green}},
+    labels are in \fbox{black}, lidar points are in \textcolor{gray}{$\bullet$ gray.}}
+  \label{fig:hook}
+\end{figure}

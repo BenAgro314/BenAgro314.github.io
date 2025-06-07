@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Contributions}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.2}Contributions}{2}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Outline}{2}{section.1.3}%
 \contentsline {chapter}{\numberline {2}Related Work}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}3D Object Detection}{3}{section.2.1}%
@@ -24,9 +24,9 @@
 \contentsline {subsection}{\numberline {4.2.1}Augmenting off-the-shelf 3D Detectors with MAD{}}{11}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Comparison against SOTA}{13}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Ablations}{13}{subsection.4.2.3}%
-\contentsline {paragraph}{Effect of memory proposals and memory attention:}{13}{section*.4}%
-\contentsline {paragraph}{Effect of forecasting:}{13}{section*.5}%
-\contentsline {paragraph}{Effect of learned proposal merging:}{14}{section*.6}%
+\contentsline {paragraph}{Effect of memory proposals and memory attention:}{13}{section*.12}%
+\contentsline {paragraph}{Effect of forecasting:}{13}{section*.13}%
+\contentsline {paragraph}{Effect of learned proposal merging:}{14}{section*.14}%
 \contentsline {section}{\numberline {4.3}Training Procedure Study}{14}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Additional Quantitative Results}{15}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Performance at different memory horizons}{15}{subsection.4.4.1}%
@@ -39,12 +39,12 @@
 \contentsline {section}{\numberline {4.5}Additional Qualitative Results}{18}{section.4.5}%
 \contentsline {section}{\numberline {4.6}Implementation Details}{19}{section.4.6}%
 \contentsline {subsection}{\numberline {4.6.1}Architecture}{19}{subsection.4.6.1}%
-\contentsline {paragraph}{Refinement Transformer}{19}{section*.7}%
-\contentsline {paragraph}{Trajectory Forecasting Header:}{19}{section*.8}%
+\contentsline {paragraph}{Refinement Transformer}{19}{section*.25}%
+\contentsline {paragraph}{Trajectory Forecasting Header:}{19}{section*.26}%
 \contentsline {subsection}{\numberline {4.6.2}Training}{19}{subsection.4.6.2}%
-\contentsline {paragraph}{Scheduling:}{19}{section*.9}%
-\contentsline {paragraph}{Augmentations:}{22}{section*.10}%
-\contentsline {paragraph}{Loss Functions:}{22}{section*.11}%
+\contentsline {paragraph}{Scheduling:}{19}{section*.27}%
+\contentsline {paragraph}{Augmentations:}{22}{section*.28}%
+\contentsline {paragraph}{Loss Functions:}{22}{section*.29}%
 \contentsline {subsection}{\numberline {4.6.3}3D Detector Implementation Details}{22}{subsection.4.6.3}%
 \contentsline {chapter}{\numberline {5}Conclusions}{23}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Future Work}{23}{section.5.1}%
