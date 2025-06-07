@@ -3,7 +3,7 @@
 
 \subsection{Architecture}
 
-\paragraph{Refinement Transformer}
+\subsubsection{Refinement Transformer}
 
 The refinement transformer uses $I = 3$ refinement blocks, and the dimension of all embeddings is $d = 128$.
 We forecast $T_f = 10$ future timestamps at stride of $s_f = 0.5\text{s}$, yielding a 5s prediction horizon.
@@ -18,7 +18,7 @@ Following prior works~\cite{hednet,safdnet,centerpoint}, for any detection post-
 % bevmap: 53M 
 
 
-\paragraph{Trajectory Forecasting Header:}
+\subsubsection{Trajectory Forecasting Header:}
 
 % Inspired by \cite{casas2024detra} and \cite{chitta2022transfuser},
 Each refinement block predicts trajectory forecasts from the refinement features $\mathbf{Q}^{\mathrm{ref}(i)} \in \mathbb{R}^{N^\mathrm{ref} \times T_f + 1 \times d}$ using a
@@ -34,7 +34,7 @@ Note while the GRU sequence length is $T_f + 1$, we only use the last $T_f$ outp
 
 \subsection{Training}
 
-\paragraph{Scheduling:}
+\subsubsection{Scheduling}
 
 For each base detector, we train \ourmodel{} for 60k update steps (roughly equivalent to 6 epochs on WOD and AV2), with batch size 16.
 We use a cosine learning rate decay with a max learning rate of $8 \times 10^{-4}$,
@@ -45,7 +45,7 @@ we use a variable set of memory target timestamps
 $T_m \sim \texttt{uniform}(\{6, 7, 8, 9, 10\})$
 with a variable stride $s_m \sim \texttt{uniform}(\{0.2s, 0.3s, 0.4s\})$.
 
-\paragraph{Augmentations:}
+\subsubsection{Augmentations}
 
 When training \ourmodel{} we adopt standard data augmentations used in prior works~\cite{safdnet,hednet,wang2023dsvt},
 including random translations in the x, y, and z directions in the ego coordinate frame with a standard deviation of 0.5m,

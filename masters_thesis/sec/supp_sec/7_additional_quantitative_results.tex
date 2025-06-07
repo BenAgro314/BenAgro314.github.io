@@ -1,37 +1,9 @@
-\section{Additional Quantitative Results}
+\subsection{Additional Quantitative Results}
 \label{sec:additional-quantitative-results}
-
-% In this section, we provide additional quantitative experiments on \ourmodel{},
-% including full results on WOD leaderboard,
-% evaluating the performance using different memory horizons,
-% investigating if our proposed memory improves trajectory forecasting performance,
-% evaluating the effect of randomly dropping memory at inference time,
-% ablating self-attention in the refinement transformer,
-% and additional training design experiments --- training with back-propagation through time (BPTT) and accumulating gradients.
-
-
-% \subsection{Full Leaderboard Results}
-% 
-% In \cref{tab:full-leaderboard-all-classes} we show the performance of \ourmodel{} when enhancing SAFDDet 4f~\cite{safdnet}
-% on the WOD test set for all actor classes,
-% comparing against other methods on the leaderboard that do not use ensembles, test-time augmentations, or future sensor data.
-% For methods that provide no information on these criteria, we give them the benefit of the doubt and include them.
-% We see that \ourmodel{} is strong across all actor classes, particularly on pedestrians and cyclists.
-% Our intuition is that these actor classes are smaller and more prone to limited LiDAR observations
-% due to occlusions or distance, so our memory mechanism is particularly beneficial.
-% 
-% In \cref{tab:leaderboard-all-classes} we compare against prior methods for learned temporal
-% fusion on the WOD validation and test sets.
-% We find that \ourmodel{} outperforms prior works by a large margin on all actor classes.
-% 
-% 
-% \input{tables/full_leaderboard_all_classes.tex}
-% 
-% \input{tables/leaderboard_all_classes.tex}
 
 
 \input{graphs/history_curve.tex}
-\subsection{Performance at different memory horizons}
+\subsubsection{Performance at different memory horizons}
 In \cref{fig:history-curve},
 we plot detection performance as a
 function of the memory horizon $T_m s_m$ used at inference time. 
@@ -48,7 +20,7 @@ We find that the performance increases rapidly
 when first introducing memory, and then increases more slowly and saturates
 around 2.7s, due to the redundancy in most memory proposals.
 
-\subsection{Performance across memory dropping rates}
+\subsubsection{Performance across memory dropping rates}
 \input{graphs/dropping_curve.tex}
 To show the importance of the memory at inference time,
 we investigate how the performance of \ourmodel{} changes
@@ -65,34 +37,17 @@ is the second stage of a two-stage detector,
 which have been shown to improve performance~\cite{centerpoint}.
 % \sergio{you can also point to Far3D. They use memory only for training and this brings them gains. I think it's because it adds hard examples for refinement }
 
-\subsection{Forecasting Results}
+\subsubsection{Forecasting Results}
 \input{tables/forecasting_metrics.tex}
 
 While our focus is task
 of 3D object detection, \ourmodel{} also performs trajectory forecasting,
 which is an important and well-studied sub-task of autonomous
 driving systems~\cite{chai2019multipath,varadarajan2022multipath++,cui2019multimodal,phan2020covernet,cui2023gorela,ngiam2021scene}.
-% \ben{Maybe remove up to my next comment?}
-% %
-% Traditionally, these methods apply tracking to the outputs of a detector
-% and use the tracks to forecast future object locations.
-% This creates and information bottleneck between the detection and
-% forecasting modules, which can cause compounding errors~\cite{casas2024detra}.
-% %
-% This has motivated recent interest
-% in \textit{end-to-end detection and trajectory forecasting},
-% where high-dimensional features are passed from the detection module
-% to the forecasting module to reduce the information bottleneck~\cite{casas2024detra,casas2020spagnn,casas2020implicit,hu2023planning,liang2020pnpnet}.
-% 
-% 
-% \ourmodel{} lives in this end-to-end joint detection and trajectory forecasting family.
-% \ben{is this clear even if we don't train end-to-end?. Do we even want to have this here?}
 In \cref{tab:forecasting-metrics}, we investigate the effect of our memory mechanism on trajectory forecasting
 performance on the WOD validation set by training
 \ourmodel{} to enhance HEDNet 1f and HEDNet 4f~\cite{hednet} on the WOD validation set.
 We also train a version where we remove the memory from the refinement transformer;
-% our refinement transformer without memory to augment
-% HEDNet 1f and HEDNet 4f~\cite{hednet}, and compare to \ourmodel{} enhancing the same base detectors.
 no memory proposals $\mathcal{P}^\mathrm{mem}$ (using $\mathcal{P}^{\mathrm{ref}(0)} = \mathcal{P}^\mathrm{det}$),
 and no memory cross-attention, so that the model is still able to generate trajectory forecasts but can't leverage memory inputs.
 The metrics in \cref{tab:forecasting-metrics} are computed at a common detection recall point of 80\%
@@ -104,76 +59,10 @@ We find that memory improves trajectory forecasting performance for both HEDNet 
 Note that, because HEDNet 4f uses multiple past LiDAR sweeps, it has better sensor evidence on the motion of vehicles.
 This is why it results in better trajectory forecasting performance than HEDNet 1f;
 the interpolated features $\mathbf{Q}^\mathrm{det}$ have more motion information which is useful to the refinement transformer.
-% Note that HEDNet 4f is trained to regress velocity, so the interpolated backbone features used to construct 
-% have motion information, which is why HEDNet 4f augmented with the refinement transformer outperforms HEDNet 1f \thomasG{augmented or not?}in trajectory forecasting \thomasG{are we sure it's because of this loss supervision, and not just because of the richer sensor information in 4f?}.
 Notably, HEDNet 1f with memory matches or outperforms HEDNet 4f without memory, showing the strength of our memory mechanism in capturing object motion information.
 
 
-
-
-% it acts as a simple two-stage detector with a refinement step, which has been shown to improve performance in prior works
-%\thomasG{Should we try to explain why it's still slighlty better with drop=1.0?}
-
-
-\subsection{Additional training design experiments}
-
-\input{tables/more_training_ablations.tex}
-In \cref{tab:more-training-ablations} we investigated
-additional training procedures for \ourmodel{}.
-For the experiments in this table we train for 45k iterations to reduce costs.
-For fair comparisons, all methods in \cref{tab:more-training-ablations} were trained
-with a fixed chunk length of 144 frames and no cache.
-Row 3 uses the architecture of \ourmodel{} described in \cref{sec:method-arch}.
-There are four alternative design questions we investigated:
-\begin{itemize}
-    \item If we accumulate gradients over the chunk length and update the model parameters once per chunk, does it improve performance?
-    Our hypothesis was that this could reduce over-fitting to sequences of correlated training examples.
-    However, comparing row 0 to row 3 of \cref{tab:more-training-ablations}, we find that
-    accumulating gradients hurts performance.
-    For this experiment, while we use the same number of model forward passes (45k), there are less model parameter updates (only once per chunk),
-    resulting in an under-trained model, even if the learning dynamics are better.
-    Training with 45k model parameter updates steps in this setting would multiply the training duration and cost by the chunk length, which is prohibitively expensive.
-    \item Can we improve performance by initializing the memory proposal features $\mathbf{Q}^\mathrm{mem}$ with
-    refinement features in the memory bank $\{\mathbf{Q}^\mathrm{ref}_{t - s_m}, \dots \mathbf{Q}^\mathrm{ref}_{t - s_m T_m}\}$? 
-    Recall from \cref{sec:method-arch} that $\mathbf{Q}^\mathrm{mem}$ 
-    is calculated from the boxes $\mathbf{B}^\mathrm{mem}$, confidence scores $\mathbf{C}^\mathrm{mem}$,
-    and trajectory forecasts $\mathbf{T}^\mathrm{mem}$.
-    However, the memory also stores past refined query features $\{\mathbf{Q}^\mathrm{ref}_{t - s_m}, \dots \mathbf{Q}^\mathrm{ref}_{t - s_m T_m}\}$, and
-    our hypothesis was that initializing $\mathbf{Q}^\mathrm{mem}$ with these refined query features could improve performance
-    because they contain richer learned information.
-    To test this, we compute $\mathbf{Q}^\mathrm{mem}$ using $\mathbf{Q}^\mathrm{{ref}}_{t_m}$ and adding an encoding of
-    the box, confidence score, and trajectory forecasts (the same way we computed the memory proposal features described in \cref{sec:method-arch}).
-    However, comparing row 0 to row 3 of \cref{tab:more-training-ablations}, we find that using the refined query features
-    does not improve performance over our proposed $\mathbf{Q}^\mathrm{mem}$ described in \cref{sec:method-arch}.
-    We think this is because the distribution of these features is changing over training, which
-    makes them difficult to learn with.
-    \item To address the lack of improvement from using the refined features, we investigated using BPTT through these features
-    to allow the model to learn to output refinement features that are relevant for future inferences.
-    Due to GPU memory constraints, we could only back-propagate through one past inference.
-    Unfortunately, we found that this did not improve performance significantly over not using BPTT (2 vs 1 in \cref{tab:more-training-ablations}),
-    or over not using refinement features to initialize the memory features (2 vs 3 in \cref{tab:more-training-ablations}).
-    We have two hypotheses for why this is: The first is that the position, size, confidence, and trajectory information in the memory features are important and easy
-    for the refinement transformer to use, overpowering the information in the refinement features.
-    Secondly, BPTT through one step might not be enough to see improvements.
-    This is an area for future work.
-\end{itemize}
-
-
-\subsection{Effect of self-attention}
-\input{tables/supp_component_ablation.tex}
-\Cref{tab:self-attention-ablation} illustrates the effect of using self-attention in the refinement transformer,
-which brings a small but consistent performance improvement.
-Recall that the memory cross attention only allows each query $\mathbf{Q}^{\mathrm{ref}(i)}$ to attend to
-the nearest $k = 4$ memory proposals features $\mathbf{Q}^\mathrm{mem}$.
-Self-attention lets queries see information from more distant memory proposals
-%\thomasG{expand why}
-because information about memory proposals can propagate through all query features which can be anywhere in the scene.
-Furthermore, self-attention allows for modelling interactions between actors,
-and prior works have shown it to improve forecasting performance~\cite{casas2024detra},
-which would in turn improve \ourmodel{}'s detection performance through the memory.
-Both of these factors could explain the improved performance of \ourmodel{}.
-
-\subsection{Computational Overhead}
+\subsubsection{Computational Overhead}
 
 We report total FLOPs and peak memory measurements per forward pass,
 taking the maximum across 10 random sequences on WOD in \cref{tab:flops}.
@@ -197,8 +86,7 @@ There is minimal computational overhead from \ourmodel{} relative to the base de
 We also note that in most traditional self-driving systems, the 3D detector would be followed by a forecasting module,
 which \ourmodel{} can replace.
 
-\subsection{Performance on Stationary Objects}
-
+\subsubsection{Performance on Stationary Objects}
 
 \Cref{fig:stationary-objects} shows the performance of \ourmodel{} on stationary objects on WOD ($\le 0.5$ m/s).
 \begin{table}
