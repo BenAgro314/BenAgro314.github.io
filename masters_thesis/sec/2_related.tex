@@ -3,7 +3,7 @@
 
 \section{3D Object Detection}
 
-We can categorize 3D detectors by their input modality (e.g., LiDAR, camera), scene representation (e.g., point clouds, voxels), and number of stages (e.g., single-stage or multi-stage)
+We can categorize 3D detectors by their input modality (e.g., LiDAR, camera), scene representation (e.g., point clouds, voxels), and number of stages (e.g., single-stage or multi-stage).
 
 LiDAR-based methods commonly represent the input as
 voxels~\cite{yan2018second,hednet,safdnet,li20173d,engelcke2017vote3deep,song2016deep}, pillars~\cite{ku2018joint,lang2019pointpillars,simony2018complex,wang2015voting,wang2020pillar,yang2018pixor},
@@ -64,7 +64,7 @@ These approaches can be difficult to scale to long history horizons as they requ
 (e.g., \cite{zhou2022centerformer,he2023msf} only use 0.7s of history).
 Finally, \textit{object-to-object} methods
 use past object detections to improve current object detections without explicit tracking,
-e.g., by cross-attending from current detection proposals to past detections~\cite{yang20213d,wang2023exploring},
+for example, by cross-attending from current detection proposals to past detections~\cite{yang20213d,wang2023exploring},
 or using hand-coded attention matrices based on distance~\cite{hou2024query}.
 Overall, most object-based methods share some deficiencies:
 Many only refine detection proposals produced by current sensor evidence and struggle to recover from missing proposals~\cite{he2023msf,yang20213d,hou2024query,chen2022mppnet,huang2024ptt}.

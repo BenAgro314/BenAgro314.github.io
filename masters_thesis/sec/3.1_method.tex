@@ -1,7 +1,7 @@
 \chapter{Memory-Augmented 3D Object Detection}
 \label{sec:method}
 
-3D object detectors take a short temporal window of sensor data as input and produce a set of detections.
+Three dimensional object detectors take a short temporal window of sensor data as input and produce a set of detections.
 Existing approaches typically struggle to perceive occluded and distant objects with limited sensor observations.
 To tackle these challenges, we propose \ourmodel{}, a plug-and-play module to enhance existing 3D object detectors with the ability to perform long-horizon temporal fusion.
 Our only requirement from the detector is that each detection includes an object bounding box, multi-class confidence scores,
@@ -16,7 +16,7 @@ To compensate for ego-motion, we assume the ego is localized --- which is the no
 
 \section{Model}
 \label{sec:method-arch}
-We start with an overview of our model; refer to \Cref{fig:arch} for an illustration.
+We start with an overview of our model; refer to \cref{fig:arch} for an illustration.
 At every inference step, \ourmodel{} takes as input the \textit{detection proposals}, the current timestamp $t$ (e.g., LiDAR sweep-end time or camera capture time),
 and the ego pose $\mathbf{E}_{t}$ in a global coordinate frame.
 It then retrieves objects from memory, aligns them spatially with $\mathbf{E}_t$ and temporally to $t$, and extracts high-dimensional features from the aligned boxes and trajectory forecasts.

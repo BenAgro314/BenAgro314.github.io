@@ -157,7 +157,7 @@ There are four alternative design questions we investigated:
     However, comparing row 0 to row 3 of \cref{tab:more-training-ablations}, we find that using the refined query features
     does not improve performance over our proposed $\mathbf{Q}^\mathrm{mem}$ described in \cref{sec:method-arch}.
     We think this is because the distribution of these features is changing over training, which
-    makes them difficult to learn with.
+    makes them difficult to learn from.
     \item To address the lack of improvement from using the refined features, we investigated using backpropagation through time (BPTT) through these features
     to allow the model to learn to output refinement features that are relevant for future inferences.
     Due to GPU memory constraints, we could only backpropagate through one past inference.
