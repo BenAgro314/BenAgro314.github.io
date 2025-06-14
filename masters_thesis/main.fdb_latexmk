@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1749314277.94671 "main.aux" "main.bbl" "main" 1749528203.00245 0
+["bibtex main"] 1749314277.94671 "main.aux" "main.bbl" "main" 1749918231.23689 0
   "./references.bib" 1747665530.71997 33040 c7100b65035aec508839b32154da91f9 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1749528202.77786 41572 872c7ace56a8a4cd0429384d0dfcfeb8 "pdflatex"
+  "main.aux" 1749918230.99317 41572 872c7ace56a8a4cd0429384d0dfcfeb8 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1749528200.55109 "/Users/benagro/BenAgro314.github.io/masters_thesis/main.tex" "main.pdf" "main" 1749528203.0026 0
+["pdflatex"] 1749918228.60538 "/Users/benagro/BenAgro314.github.io/masters_thesis/main.tex" "main.pdf" "main" 1749918231.23704 0
   "/Users/benagro/BenAgro314.github.io/masters_thesis/main.tex" 1747631714.38024 811 1509ee1437af2201fa022857b9a6ccbe ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -342,14 +342,14 @@
   "images/images_for_supp/98/original_det_anchors_wod_viz_98_138.pdf" 1747631039.04871 367743 3d75f2be8edc58ceaa96d1489e2496cf ""
   "images/supp_quali.tex" 1747631039.00559 11658 345b4522e04c10276a4b204d850cedeb ""
   "images/supp_quali_2.tex" 1747631039.05975 12732 a3ae1efe5b2c453533844b8313b176c5 ""
-  "main.aux" 1749528202.77786 41572 872c7ace56a8a4cd0429384d0dfcfeb8 "pdflatex"
+  "main.aux" 1749918230.99317 41572 872c7ace56a8a4cd0429384d0dfcfeb8 "pdflatex"
   "main.bbl" 1749314278.03094 23361 0a0fa8a7b80635b52f81b6a4b265f4ab "bibtex main"
-  "main.brf" 1749528202.78025 8240 eb16f04e88fbc1c1b6ef1148fa47d681 "pdflatex"
-  "main.out" 1749528202.78012 6586 d3f7c0bc86e972412c4291f130826060 "pdflatex"
+  "main.brf" 1749918230.99562 8240 eb16f04e88fbc1c1b6ef1148fa47d681 "pdflatex"
+  "main.out" 1749918230.99552 6586 d3f7c0bc86e972412c4291f130826060 "pdflatex"
   "main.tex" 1747631714.38024 811 1509ee1437af2201fa022857b9a6ccbe ""
-  "main.toc" 1749528202.78043 4450 8456bd4a1519de6eb36207a934ced483 "pdflatex"
+  "main.toc" 1749918230.99578 4450 8456bd4a1519de6eb36207a934ced483 "pdflatex"
   "preamble.tex" 1749311649.2076 2073 c695b814a4fa44137582ba7f844a5385 ""
-  "sec/0_abstract.tex" 1747630471.92965 1204 d4ce8d032e43c9d5718472c3dfa2c160 ""
+  "sec/0_abstract.tex" 1749918228.3804 1008 1f69700f8171945df4762c11ddc15990 ""
   "sec/1_intro.tex" 1749528190.08963 5245 e1ae4f72beb52214c75fa7e6e0faaed5 ""
   "sec/2_related.tex" 1747666845.19086 6505 d6552dd79306e704bf14e294749a044b ""
   "sec/3.1_method.tex" 1747666694.29323 11399 5c309a11c025ac3904409a0ed9f0a9e6 ""
