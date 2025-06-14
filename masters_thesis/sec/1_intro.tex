@@ -5,7 +5,7 @@
 
 \section{Motivation}
 
-Most self-driving vehicles (SDVs) utilize a 3D object detector to recognize and localize objects in 3D space.
+Most self-driving vehicles (SDV's) utilize a 3D object detector to recognize and localize objects in 3D space.
 This task is challenging due to occlusion, large intra-class variability, and distant objects, which typically have limited sensor observations.
 To overcome these challenges, human drivers rely on their memory.
 For example, they may drive more cautiously when remembering a previously observed but now occluded cyclist, who may suddenly enter the road.
@@ -39,8 +39,8 @@ By storing explicit trajectory forecasts in the memory bank, we can estimate obj
 This enables us to enrich the set of proposals by aligning memory proposals with the current observations.
 
 Training with temporal data can be challenging:
-back-propogation through consecutive training examples consumes prohibitive amounts of memory,
-training on long sequences can cause over-fitting when back-propagating on every example,
+backpropogation through consecutive training examples consumes prohibitive amounts of memory,
+training on long sequences can cause over-fitting when backpropagating on every example,
 and using memory warm-up can slow down training.
 We design a more effective training schedule that begins with short temporal sequences and progressively increases the length, exploiting high data diversity early and closing the gap with inference towards the end.
 To ensure the model learns to trust the memory when training on short sequences,
@@ -53,7 +53,7 @@ Notably, SAFDNet~\cite{safdnet} enhanced with \ourmodel{} achieves state-of-the-
 
 This thesis is structured as follows: \Cref{sec:related} surveys related work
 in 3D object detection and long-term temporal fusion for object detection, 
-\Cref{sec:method} describes our archiecture (\cref{sec:method-arch}) and
+\Cref{sec:method} describes our architecture (\cref{sec:method-arch}) and
 training procedure (\cref{sec:method-training}).
 \Cref{sec:experiments} benchmarks our approach against alternatives
 (\cref{sec:aug,sec:sota}) and ablates (\cref{sec:ablations}) and

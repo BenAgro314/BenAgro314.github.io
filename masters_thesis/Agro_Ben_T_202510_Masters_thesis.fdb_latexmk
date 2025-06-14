@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex Agro_Ben_T_202510_Masters_thesis"] 1749918324.23359 "Agro_Ben_T_202510_Masters_thesis.aux" "Agro_Ben_T_202510_Masters_thesis.bbl" "Agro_Ben_T_202510_Masters_thesis" 1749918326.87959 0
+["bibtex Agro_Ben_T_202510_Masters_thesis"] 1749918602.16887 "Agro_Ben_T_202510_Masters_thesis.aux" "Agro_Ben_T_202510_Masters_thesis.bbl" "Agro_Ben_T_202510_Masters_thesis" 1749918838.23544 0
   "./references.bib" 1747665530.71997 33040 c7100b65035aec508839b32154da91f9 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "Agro_Ben_T_202510_Masters_thesis.aux" 1749918326.61549 41572 872c7ace56a8a4cd0429384d0dfcfeb8 "pdflatex"
+  "Agro_Ben_T_202510_Masters_thesis.aux" 1749918837.98417 41572 a95a5b572dbebff6f3e7d5b268089ba0 "pdflatex"
   (generated)
   "Agro_Ben_T_202510_Masters_thesis.bbl"
   "Agro_Ben_T_202510_Masters_thesis.blg"
   (rewritten before read)
-["pdflatex"] 1749918324.31754 "/Users/benagro/BenAgro314.github.io/masters_thesis/Agro_Ben_T_202510_Masters_thesis.tex" "Agro_Ben_T_202510_Masters_thesis.pdf" "Agro_Ben_T_202510_Masters_thesis" 1749918326.87974 0
-  "/Users/benagro/BenAgro314.github.io/masters_thesis/Agro_Ben_T_202510_Masters_thesis.tex" 1747631714.38024 811 1509ee1437af2201fa022857b9a6ccbe ""
+["pdflatex"] 1749918835.68152 "/Users/benagro/BenAgro314.github.io/masters_thesis/Agro_Ben_T_202510_Masters_thesis.tex" "Agro_Ben_T_202510_Masters_thesis.pdf" "Agro_Ben_T_202510_Masters_thesis" 1749918838.2356 0
+  "/Users/benagro/BenAgro314.github.io/masters_thesis/Agro_Ben_T_202510_Masters_thesis.tex" 1749918591.79643 811 69f781b17a71c9ac1c2ab7fabe0efcd3 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -298,12 +298,12 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1742013180 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "Agro_Ben_T_202510_Masters_thesis.aux" 1749918326.61549 41572 872c7ace56a8a4cd0429384d0dfcfeb8 "pdflatex"
-  "Agro_Ben_T_202510_Masters_thesis.bbl" 1749918324.31421 23361 0a0fa8a7b80635b52f81b6a4b265f4ab "bibtex Agro_Ben_T_202510_Masters_thesis"
-  "Agro_Ben_T_202510_Masters_thesis.brf" 1749918326.61794 8240 eb16f04e88fbc1c1b6ef1148fa47d681 "pdflatex"
-  "Agro_Ben_T_202510_Masters_thesis.out" 1749918326.61783 6586 d3f7c0bc86e972412c4291f130826060 "pdflatex"
-  "Agro_Ben_T_202510_Masters_thesis.tex" 1747631714.38024 811 1509ee1437af2201fa022857b9a6ccbe ""
-  "Agro_Ben_T_202510_Masters_thesis.toc" 1749918326.61812 4450 8456bd4a1519de6eb36207a934ced483 "pdflatex"
+  "Agro_Ben_T_202510_Masters_thesis.aux" 1749918837.98417 41572 a95a5b572dbebff6f3e7d5b268089ba0 "pdflatex"
+  "Agro_Ben_T_202510_Masters_thesis.bbl" 1749918602.24609 23361 0a0fa8a7b80635b52f81b6a4b265f4ab "bibtex Agro_Ben_T_202510_Masters_thesis"
+  "Agro_Ben_T_202510_Masters_thesis.brf" 1749918837.98667 8240 eb16f04e88fbc1c1b6ef1148fa47d681 "pdflatex"
+  "Agro_Ben_T_202510_Masters_thesis.out" 1749918837.98655 6583 cc012cfc41c78f00e7091e7082f941f6 "pdflatex"
+  "Agro_Ben_T_202510_Masters_thesis.tex" 1749918591.79643 811 69f781b17a71c9ac1c2ab7fabe0efcd3 ""
+  "Agro_Ben_T_202510_Masters_thesis.toc" 1749918837.98685 4450 1504e58f011a1e739bcf697d15dde4ea "pdflatex"
   "graphs/dropping_curve.tex" 1747631029.81909 1620 87c49cddf4d2c042955c1848630fe4fb ""
   "graphs/history_curve.tex" 1747631029.81993 1622 4824a4df641b855107f4bf0dc960f03d ""
   "images/architecture_v7.pdf" 1747631038.99558 96546 7a5ed57183891d3ed8156f6cfea050c8 ""
@@ -350,11 +350,11 @@
   "images/supp_quali_2.tex" 1747631039.05975 12732 a3ae1efe5b2c453533844b8313b176c5 ""
   "preamble.tex" 1749311649.2076 2073 c695b814a4fa44137582ba7f844a5385 ""
   "sec/0_abstract.tex" 1749918228.3804 1008 1f69700f8171945df4762c11ddc15990 ""
-  "sec/1_intro.tex" 1749528190.08963 5245 e1ae4f72beb52214c75fa7e6e0faaed5 ""
+  "sec/1_intro.tex" 1749918835.49197 5245 dc0100d399e808d9b8218b827a84b8bf ""
   "sec/2_related.tex" 1747666845.19086 6505 d6552dd79306e704bf14e294749a044b ""
-  "sec/3.1_method.tex" 1747666694.29323 11399 5c309a11c025ac3904409a0ed9f0a9e6 ""
+  "sec/3.1_method.tex" 1749918599.37757 11399 866e0d4f52f354a50acde1dab0d7c3a5 ""
   "sec/3.2_method.tex" 1749312841.49261 8285 b157933c98b93a8902c607f572f3f2fc ""
-  "sec/4_experiments.tex" 1749528194.56301 13134 464e580e9764dcb528c8379ed6bc4b36 ""
+  "sec/4_experiments.tex" 1749918738.07246 13164 831a06a1a9ca58e17fe31bbb44acfbfd ""
   "sec/5_conclusion.tex" 1749528200.36722 5384 3047160108a1a285a97fe2041ee1ced6 ""
   "sec/ack.tex" 1747666010.70658 760 766e9038da511bf460d39f80d4e0ee97 ""
   "sec/dedication.tex" 1747665286.9015 76 a4591e00005610a8244be459b3bfe98f ""
