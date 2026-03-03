@@ -1,0 +1,220 @@
+\documentclass{article}
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[default,regular,black]{sourceserifpro}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{dashrule}
+\usepackage{scrextend}
+\usepackage{comment}
+\usepackage{tikz}
+\usetikzlibrary{fadings}
+\usepackage{enumitem}
+\usepackage{soul}
+%\usepackage{academicons}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=violet,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+}
+
+% \title{ben agro resume v5}
+% \author{ben agro }
+% \date{April 2024}
+
+\newcommand{\tikzrule}[3][]{\tikz{\fill[#1] (0,0) rectangle (#2,#3);}\vspace{0.5em}}
+
+\begin{document}
+
+\begin{center}
+%\begin{Huge}
+{\Huge\textsc{Ben Agro}} \\
+%\end{Huge}
+\vspace{2mm}
+\href{mailto:benagro01@gmail.com}{\faIcon{envelope} \texttt{benagro01@gmail.com}} \textbullet{} \href{https://benagro314.github.io/}{\faIcon{globe} Website} \textbullet{} \href{https://github.com/BenAgro314}{\faIcon{github} BenAgro314} \textbullet{} \href{ https://www.linkedin.com/in/ben-agro-43a619196/}{\faIcon{linkedin} BenAgro}
+\end{center}
+% \maketitle
+
+%\vspace{0.25em}
+\begin{center}
+    \textit{
+        Bringing research to real world robots
+        % I want to bridge the gap between the digital and physical.
+    }
+\end{center}
+%\vspace{0.25em}
+
+%\begin{center}
+\vspace{0.5em}
+\noindent{}{\Large Work Experience}\\
+\tikzrule[black, path fading=east]{\textwidth}{1pt} 
+% waabi
+\noindent{}\textbf{\href{https://waabi.ai/}{Waabi}} - Intern $\to$ Researcher I $\to$ Researcher II \hfill \faCalendar{} \textit{May 2022 - Present} 
+\begin{itemize}[noitemsep, topsep=1mm]
+    \item Developing novel perception and forecasting systems that enable self-driving trucks across perception, forecasting, behavior simulation, and sensor simulation.
+    \item Rapid developement from research ideas to improvements on real autonomous trucks.
+    \item Published work through various papers; see MAD, DIO, UnO, ImplicitO, DeTra, QUaD in the ``papers" section below.
+\end{itemize}
+\vspace{0.5em}
+
+% RVL
+\noindent{}\textbf{\href{https://rvl.cs.toronto.edu}{Robotics Vision and Learning Lab}} - Undergraduate Researcher \hfill \faCalendar{} \textit{May 2021 - Sept 2021} 
+\begin{itemize}[noitemsep, topsep=1mm]
+    \item Enabled robots to operate in complex scenarios with learning-based task and motion-planning systems
+    \item Built a simulation environment for development, extended \href{https://github.com/caelan/pddlstream}{PDDLStream} with learned stream-scoring and a queue-based algorithm, and deployed the system to a Franka Panda robot
+    \item Published our work in the paper ``Learning to Search in Task and Motion Planning with Streams"
+\end{itemize}
+\vspace{0.5em}
+
+% ASRL
+\noindent{}\textbf{\href{http://asrl.utias.utoronto.ca/}{Autonomous Space Robotics Lab}} - Undergraduate Researcher \hfill \faCalendar{} \textit{May 2020 - Aug 2020} 
+\begin{itemize}[noitemsep, topsep=1mm]
+    \item Developed a self-supervised semantic LiDAR segmentation pipeline for autonomous navigation
+    \item Published the paper ``Self-Supervised Learning of LiDAR Segmentation for Autonomous Indoor Navigation"
+\end{itemize}
+
+\vspace{0.5em}
+\noindent{}{\Large Papers}\\
+\tikzrule[black, path fading=east]{\textwidth}{1pt}
+
+\noindent{}{\textsc{MAD: Memory-Augmented Detection of 3D Objects} \\
+\indent{}\textit{\textbf{Ben Agro}, Sergio Casas, Patrick Wang, Thomas Gilles, Raquel Urtasun}\\
+\indent{}Pending CVPR 2025 Submission\\ \indent{}\textbf{\href{https://waymo.com/open/challenges/detection-3d/results/c71e640c-9c11/1730673379142000/}{Top online non-ensemble method on the Waymo Open Detection Challenge}} 
+\vspace{1em}
+
+\noindent{}{\textsc{DIO: Decomposable Implicit 4D Occupancy-Flow World Model} \\
+\indent{}\textit{Christopher Diehl, Quinlan Sykora, \textbf{Ben Agro}, Thomas Gilles, Sergio Casas, Raquel Urtasun}\\
+\indent{}Pending CVPR 2025 Submission
+\vspace{1em}
+
+\noindent{}{\href{https://arxiv.org/abs/2406.04426}{\textsc{DeTra: A Unified Model for Object Detection and Trajectory Forecasting}} \\
+\indent{}\textit{Sergio Casas*, \textbf{Ben Agro*}, Jiageng Mao*, Thomas Gilles, Alexander Cui, Thomas Li, Raquel Urtasun}\\
+\indent{}ECCV 2024
+\vspace{1em}
+
+\noindent{}{\href{https://arxiv.org/abs/2406.08691}{\textsc{UnO: Unsupervised Occupancy Fields for Perception and Forecasting}}\\
+\indent{}\textit{\textbf{Ben Agro}, Quin Sykora, Sergio Casas, Thomas Gilles, Raquel Urtasun}\\
+\indent{}CVPR 2024, \textbf{Oral (top 0.7\% of submitted papers)}
+\vspace{1em}
+
+\noindent{}{\href{https://waabi.ai/quad/}{\textsc{QuAD: Query-based Interpretable Neural Motion Planning for Autonomous Driving}}\\
+\indent{}\textit{Sourav Biswas, Sergio Casas, Quin Sykora, \textbf{Ben Agro}, Abbas Sadat, Raquel Urtasun}\\
+\indent{}ICRA 2024
+\vspace{1em}
+
+\noindent{}{\href{https://waabi.ai/implicito/}{\textsc{Implicit Occupancy Flow Fields for Perception and Prediction in Self-Driving}}\\
+\indent{}\textit{\textbf{Ben Agro}, Quin Sykora, Sergio Casas, Raquel Urtasun}\\
+\indent{}CVPR 2023, \textbf{Highlight}
+\vspace{1em}
+
+
+\noindent{}{\href{https://arxiv.org/pdf/2308.05783}{\textsc{Toward globally optimal state estimation using automatically tightened semidefinite relaxations}}\\
+\indent{}\textit{Frederike Dümbgen, Connor Holmes, \textbf{Ben Agro}, Tim Barfoot}\\
+\indent{}Arxiv Preprint 2023
+\vspace{1em}
+
+\noindent{}{\href{https://arxiv.org/pdf/2111.13144}{\textsc{Learning to Search in Task and Motion Planning with Streams}}\\
+\indent{}\textit{Mohamed Khodeir*, \textbf{Ben Agro*}, Florian Shkurti}\\
+\indent{}IEEE Robotics and Automation Letters 2023
+\vspace{1em}
+
+\noindent{}{\href{https://arxiv.org/pdf/2012.05897}{\textsc{Self-supervised learning of lidar segmentation for autonomous indoor navigation}}\\
+\indent{}\textit{Hugues Thomas, \textbf{Ben Agro}, Mona Gridseth, Jian Zhang, Tim Barfoot}\\
+\indent{}ICRA 2021
+\vspace{1em}
+
+
+\vspace{0.5em}
+\noindent{}{\Large Education}\\
+\tikzrule[black, path fading=east]{\textwidth}{1pt}
+
+\noindent{}{\st{PhD in Computer Science} (Dropout), University of Toronto} \hfill \faCalendar{} \textit{Sept 2023 - Feb 2025} \\
+\indent{}\textit{Supervised by \href{https://scholar.google.ca/citations?user=jyxO2akAAAAJ&hl=en}{Raquel Urtasun}}
+\vspace{1em}
+
+\noindent{}{BASc in Engineering Science, University Of Toronto} \hfill \faCalendar{} \textit{Sept 2019 - May 2023} \\
+\indent{}\textit{Majored in robotics, Cumulative Average = 97\%, CGPA = 4.0}
+\vspace{1em}
+
+\vspace{0.5em}
+\noindent{}{\Large Awards}\\
+\tikzrule[black, path fading=east]{\textwidth}{1pt}
+
+\noindent{}{John Black Aird Scholarship, W.S. Wilson Medal, Ontario Professional Engineers Foundation Gold
+Medal, Governer's General Silver Medal
+} \\
+\faCalendar{} \textit{May 2024} \\
+\indent{}\textit{Awarded to the student with the highest academic standing of any UofT undergraduate}
+\vspace{1em}
+
+\noindent{}{Centennial Senior Project Award} \hfill \faCalendar{} \textit{May 2024} \\
+\indent{}\textit{Awarded for the best \href{https://benagro314.github.io/files/bagro_engsci_thesis.pdf}{undergraduate thesis project}}
+\vspace{1em}
+
+\noindent{}{University of Toronto Excellence Award} \hfill \faCalendar{} \textit{May 2020} \\
+\indent{}\textit{To fund the research of exceptional UofT undergraduate students}
+\vspace{1em}
+
+\noindent{}{University of Toronto Scholar Award} \hfill \faCalendar{} \textit{Sept 2019} \\
+\indent{}\textit{Recognition of UofT’s outstanding students at admission}
+\vspace{1em}
+
+\noindent{}{Governor General's Bronze Medal} \hfill \faCalendar{} \textit{May 2019} \\
+\indent{}\textit{Awarded for the highest academic standing in highschool}
+\vspace{1em}
+
+
+\noindent{}{AP National Scholar} \hfill \faCalendar{} \textit{May 2019} \\
+\indent{}\textit{Graduated highschool with six AP (university equivalent) credits}
+\vspace{1em}
+
+
+\vspace{0.5em}
+\noindent{}{\Large Personal Projects}\\
+\tikzrule[black, path fading=east]{\textwidth}{1pt}
+
+
+\noindent{}\textsc{BARFT: \underline{B}undle \underline{A}djusting Neural \underline{R}adiance \underline{F}ields with \underline{T}emporal Regularization} \hfill 
+\href{https://benagro314.github.io/files/CSC2532_Final_Project_Report.pdf}{\faFilePdf{}} \textbullet{} 
+\href{https://github.com/souravb111/bundle-adjusting-NeRF/tree/bagro/sched}{\faGithub{}}  \\
+\indent{}A framework for training NeRFs with unknown (learned) camera poses.
+\vspace{1em}
+
+\noindent{}\textsc{Explainer of ``Transformers As Statisticians"} \hfill 
+\href{https://benagro314.github.io/files/TaS_report.pdf}{\faFilePdf{}}  \\
+\indent{}Distilling the key ideas behind \href{https://arxiv.org/abs/2306.04637}{``Transformers as Statisticians: Provable In-Context Learning with In-Context \indent{}Algorithm Selection"}
+\vspace{1em}
+
+\noindent{}\textsc{Zero-Shot Video Retrieval With Vision Language Models} \hfill 
+\href{https://benagro314.github.io/files/agrobenj_CSC2508_Final_Report.pdf}{\faFilePdf{}} \textbullet{} 
+\href{https://github.com/BenAgro314/CSC2508_final_project}{\faGithub{}}  \\
+\indent{}A zero-shot video retrieval system that leverages open-source vision-language models
+\vspace{1em}
+
+\noindent{}\textsc{Towards Globally Optimal Stereo Localization (Undergrad Thesis)} \hfill \href{https://benagro314.github.io/files/bagro_engsci_thesis.pdf}{\faFilePdf{}} \textbullet{} \href{https://github.com/BenAgro314/bagro_engsci_thesis}{\faGithub{}} \textbullet{} \href{https://www.youtube.com/watch?v=_fX9ZbzrwBE}{\faYoutube} \\
+\indent{}An investigation into how to make the problem stereo localization globally optimal, supervised by Tim Barfoot
+\vspace{1em}
+
+\noindent{}\textsc{``Captor" the autonomous drone} \hfill \href{https://benagro314.github.io/files/Captor_Report.pdf}{\faFilePdf{}} \textbullet{} \href{https://github.com/BenAgro314/rob498_capstone}{\faGithub{}} \textbullet{} \href{https://www.youtube.com/watch?v=bnN9CyDADcY}{\faYoutube} \\
+\indent{}A custom-built autonomous drone with reliable onboard SLAM and vision-only obstacle avoidance
+\vspace{1em}
+
+\noindent{}\textsc{Geometry Boy} \hfill \href{https://benagro314.github.io/files/Geometry_Boy_Report.pdf}{\faFilePdf{}} \textbullet{} \href{https://github.com/BenAgro314/MIE438_Project}{\faGithub{}} \textbullet{} \href{https://www.youtube.com/watch?v=1WBaEiE1EUo}{\faYoutube} \\
+\indent{}A version of the popular game Geomety Dash programmed for the original Gameboy hardware
+\vspace{1em}
+
+\vspace{0.5em}
+{\Large News}\\
+\tikzrule[black, path fading=east]{\textwidth}{1pt}
+
+\noindent{}{\href{https://news.engineering.utoronto.ca/top-u-of-t-undergraduate-ben-agro-is-taking-his-passion-for-research-into-a-direct-entry-phd/}{\textit{Top U of T undergraduate Ben Agro is taking his passion for research into a direct-entry PhD}} \hfill  \faCalendar{} \textit{June 12, 2023} \\
+\vspace{1em}
+
+
+\end{document}
