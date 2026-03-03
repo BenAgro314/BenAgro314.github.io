@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1772578189.3724 "/Users/benagro/BenAgro314.github.io/resume/main.tex" "main.pdf" "main" 1772578189.88116 0
-  "/Users/benagro/BenAgro314.github.io/resume/main.tex" 1772606958 10902 5998c2b37b5807a2340d3debe29954fe ""
+["pdflatex"] 1772579172.29004 "/Users/benagro/BenAgro314.github.io/resume/main.tex" "main.pdf" "main" 1772579172.81898 0
+  "/Users/benagro/BenAgro314.github.io/resume/main.tex" 1772579172.09806 11804 cb0b52c5abe14621da76a932c2470c55 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc" 1622837620 2920 d63721872b8c77041b88e51b8f7c291d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands1.enc" 1651520503 2608 3139db8e1f9371a4f87c0715d17fa217 ""
@@ -194,9 +194,9 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1742013180 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "main.aux" 1772578189.81076 198 834b17f976279f96a131894023c9f3e9 "pdflatex"
-  "main.out" 1772578189.6923 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1772606958 10902 5998c2b37b5807a2340d3debe29954fe ""
+  "main.aux" 1772579172.74743 198 cf5acddb0a15b644fb7a2ad3b45fa05b "pdflatex"
+  "main.out" 1772579172.62417 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1772579172.09806 11804 cb0b52c5abe14621da76a932c2470c55 ""
   (generated)
   "main.aux"
   "main.log"

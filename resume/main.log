@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  3 MAR 2026 14:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  3 MAR 2026 15:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -711,21 +711,23 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree0 on input line 58.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/fontawesome5/ufontawesomefree0.fd)
 LaTeX Font Info:    Font shape `T1/SourceSerifPro-LF/m/sc' will be
-(Font)              scaled to size 10.0pt on input line 86.
+(Font)              scaled to size 10.0pt on input line 94.
 LaTeX Font Info:    Font shape `T1/SourceSerifPro-LF/k/it' will be
-(Font)              scaled to size 10.0pt on input line 87.
+(Font)              scaled to size 10.0pt on input line 95.
 
 
 [1
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/sourceserifpro/a_lseshj.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/sourceserifpro/a_nqu667.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/sourceserifpro/a_rlbtkr.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/sourceserifpro/a_5mjl2d.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free0.enc}]
-LaTeX Font Info:    Trying to load font information for U+fontawesomebrands1 on input line 200.
+LaTeX Font Info:    Trying to load font information for U+fontawesomebrands1 on input line 212.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/fontawesome5/ufontawesomebrands1.fd)
 LaTeX Font Info:    Font shape `U/fontawesomebrands1/solid/n' in size <10> not available
-(Font)              Font shape `U/fontawesomebrands1/regular/n' tried instead on input line 200.
+(Font)              Font shape `U/fontawesomebrands1/regular/n' tried instead on input line 212.
 
 
-[2{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands1.enc}] (./main.aux)
+[2{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands1.enc}]
+
+[3] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -735,30 +737,30 @@ Package rerunfilecheck Info: File `main.out' has not changed.
  )
 (\end occurred inside a group at level 10)
 
-### simple group (level 10) entered at line 216 ({)
-### simple group (level 9) entered at line 127 ({)
-### simple group (level 8) entered at line 122 ({)
-### simple group (level 7) entered at line 117 ({)
-### simple group (level 6) entered at line 111 ({)
-### simple group (level 5) entered at line 106 ({)
-### simple group (level 4) entered at line 101 ({)
-### simple group (level 3) entered at line 96 ({)
-### simple group (level 2) entered at line 91 ({)
-### simple group (level 1) entered at line 86 ({)
+### simple group (level 10) entered at line 228 ({)
+### simple group (level 9) entered at line 135 ({)
+### simple group (level 8) entered at line 130 ({)
+### simple group (level 7) entered at line 125 ({)
+### simple group (level 6) entered at line 119 ({)
+### simple group (level 5) entered at line 114 ({)
+### simple group (level 4) entered at line 109 ({)
+### simple group (level 3) entered at line 104 ({)
+### simple group (level 2) entered at line 99 ({)
+### simple group (level 1) entered at line 94 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 25050 strings out of 473190
- 484076 string characters out of 5715801
- 873634 words of memory out of 5000000
+ 25051 strings out of 473190
+ 484082 string characters out of 5715801
+ 874634 words of memory out of 5000000
  47874 multiletter control sequences out of 15000+600000
  720031 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,5n,107p,487b,687s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,5n,107p,487b,689s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/adobe/sourceserifpro/SourceSerifPro-Black.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/adobe/sourceserifpro/SourceSerifPro-BlackIt.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/adobe/sourceserifpro/SourceSerifPro-It.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/adobe/sourceserifpro/SourceSerifPro-Regular.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (2 pages, 268361 bytes).
+Output written on main.pdf (3 pages, 270065 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
- 3 named destinations out of 1000 (max. 500000)
+ 152 PDF objects out of 1000 (max. 8388607)
+ 108 compressed objects within 2 object streams
+ 4 named destinations out of 1000 (max. 500000)
  115 words of extra memory for PDF output out of 10000 (max. 10000000)
 
