@@ -81,18 +81,10 @@ section:first-of-type { border: 0; }
 .my-name {
   margin: 0;
   color: var(--ink);
-  font: bold clamp(34px, 7vw, 72px)/.93 Georgia, "Times New Roman", serif;
+  font: bold clamp(30px, 5.5vw, 60px)/.93 Georgia, "Times New Roman", serif;
   font-variant: normal;
   letter-spacing: -.045em;
   text-align: left;
-}
-.my-name::after {
-  content: "Robotics · Machine Intelligence · Climbing";
-  display: block;
-  margin-top: 8px;
-  font: bold 11px/1.2 Arial, sans-serif;
-  letter-spacing: .08em;
-  text-transform: uppercase;
 }
 #sec-about .icons { justify-content: flex-start; gap: 11px; }
 .icons li { padding: 0; }
@@ -126,7 +118,7 @@ a:hover, a:visited:hover { color: var(--hover-link-color); }
 }
 .timespan::before { display: none; }
 .timespan time { display: block; margin-top: 4px; font: 10px/1.25 "Courier New", monospace; }
-.logo-img { width: auto; max-width: 88px; max-height: 30px; object-fit: contain; object-position: left; filter: grayscale(1); }
+.logo-img { width: auto; max-width: 88px; max-height: 30px; object-fit: contain; object-position: left; }
 .experience-desc { width: auto; margin: 0; padding-left: 0; font-size: 12px; }
 
 #sec-publications, #sec-projects {
@@ -146,7 +138,7 @@ a:hover, a:visited:hover { color: var(--hover-link-color); }
 }
 .publication-header { display: contents; margin: 0; }
 .pub-img { width: 90px; grid-row: span 2; }
-.pub-img img, .pub-img video { width: 90px !important; height: 64px !important; object-fit: cover !important; border: 1px solid var(--line); filter: grayscale(.6); }
+.pub-img img, .pub-img video { width: 90px !important; height: 64px !important; object-fit: cover !important; border: 1px solid var(--line); }
 .pub-meta { margin: 0; display: block; }
 .paper-title { margin: 0 0 3px; font: bold 13px/1.25 Arial, sans-serif; text-align: left; }
 .paper-authors, .paper-journal { margin: 0 0 3px; color: var(--subtle); font: 10px/1.25 Arial, sans-serif; text-align: left; }
@@ -172,7 +164,7 @@ p { margin-bottom: 8px; }
   body { padding: 0 8px; }.index-banner span:not(:first-child) { display: none; }
   .nav-bar ul { display: block; column-count: 2; }.nav-bar li:not(:last-child)::after { display:none; }
   .page { display: block; margin-top: 12px; padding: 0; }
-  #sec-about { grid-template-columns: 82px 1fr; min-height: 0; }.headshot { width: 82px; }.my-name { font-size: 38px; }
+  #sec-about { grid-template-columns: 82px 1fr; min-height: 0; }.headshot { width: 82px; }.my-name { font-size: 32px; }
   #sec-publications, #sec-projects { display: block; }
   .row-publication { grid-template-columns: 72px 1fr; }.pub-img { width:72px; }.pub-img img, .pub-img video { width:72px !important; height:54px !important; }
 }
