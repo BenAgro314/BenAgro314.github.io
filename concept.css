@@ -88,9 +88,29 @@ section:first-of-type { border: 0; }
   letter-spacing: -.045em;
   text-align: left;
 }
-#sec-about .icons { justify-content: flex-start; gap: 11px; margin-top: 6px; }
+#sec-about .icons {
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 6px;
+}
 .icons li { padding: 0; }
-.icons li a { color: var(--blue); font-size: 15px; }
+.icons li a {
+  color: var(--blue);
+  font-size: 15px;
+}
+#sec-about .icons li a {
+  width: 17px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+#sec-about .icons li a.icon-sendage {
+  transform: scale(.82);
+  transform-origin: center;
+}
 #sec-about p { max-width: 640px; margin: 8px 0 0; font-family: var(--font-text); font-size: 17px; }
 
 h2 {
