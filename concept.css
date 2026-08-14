@@ -88,7 +88,7 @@ section:first-of-type { border: 0; }
   letter-spacing: -.045em;
   text-align: left;
 }
-#sec-about .icons { justify-content: flex-start; gap: 11px; }
+#sec-about .icons { justify-content: flex-start; gap: 11px; margin-top: 6px; }
 .icons li { padding: 0; }
 .icons li a { color: var(--blue); font-size: 15px; }
 #sec-about p { max-width: 640px; margin: 8px 0 0; font-family: var(--font-text); font-size: 17px; }
