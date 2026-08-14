@@ -5,6 +5,8 @@
   --line: #b8b8ad;
   --blue: #0000cc;
   --visited: #551a8b;
+  --font-text: Georgia, "Times New Roman", serif;
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --bg-color: var(--page);
   --font-color: var(--ink);
   --navbar-link-color: var(--blue);
@@ -20,7 +22,7 @@ body {
   padding: 0 14px;
   color: var(--ink);
   background: var(--page);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-text);
   line-height: 1.42;
 }
 
@@ -32,7 +34,7 @@ body {
   padding: 5px 8px;
   color: white;
   background: #111;
-  font: bold 10px/1.2 "Courier New", monospace;
+  font: bold 10px/1.2 var(--font-ui);
   letter-spacing: .08em;
 }
 
@@ -49,7 +51,7 @@ body {
 .nav-bar ul { gap: 3px 0; }
 .nav-bar li { padding: 0; }
 .nav-bar li:not(:last-child)::after { content: " | "; color: var(--subtle); padding: 0 7px; }
-.nav-bar li a, .nav-bar li a:visited { color: var(--blue); font-variant: normal; font-size: 12px; text-decoration: underline; }
+.nav-bar li a, .nav-bar li a:visited { color: var(--blue); font: 12px/1.2 var(--font-ui); font-variant: normal; text-decoration: underline; }
 
 .page {
   max-width: 1060px;
@@ -81,7 +83,7 @@ section:first-of-type { border: 0; }
 .my-name {
   margin: 0;
   color: var(--ink);
-  font: bold clamp(30px, 5.5vw, 60px)/.93 Georgia, "Times New Roman", serif;
+  font: bold clamp(30px, 5.5vw, 60px)/.93 var(--font-text);
   font-variant: normal;
   letter-spacing: -.045em;
   text-align: left;
@@ -89,14 +91,14 @@ section:first-of-type { border: 0; }
 #sec-about .icons { justify-content: flex-start; gap: 11px; }
 .icons li { padding: 0; }
 .icons li a { color: var(--blue); font-size: 15px; }
-#sec-about p { max-width: 640px; margin: 8px 0 0; font-family: Georgia, serif; font-size: 17px; }
+#sec-about p { max-width: 640px; margin: 8px 0 0; font-family: var(--font-text); font-size: 17px; }
 
 h2 {
   margin: 0 0 12px;
   padding: 4px 7px;
   color: white;
   background: #111;
-  font: bold 12px/1.2 "Courier New", monospace;
+  font: bold 12px/1.2 var(--font-ui);
   font-variant: normal;
   letter-spacing: .08em;
   text-align: left;
@@ -117,7 +119,7 @@ a:hover, a:visited:hover { color: var(--hover-link-color); }
   text-align: left;
 }
 .timespan::before { display: none; }
-.timespan time { display: block; margin-top: 4px; font: 10px/1.25 "Courier New", monospace; }
+.timespan time { display: block; margin-top: 4px; font: 10px/1.25 var(--font-ui); }
 .logo-img { width: auto; max-width: 88px; max-height: 30px; object-fit: contain; object-position: left; }
 .experience-desc { width: auto; margin: 0; padding-left: 0; font-size: 12px; }
 
@@ -140,16 +142,27 @@ a:hover, a:visited:hover { color: var(--hover-link-color); }
 .pub-img { width: 90px; grid-row: span 2; }
 .pub-img img, .pub-img video { width: 90px !important; height: 64px !important; object-fit: cover !important; border: 1px solid var(--line); }
 .pub-meta { margin: 0; display: block; }
-.paper-title { margin: 0 0 3px; font: bold 13px/1.25 Arial, sans-serif; text-align: left; }
-.paper-authors, .paper-journal { margin: 0 0 3px; color: var(--subtle); font: 10px/1.25 Arial, sans-serif; text-align: left; }
+.paper-title { margin: 0 0 3px; font: bold 13px/1.25 var(--font-text); text-align: left; }
+.paper-authors, .paper-journal { margin: 0 0 3px; color: var(--subtle); font: 10px/1.25 var(--font-ui); text-align: left; }
 .pub-meta ul { margin: 3px 0; }
 .pub-meta ul li { padding-right: 8px; }
 .pub-meta ul li a { color: var(--blue); font-size: 11px; }
-.publication-summary { color: #444; font: 11px/1.35 Georgia, serif; }
+.publication-summary { color: #444; font: 11px/1.35 var(--font-text); }
 
 .spaced-list { list-style: square; }
 .spaced-list li { margin: 0 0 6px 20px; font-size: 12px; }
 .spaced-list li::marker { color: #111; }
+.notes-group { padding: 11px 0 14px; border-top: 1px dotted var(--line); }
+.notes-group:first-of-type { padding-top: 0; border-top: 0; }
+.notes-group:last-of-type { padding-bottom: 0; }
+.notes-group h3 {
+  margin: 0 0 8px;
+  color: var(--subtle);
+  font: bold 10px/1.2 var(--font-ui);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.notes-group p { margin: 0 0 9px; font-size: 12px; }
 p { margin-bottom: 8px; }
 
 .website-footer { margin: 0 auto 18px; padding: 0 14px; border: 0; }
@@ -157,7 +170,7 @@ p { margin-bottom: 8px; }
   max-width: 1060px;
   padding: 8px;
   border-top: 4px double var(--ink);
-  font: 10px/1.2 "Courier New", monospace;
+  font: 10px/1.2 var(--font-ui);
 }
 
 @media (max-width: 760px) {
