@@ -72,14 +72,14 @@ section:first-of-type { border: 0; }
 #sec-about {
   min-height: 235px;
   display: grid;
-  grid-template-columns: 120px minmax(0, 1fr);
+  grid-template-columns: 136px minmax(0, 1fr);
   grid-template-rows: auto auto 1fr;
   gap: 5px 18px;
   padding-bottom: 18px;
   border-bottom: 4px double var(--ink);
 }
 .headshot-figure { grid-column: 1; grid-row: 1 / 4; display: block; }
-.headshot { width: 120px; border-radius: 0; border: 1px solid var(--ink); padding: 3px; }
+.headshot { width: 136px; border-radius: 0; border: 1px solid var(--ink); padding: 3px; }
 .my-name {
   margin: 0;
   color: var(--ink);
@@ -112,7 +112,7 @@ section:first-of-type { border: 0; }
   transform-origin: center;
 }
 #sec-about .icons li a.icon-goodreads {
-  transform: scale(.85);
+  transform: scale(.82);
   transform-origin: center;
 }
 #sec-about p { max-width: 640px; margin: 8px 0 0; font-family: var(--font-text); font-size: 17px; }
