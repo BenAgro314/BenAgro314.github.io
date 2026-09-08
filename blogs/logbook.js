@@ -157,7 +157,8 @@
         updated.textContent = formatDate(data.updated, true);
       }
 
-      [search, grade, location, sort].forEach((control) => control.addEventListener("input", () => render(entries)));
+      search.addEventListener("input", () => render(entries));
+      [grade, location, sort].forEach((control) => control.addEventListener("change", () => render(entries)));
       reset.addEventListener("click", () => {
         search.value = "";
         grade.value = "";
