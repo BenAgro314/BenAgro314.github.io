@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../images/headshot.jpeg" />
+    <title>Climbing Logbook — Ben Agro</title>
+    <meta name="description" content="Ben Agro's outdoor bouldering logbook." />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="article.css" />
+    <link rel="stylesheet" href="logbook.css" />
+    <script src="logbook.js" defer></script>
+  </head>
+
+  <body id="top">
+    <div class="index-banner"><span>BEN AGRO'S HOME PAGE</span><span>CLIMBING LOGBOOK</span><span>EST. 2022</span></div>
+    <div class="nav-div">
+      <div class="nav-background">
+        <nav class="nav-bar">
+          <ul>
+            <li><a href="../index.html#sec-about">Home</a></li>
+            <li><a href="../index.html#sec-experience">Work</a></li>
+            <li><a href="../index.html#sec-notes" aria-current="page">Notes</a></li>
+            <li><a href="../index.html#sec-publications">Publications</a></li>
+            <li><a href="../index.html#sec-projects">Past Projects</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main class="page logbook-page">
+      <div class="article-breadcrumb"><a href="../index.html">Ben Agro</a> / <a href="../index.html#sec-climbing">Climbing</a></div>
+      <h1 class="blog-title">Climbing Logbook</h1>
+      <div class="blog-date">Outdoor boulders · Last updated <time id="logbook-updated" datetime="2026-09-07">September 7, 2026</time></div>
+
+      <section id="sec-intro">
+        <p>A record of things I have climbed outside. Imported from Sendage in September 2026; maintained here from now on.</p>
+      </section>
+
+      <section class="logbook-tools" aria-label="Filter the climbing logbook">
+        <p class="logbook-summary" id="logbook-summary">Loading logbook…</p>
+        <div class="logbook-filters">
+          <label>
+            <span>Search</span>
+            <input id="logbook-search" type="search" placeholder="Boulder or area" autocomplete="off" />
+          </label>
+          <label>
+            <span>Grade</span>
+            <select id="logbook-grade"><option value="">All grades</option></select>
+          </label>
+          <label>
+            <span>Location</span>
+            <select id="logbook-location"><option value="">All locations</option></select>
+          </label>
+          <button id="logbook-reset" type="button">Reset</button>
+        </div>
+      </section>
+
+      <section class="logbook-results" aria-labelledby="logbook-results-heading">
+        <h2 id="logbook-results-heading" class="visually-hidden">Sends</h2>
+        <p id="logbook-status" class="logbook-status" aria-live="polite"></p>
+        <div id="logbook-list"></div>
+        <noscript><p>This logbook needs JavaScript to read its local data file.</p></noscript>
+      </section>
+    </main>
+
+    <footer class="website-footer">
+      <div class="footer-content"><a href="#top">↑ top</a> · <a href="../index.html#sec-climbing">back to climbing</a></div>
+    </footer>
+  </body>
+</html>
