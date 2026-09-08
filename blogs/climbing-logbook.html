@@ -52,6 +52,16 @@
             <span>Location</span>
             <select id="logbook-location"><option value="">All locations</option></select>
           </label>
+          <label>
+            <span>Sort</span>
+            <select id="logbook-sort">
+              <option value="date">Date (newest)</option>
+              <option value="grade">Grade (hardest)</option>
+              <option value="name">Name (A–Z)</option>
+              <option value="rating">Rating (highest)</option>
+              <option value="comment">Comment (A–Z)</option>
+            </select>
+          </label>
           <button id="logbook-reset" type="button">Reset</button>
         </div>
       </section>
@@ -64,7 +74,7 @@
       </section>
     </main>
 
-    <footer class="website-footer">
+    <footer class="website-footer logbook-footer">
       <div class="footer-content"><a href="#top">↑ top</a> · <a href="../index.html#sec-climbing">back to climbing</a></div>
     </footer>
   </body>

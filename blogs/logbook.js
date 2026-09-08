@@ -7,12 +7,41 @@
   const search = document.querySelector("#logbook-search");
   const grade = document.querySelector("#logbook-grade");
   const location = document.querySelector("#logbook-location");
+  const sort = document.querySelector("#logbook-sort");
   const reset = document.querySelector("#logbook-reset");
 
   const gradeNumber = (value) => Number.parseInt(value.replace(/\D/g, ""), 10) || 0;
   const pluralize = (count, singular, plural = `${singular}s`) => `${count} ${count === 1 ? singular : plural}`;
   const clean = (value) => String(value || "").trim();
   const dateValue = (entry) => entry.date || "0000-00-00";
+  const compareDate = (a, b) => dateValue(b).localeCompare(dateValue(a)) || gradeNumber(b.grade) - gradeNumber(a.grade) || a.name.localeCompare(b.name);
+  const compareGrade = (a, b) => gradeNumber(b.grade) - gradeNumber(a.grade) || compareDate(a, b);
+  const compareName = (a, b) => a.name.localeCompare(b.name) || compareDate(a, b);
+  const compareRating = (a, b) => b.rating - a.rating || compareGrade(a, b);
+  const compareComment = (a, b) => {
+    const aComment = clean(a.notes);
+    const bComment = clean(b.notes);
+    if (Boolean(aComment) !== Boolean(bComment)) return bComment ? 1 : -1;
+    return aComment && bComment ? aComment.localeCompare(bComment) || compareDate(a, b) : compareDate(a, b);
+  };
+
+  const sorters = {
+    date: compareDate,
+    grade: compareGrade,
+    name: compareName,
+    rating: compareRating,
+    comment: compareComment
+  };
+
+  const groupLabel = (entry) => {
+    switch (sort.value) {
+      case "grade": return entry.grade;
+      case "name": return clean(entry.name).charAt(0).toLocaleUpperCase() || "#";
+      case "rating": return entry.rating > 0 ? `${entry.rating}/5` : "Unrated";
+      case "comment": return clean(entry.notes) ? "With comments" : "Without comments";
+      default: return entry.date ? entry.date.slice(0, 4) : "Date unknown";
+    }
+  };
 
   const element = (tag, className, text) => {
     const node = document.createElement(tag);
@@ -76,7 +105,7 @@
         return [entry.name, entry.area, entry.region, entry.notes, entry.grade]
           .some((value) => clean(value).toLocaleLowerCase().includes(term));
       })
-      .sort((a, b) => dateValue(b).localeCompare(dateValue(a)) || gradeNumber(b.grade) - gradeNumber(a.grade) || a.name.localeCompare(b.name));
+      .sort(sorters[sort.value] || compareDate);
 
     status.textContent = filtered.length === entries.length
       ? `${pluralize(entries.length, "send")} shown`
@@ -90,17 +119,17 @@
 
     const groups = new Map();
     filtered.forEach((entry) => {
-      const year = entry.date ? entry.date.slice(0, 4) : "Date unknown";
-      if (!groups.has(year)) groups.set(year, []);
-      groups.get(year).push(entry);
+      const label = groupLabel(entry);
+      if (!groups.has(label)) groups.set(label, []);
+      groups.get(label).push(entry);
     });
 
-    groups.forEach((yearEntries, year) => {
+    groups.forEach((groupEntries, label) => {
       const section = element("section", "log-year");
-      const heading = element("h2", "log-year__heading", year);
-      heading.append(element("span", "", pluralize(yearEntries.length, "send")));
+      const heading = element("h2", "log-year__heading", label);
+      heading.append(element("span", "", pluralize(groupEntries.length, "send")));
       section.append(heading);
-      yearEntries.forEach((entry) => section.append(renderEntry(entry)));
+      groupEntries.forEach((entry) => section.append(renderEntry(entry)));
       list.append(section);
     });
   };
@@ -128,11 +157,12 @@
         updated.textContent = formatDate(data.updated, true);
       }
 
-      [search, grade, location].forEach((control) => control.addEventListener("input", () => render(entries)));
+      [search, grade, location, sort].forEach((control) => control.addEventListener("input", () => render(entries)));
       reset.addEventListener("click", () => {
         search.value = "";
         grade.value = "";
         location.value = "";
+        sort.value = "date";
         render(entries);
         search.focus();
       });
