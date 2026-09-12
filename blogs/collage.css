@@ -8,6 +8,25 @@
 .collage-page .blog-date { margin-bottom: 42px; }
 .photo-credit { display: block; margin-top: 4px; }
 
+.collage-sort {
+  margin: -26px 0 18px;
+  color: var(--subtle);
+  font: 10px/1.3 var(--font-ui);
+}
+
+.collage-sort button {
+  padding: 5px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.collage-sort button:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.collage-sort button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
 .collage-page > .collage-set {
   display: block;
   margin: 0 0 62px;
@@ -80,6 +99,7 @@
 @media (max-width: 680px) {
   .collage-page { padding: 0 4px; }
   .collage-page .blog-date { margin-bottom: 30px; }
+  .collage-sort { margin-top: -14px; }
   .collage-page > .collage-set { margin-bottom: 42px; }
   .photo-grid,
   .photo-grid--pair { columns: 1; }
