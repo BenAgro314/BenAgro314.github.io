@@ -1,6 +1,39 @@
 {
-  "updated": "2026-09-07",
+  "updated": "2026-09-12",
   "entries": [
+    {
+      "date": "2026-09-12",
+      "name": "Rolling Thunder",
+      "grade": "V8",
+      "gradeOpinion": "",
+      "style": "flash",
+      "area": "",
+      "region": "Tahoe",
+      "rating": 2,
+      "notes": ""
+    },
+    {
+      "date": "2026-09-12",
+      "name": "Dead Ant",
+      "grade": "V11",
+      "gradeOpinion": "soft",
+      "style": "flash",
+      "area": "",
+      "region": "Tahoe",
+      "rating": 2,
+      "notes": ""
+    },
+    {
+      "date": "2026-09-12",
+      "name": "The Beatdown",
+      "grade": "V12",
+      "gradeOpinion": "soft",
+      "style": "flash",
+      "area": "",
+      "region": "Tahoe",
+      "rating": 3,
+      "notes": ""
+    },
     {
       "date": "2026-09-07",
       "name": "Eminently Climbable",
