@@ -1,0 +1,3 @@
+# Keep the local photo archive out of the GitHub Pages build.
+exclude:
+  - .unpublished-images
