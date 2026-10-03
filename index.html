@@ -13,7 +13,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <!-- custom stylesheet -->
     <link rel='stylesheet' href='styles.css' />
-    <link rel='stylesheet' href='concept.css?v=20260815b' />
+    <link rel='stylesheet' href='concept.css?v=20261003' />
 
 
 </head>
@@ -26,7 +26,9 @@
                 <ul>
                     <li><a href='#sec-about'>Home</a></li>
                     <li><a href='#sec-experience'>Work</a></li>
-                    <li><a href='#sec-notes'>Notes</a></li>
+                    <li><a href='#sec-climbing'>Climbing</a></li>
+                    <li><a href='#sec-blog'>Writing</a></li>
+                    <li><a href='#sec-news'>News</a></li>
                     <li><a href='#sec-publications'>Publications</a></li>
                     <li><a href='#sec-projects'>Past Projects</a></li>
                 </ul>
@@ -53,7 +55,7 @@
                 <li><a href="https://www.goodreads.com/review/list/145033699?shelf=read" class="fa-solid fa-book-open icon-goodreads" aria-label="Goodreads" title="Goodreads"></a></li>
             </ul>
             <p>
-                I am an engineer and researcher working on Tesla's Robotaxi.
+                I am an engineer and researcher working on AI for humanoid robots at Tesla.
                 I am focused on bringing machine intelligence in contact with reality.
                 Outside of work I love rock climbing.
             </p>
@@ -63,15 +65,29 @@
             <div class="row-experience">
                 <div class="timespan">
                     <div>
-                        <a href="https://www.tesla.com/">
-                            <!--img src="images/telsa_logo.png" alt="Tesla Logo" class="logo-img" style="width: 100px; height: auto;" /-->
+                        <a href="https://www.tesla.com/AI">
                             <img src="images/telsa_logo.png" alt="Tesla Logo" class="logo-img" />
                         </a>
-
-                        <time datetime='2025-3'>March 2025 - Present</time>
+                        <time datetime="2026-10">October 2026 - Present</time>
                     </div>
                 </div>
                 <div class="experience-desc">
+                    <h3 class="experience-title">Tesla AI — Senior Staff Robotics Machine Learning Engineer</h3>
+                    Working on AI for humanoid robots and large models for Optimus, in collaboration with xAI.
+                </div>
+            </div>
+            <div class="row-experience">
+                <div class="timespan">
+                    <div>
+                        <a href="https://www.tesla.com/">
+                            <img src="images/cybercab-hero.png" alt="Tesla Cybercab" class="logo-img logo-cybercab" />
+                        </a>
+
+                        <time datetime='2025-03'>March 2025 - September 2026</time>
+                    </div>
+                </div>
+                <div class="experience-desc">
+                    <h3 class="experience-title">Tesla AI — Staff Autopilot Machine Learning Engineer</h3>
                     As part of the fleet learning team I made foundational contributions to RL and pretraining,
                     which lead to FSD v14.*, the first unsupervised Robotaxi, and the launch of <a href="blogs/cybercab-2026.html">Cybercab</a>.
                 </div>
@@ -86,6 +102,7 @@
                     </div>
                 </div>
                 <div class="experience-desc">
+                    <h3 class="experience-title">Waabi — Researcher II</h3>
                     I was a researcher at <a href="https://waabi.ai/">Waabi</a> working on next-generation autonomy
                     systems under <a href="https://sergiocasas.github.io/">Sergio Casas</a> and my
                     PhD supervisor <a href="http://www.cs.toronto.edu/~urtasun/">Raquel Urtasun</a>.
@@ -101,6 +118,7 @@
                     </div>
                 </div>
                 <div class="experience-desc">
+                    <h3 class="experience-title">Robotics Vision and Learning Lab — Undergraduate Researcher</h3>
                     I was a research intern at the <a href="https://rvl.cs.toronto.edu/#/">Robotics Vision and Learning
                         Lab</a> supervised by <a href="http://www.cs.toronto.edu/~florian/">Florian Shkurti</a>.
                     We worked on learning methods for task and motion planning, and I developed a new algorithm
@@ -118,6 +136,7 @@
                     </div>
                 </div>
                 <div class="experience-desc">
+                    <h3 class="experience-title">Autonomous Space Robotics Lab — Undergraduate Researcher</h3>
                     I was a research intern at the <a href="http://asrl.utias.utoronto.ca/">Autonomous Space and
                         Robotics Lab</a> supervised by <a href="http://asrl.utias.utoronto.ca/~tdb/">Tim Barfoot</a>.
                     We worked on self-supervised semantic LiDAR segmentation for autonomous navigation. I developed a
@@ -126,18 +145,16 @@
                 </div>
             </div>
         </section>
-        <section id="sec-notes">
-            <h2>Notes</h2>
-
-            <div class="notes-group" id="sec-climbing">
-                <h3>Climbing</h3>
+        <div class="notes-column">
+            <section class="notes-group" id="sec-climbing">
+                <h2>Climbing</h2>
                 <p>I love bouldering, and try to get outside as much as possible. My current goal is to send
                     <s>V13</s> V14.</p>
                 <ul class="spaced-list">
+                    <li><a href="blogs/climbing-logbook.html">Logbook</a></li>
                     <li><b>Photo collages:</b> <a href="blogs/tahoe-fourth-of-july-2026.html">Tahoe (2026)</a>,
                         <a href="blogs/yosemite-photo-collage.html">Yosemite (2025–26)</a>, and
                         <a href="blogs/bishop-2025.html">Bishop (2025)</a>.</li>
-                    <li><b>Logbook:</b> <a href="blogs/climbing-logbook.html">Outdoor sends</a>.</li>
                     <li><b>Other media:</b>
                         <a href="https://www.youtube.com/watch?v=RCzC7o2hwVw&amp;t=6s">Squamish trip (2022)</a>,
                         <a href="https://www.youtube.com/watch?v=dlhQ3oO69IU">Vegas trip (2023)</a>,
@@ -145,20 +162,20 @@
                         and <a href="https://www.instagram.com/ben_agro/">Instagram</a>.
                     </li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="notes-group" id="sec-blog">
-                <h3>Writing</h3>
+            <section class="notes-group" id="sec-blog">
+                <h2>Writing</h2>
                 <ul class="spaced-list">
                     <li><time datetime="2024-01-13"><b>Jan 13, 2024</b></time>: <a href="blogs/lessons_from_2nd_climbing_trip.html">
                             Lessons from 2024 Red Rock Trip</a></li>
                     <li><time datetime="2024-01-14"><b>Jan 14, 2024</b></time>: <a href="blogs/succeeding_in_engsci.html">
                             Studying Tips</a></li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="notes-group" id="sec-news">
-                <h3>News</h3>
+            <section class="notes-group" id="sec-news">
+                <h2>News</h2>
                 <ul class="spaced-list">
                     <li><time datetime="2026-09-03"><b>September 3–4, 2026</b></time>: <a href="blogs/cybercab-2026.html">Cybercab launch event</a></li>
                     <li><b>June 20, 2023</b>: I'll be at CVPR2024 to present UnO!</li>
@@ -170,9 +187,9 @@
                             Top U of T undergraduate Ben Agro is taking his passion for research into a direct-entry
                             PhD</a>.</li>
                 </ul>
-            </div>
+            </section>
 
-        </section>
+        </div>
         <section id="sec-publications">
             <h2>Publications</h2>
             <div class="row-publication">
