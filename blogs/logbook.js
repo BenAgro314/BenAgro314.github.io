@@ -85,6 +85,9 @@
 
     const meta = element("div", "log-entry__meta");
     meta.append(element("span", "log-entry__style", entry.style || "send"));
+    if (Number.isInteger(entry.attempts) && entry.attempts > 0) {
+      meta.append(element("span", "log-entry__attempts", pluralize(entry.attempts, "try", "tries")));
+    }
     if (entry.rating > 0) {
       const rating = element("span", "log-entry__rating", `${entry.rating}/5`);
       rating.title = `${entry.rating} out of 5 stars`;

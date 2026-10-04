@@ -102,6 +102,7 @@
 .log-entry__date,
 .log-entry__grade,
 .log-entry__style,
+.log-entry__attempts,
 .log-entry__rating,
 .log-entry__place {
   font-family: var(--font-ui);
@@ -149,6 +150,7 @@
 }
 
 .log-entry__style,
+.log-entry__attempts,
 .log-entry__rating {
   color: var(--subtle);
   font-size: 9px;

@@ -22,7 +22,7 @@ Each entry uses this shape:
 }
 ```
 
-Use `null` for an unknown date. `gradeOpinion` can be `"soft"`, `"hard"`, or empty. `style` can be `"flash"`, `"onsight"`, `"redpoint"`, or `"send"` when the style was not recorded. Ratings run from 0 (not recorded) to 5.
+Use `null` for an unknown date. `gradeOpinion` can be `"soft"`, `"hard"`, or empty. `style` can be `"flash"`, `"onsight"`, `"redpoint"`, or `"send"` when the style was not recorded. Ratings run from 0 (not recorded) to 5. Optional `attempts` records a positive integer attempt count, displayed as “1 try” or “N tries”.
 
 ## Location sources (September 28, 2026)
 

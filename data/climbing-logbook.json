@@ -1,6 +1,66 @@
 {
-  "updated": "2026-09-28",
+  "updated": "2026-10-04",
   "entries": [
+    {
+      "date": "2026-10-04",
+      "name": "Fat Boy",
+      "grade": "V11",
+      "gradeOpinion": "",
+      "style": "send",
+      "attempts": 4,
+      "area": "Truckee / Memorial Boulder",
+      "region": "Tahoe",
+      "rating": 3,
+      "notes": "Rough on skin in 80 deg"
+    },
+    {
+      "date": "2026-10-03",
+      "name": "Smooth boy slim",
+      "grade": "V9",
+      "gradeOpinion": "",
+      "style": "send",
+      "attempts": 3,
+      "area": "Burnside Lake / Whale Shark",
+      "region": "Tahoe",
+      "rating": 4,
+      "notes": ""
+    },
+    {
+      "date": "2026-10-03",
+      "name": "Wolf Pack",
+      "grade": "V11",
+      "gradeOpinion": "soft",
+      "style": "send",
+      "attempts": 2,
+      "area": "Burnside Lake / Whale Shark",
+      "region": "Tahoe",
+      "rating": 4,
+      "notes": ""
+    },
+    {
+      "date": "2026-10-03",
+      "name": "Fat Man in a Little Coat",
+      "grade": "V9",
+      "gradeOpinion": "soft",
+      "style": "flash",
+      "attempts": 1,
+      "area": "Burnside Lake / Whale Shark",
+      "region": "Tahoe",
+      "rating": 4,
+      "notes": ""
+    },
+    {
+      "date": "2026-10-03",
+      "name": "Lone Wolf",
+      "grade": "V12",
+      "gradeOpinion": "soft",
+      "style": "send",
+      "attempts": 2,
+      "area": "Burnside Lake / Whale Shark",
+      "region": "Tahoe",
+      "rating": 3,
+      "notes": "next time make sure headlamp is tighter!"
+    },
     {
       "date": "2026-09-27",
       "name": "Pen15 Club",
@@ -212,7 +272,7 @@
     },
     {
       "date": "2026-07-04",
-      "name": "Don’t Mention It",
+      "name": "Don\u2019t Mention It",
       "grade": "V8",
       "gradeOpinion": "",
       "style": "flash",
@@ -564,7 +624,7 @@
     },
     {
       "date": "2024-07-05",
-      "name": "Tim's Arête",
+      "name": "Tim's Ar\u00eate",
       "grade": "V10",
       "gradeOpinion": "soft",
       "style": "flash",
