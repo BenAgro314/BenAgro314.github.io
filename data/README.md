@@ -46,3 +46,7 @@ Only locations supported by route listings, guidebook material, or ascent report
 The guidebook preview identifies the Knobby Wall sector on Highway 140 (printed pages 446–447). The stand-start entries for Balls of Steel and Bel Sorriso use the location of their parent problems; those sources do not separately list each start variation.
 
 Sub-locations remain unverified for The Gremlin, The Gremlin Left, Sideswiped, Tieranny Stand, and Snug As A Bug; their existing broad locations were retained.
+
+## Location source (October 12, 2026)
+
+Demon on a Leash: Kirkwood Lake / Lost World, Tahoe, per [Mountain Project](https://www.mountainproject.com/area/124923092/lost-world). The logbook retains the climber’s supplied V9 grade and soft opinion.
