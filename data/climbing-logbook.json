@@ -1,6 +1,39 @@
 {
-  "updated": "2026-10-12",
+  "updated": "2026-10-25",
   "entries": [
+    {
+      "date": "2026-10-25",
+      "name": "Left Warmup",
+      "grade": "V1",
+      "gradeOpinion": "",
+      "style": "send",
+      "area": "PCT Boulders / PCT 1 / Roadside",
+      "region": "Tahoe",
+      "rating": 2,
+      "notes": ""
+    },
+    {
+      "date": "2026-10-25",
+      "name": "Right Warmup",
+      "grade": "V1",
+      "gradeOpinion": "",
+      "style": "send",
+      "area": "PCT Boulders / PCT 1 / Roadside",
+      "region": "Tahoe",
+      "rating": 2,
+      "notes": ""
+    },
+    {
+      "date": "2026-10-25",
+      "name": "Warmup Traverse",
+      "grade": "V0",
+      "gradeOpinion": "",
+      "style": "send",
+      "area": "PCT Boulders / PCT 1 / Roadside",
+      "region": "Tahoe",
+      "rating": 1,
+      "notes": ""
+    },
     {
       "date": "2026-10-11",
       "name": "Demon on a Leash",
